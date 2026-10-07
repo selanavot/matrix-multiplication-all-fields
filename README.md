@@ -94,6 +94,19 @@ All transitive revisions are recorded in [`lean/lake-manifest.json`](lean/lake-m
 
 > **Verified on 2026-10-06.** The isolated core source rebuild and fresh kernel replay passed at proof commit `9bd2a64`. The expanded public audit passed at `704431e`, including ten axiom guards; separate controls confirmed that added axioms and `sorry` are rejected. Three fresh adversarial source reviews found no fatal defect. Pinned third-party caches were reused, and the broader isolated rebuild of unrelated public results was not completed. The verification record gives the exact scope and documents subsequent comment-only attribution changes.
 
+**Verification by OpenAI and Anthropic models.** Both checked that the theorem statement means what it claims and that the Lean verification works end to end. The OpenAI models credited above did so while developing the proof, with the results summarized in the box above. Anthropic's Claude (Opus 5.5), which took no part in the development, then repeated both checks independently on 2026-10-06:
+
+- **The statement makes sense.**
+  - `Model.lean` is byte-identical to OpenAI's upstream file, and the exported theorems depend only on Lean core, Mathlib and that file.
+  - Its program model, correctness predicate and exponent match the textbook definition of ω exactly for infinite fields. For finite fields, the separate exact-rank theorem gives the textbook-strength statement.
+  - The bound is not vacuous, since 2 ≤ ω(F) is proved.
+- **The Lean verification works end to end.** From a fresh clone at commit `7c4b124`, with no OAI build outputs, `bash scripts/check-kernel.sh` exited 0:
+  - all 126 OAI modules of the core compiled with no errors or `sorry`;
+  - all ten axiom guards passed;
+  - `leanchecker --fresh` replayed the audit target.
+
+  Pinned third-party build caches were reused, and `bootstrap.sh` was not rerun.
+
 See the [verification record](docs/field-port/VERIFICATION.md) and [adversarial audit](docs/field-port/ADVERSARIAL.md) for evidence and review limits. For the source comparison against OpenAI's preserved subtree:
 
 ```sh

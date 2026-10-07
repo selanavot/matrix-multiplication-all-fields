@@ -152,3 +152,72 @@ linear-combination cost. Their mathematical review and its limits are in
 a separate formalization. Historical priority, the original authors' reasons
 for their scope, the exact exponent, practical constants, and an effective
 algorithm generator are not established by this audit.
+
+## Independent re-verification by Anthropic's Claude
+
+Date: 2026-10-06. Checker: Anthropic's Claude (Opus 5.5), which took no part
+in developing the proof. Toolchain: `leanprover/lean4:v4.34.1` on arm64 macOS,
+`LEAN_NUM_THREADS=1`.
+
+**Core proof, end to end.** A fresh clone from GitHub was checked at commit
+`7c4b124`, which moves the exported theorems into `AllFields.lean` without
+changing them. The clone started with an empty OAI build directory, and all
+ten dependency checkouts passed `verify-dependencies.py`.
+`bash scripts/check-kernel.sh` exited 0 after 29 minutes:
+
+- the eleven protected files matched the baseline;
+- 126 OAI modules compiled with no errors or `sorry` warnings;
+- the ten guarded axiom checks passed;
+- `leanchecker --fresh` replayed `AllFieldsAudit` and all its imported
+  declarations.
+
+The source commit and a clean working tree were confirmed before and after
+the run. Pinned third-party build caches were reused, and `bootstrap.sh` was
+not rerun.
+
+**Full public entry point.** A separate fresh clone was checked at the
+previous `main` commit, `2bb9a6f`. Its scripts still build `Main` together with
+OpenAI's other retained results. `check-proof.sh` completed (9437 jobs; 508
+OAI modules compiled from empty outputs, with no errors). That run was
+interrupted once and resumed from its own completed modules.
+Its kernel replay targets `AuxiliarySeparation.Main`, which the core replay
+above already covers.
+
+**Statement checks.** Additional Lean files were elaborated against these
+builds and confirmed the following.
+
+- **The headline depends only on the specification.** The fully explicit
+  statement of `omega_le_nine_quarters` uses only `Model.lean` definitions and
+  standard Mathlib instances. A dependency walk over the types and definition
+  bodies of the exported statements reaches only Lean core, Mathlib and
+  `Model.lean`.
+- **The infimum is not vacuous.** 2 ≤ `Arithmetic.omega F`; the admissible
+  set is non-empty and bounded below; 9/4 is admissible. The headline also
+  holds with every specification definition unfolded by hand.
+- **The rank notions are the standard ones.** At ℂ, the generic matrix
+  multiplication tensor is definitionally OpenAI's original tensor.
+  `RankAtMost` is an exact sum of rank-one tensors, and the 2×2 tensor
+  provably has rank greater than 3.
+- **The proof ingredients behave as described.** The Fourier period selector
+  gives the stated values on `ZMod 2`, `ZMod 5` and ℚ. The descent,
+  Fourier, interpolation, character and bridge lemmas depend only on
+  `propext`, `Classical.choice` and `Quot.sound`.
+- **OpenAI's other exported statements.** Against the full build, the same
+  dependency walk shows that OpenAI's α and rectangular statements also reach
+  only Lean core, Mathlib and `Model.lean`, and that they depend only on the
+  three standard axioms. The exact-rank statement additionally reaches only
+  the rank definitions `exactRankExponent`, `exactMatrixRank`, `exactRank`,
+  `matrixMultiplicationTensor`, `RankAtMost` and `rankOne`.
+
+**Statement review.** Separate source reviews found no specification change,
+and found that the elaborated theorem means what the README states. They also
+found that OpenAI's program model, correctness predicate and exponent match
+the textbook definition of ω:
+
+- **Infinite fields:** an exact match.
+- **Finite fields:** `Correct` is equality of functions on field-valued
+  inputs, so `Arithmetic.omega F` is at most the textbook value. The
+  exact-rank theorem gives the textbook-strength statement there.
+
+These reviews are AI review, not human peer review. The Lean checks retain
+the usual trust in Lean's kernel, Mathlib and the toolchain.
