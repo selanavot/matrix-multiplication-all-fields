@@ -180,8 +180,8 @@ previous `main` commit, `2bb9a6f`. Its scripts still build `Main` together with
 OpenAI's other retained results. `check-proof.sh` completed (9437 jobs; 508
 OAI modules compiled from empty outputs, with no errors). That run was
 interrupted once and resumed from its own completed modules.
-Its kernel replay targets `AuxiliarySeparation.Main`, which the core replay
-above already covers.
+`check-kernel.sh` then exited 0, including its fresh replay of
+`AuxiliarySeparation.Main`.
 
 **Statement checks.** Additional Lean files were elaborated against these
 builds and confirmed the following.
