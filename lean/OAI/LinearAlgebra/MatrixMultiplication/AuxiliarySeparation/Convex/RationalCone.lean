@@ -1,8 +1,14 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.RationalSpan
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.RationalDenominators
-import Mathlib.Analysis.Convex.Caratheodory
-import Mathlib.Geometry.Convex.Cone.Pointed
-import Mathlib.Tactic
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.RationalSpan
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.RationalDenominators
+public import Mathlib.Analysis.Convex.Caratheodory
+public import Mathlib.Geometry.Convex.Cone.Pointed
+public import Mathlib.Tactic
+
+public section
+
+@[expose] section
 
 namespace OAI
 

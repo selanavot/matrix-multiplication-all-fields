@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexMatrixTensor
-import Mathlib.LinearAlgebra.Matrix.Rank
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexMatrixTensor
+public import Mathlib.LinearAlgebra.Matrix.Rank
+
+public section
+
+@[expose] section
 
 namespace OAI
 

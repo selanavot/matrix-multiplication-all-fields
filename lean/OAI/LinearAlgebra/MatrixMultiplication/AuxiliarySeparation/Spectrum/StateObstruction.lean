@@ -1,10 +1,16 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.NormalizedStates
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.Farkas
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.Catalyst
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.Coordinates
-import Mathlib.GroupTheory.MonoidLocalization.GrothendieckGroup
-import Mathlib.LinearAlgebra.Finsupp.LinearCombination
-import Mathlib.Tactic
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.NormalizedStates
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.Farkas
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.Catalyst
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.Coordinates
+public import Mathlib.GroupTheory.MonoidLocalization.GrothendieckGroup
+public import Mathlib.LinearAlgebra.Finsupp.LinearCombination
+public import Mathlib.Tactic
+
+public section
+
+@[expose] section
 
 namespace OAI
 

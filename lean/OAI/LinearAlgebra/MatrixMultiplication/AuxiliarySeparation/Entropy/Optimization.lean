@@ -1,8 +1,14 @@
-import Mathlib.Algebra.BigOperators.Field
-import Mathlib.Analysis.SpecialFunctions.BinaryEntropy
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
+module
+
+public import Mathlib.Algebra.BigOperators.Field
+public import Mathlib.Analysis.SpecialFunctions.BinaryEntropy
+public import Mathlib.Analysis.SpecialFunctions.Pow.Real
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Ring
+
+public section
+
+@[expose] section
 
 namespace OAI
 

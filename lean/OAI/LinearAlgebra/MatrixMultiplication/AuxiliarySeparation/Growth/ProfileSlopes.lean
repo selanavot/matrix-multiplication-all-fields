@@ -1,4 +1,10 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.ConcaveSlopes
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.ConcaveSlopes
+
+public section
+
+@[expose] section
 
 namespace OAI
 

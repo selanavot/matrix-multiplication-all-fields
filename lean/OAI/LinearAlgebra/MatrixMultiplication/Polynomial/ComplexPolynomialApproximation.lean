@@ -1,8 +1,14 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
-import Mathlib.LinearAlgebra.Lagrange
-import Mathlib.Algebra.Polynomial.Div
-import Mathlib.Algebra.Polynomial.BigOperators
-import Mathlib.Topology.Algebra.Polynomial
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
+public import Mathlib.LinearAlgebra.Lagrange
+public import Mathlib.Algebra.Polynomial.Div
+public import Mathlib.Algebra.Polynomial.BigOperators
+public import Mathlib.Topology.Algebra.Polynomial
+
+public section
+
+@[expose] section
 
 namespace OAI
 

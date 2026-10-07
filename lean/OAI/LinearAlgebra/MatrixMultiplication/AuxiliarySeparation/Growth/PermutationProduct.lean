@@ -1,10 +1,16 @@
-import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Algebra.Group.Equiv.Basic
-import Mathlib.Data.Fintype.Perm
-import Mathlib.Basic.Real.Basic
-import Mathlib.Tactic.FinCases
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Ring
+module
+
+public import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+public import Mathlib.Algebra.Group.Equiv.Basic
+public import Mathlib.Data.Fintype.Perm
+public import Mathlib.Basic.Real.Basic
+public import Mathlib.Tactic.FinCases
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Ring
+
+public section
+
+@[expose] section
 
 namespace OAI
 

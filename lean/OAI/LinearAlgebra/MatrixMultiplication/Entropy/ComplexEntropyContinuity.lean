@@ -1,6 +1,12 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexFiniteEntropy
-import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
-import Mathlib.Analysis.Convex.Jensen
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexFiniteEntropy
+public import Mathlib.Analysis.SpecialFunctions.Log.NegMulLog
+public import Mathlib.Analysis.Convex.Jensen
+
+public section
+
+@[expose] section
 
 namespace OAI
 

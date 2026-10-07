@@ -1,6 +1,12 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.RationalCone
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.FiniteConeClosed
-import Mathlib.Analysis.Convex.Cone.Dual
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.RationalCone
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.FiniteConeClosed
+public import Mathlib.Analysis.Convex.Cone.Dual
+
+public section
+
+@[expose] section
 
 namespace OAI
 

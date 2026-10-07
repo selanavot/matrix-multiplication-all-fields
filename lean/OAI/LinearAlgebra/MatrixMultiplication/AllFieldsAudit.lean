@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AllFields
-import Mathlib.Data.ZMod.Basic
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AllFields
+public import Mathlib.Data.ZMod.Basic
+
+public section
+
+@[expose] section
 
 /-!
 # Checks of the all-fields theorem and its specification

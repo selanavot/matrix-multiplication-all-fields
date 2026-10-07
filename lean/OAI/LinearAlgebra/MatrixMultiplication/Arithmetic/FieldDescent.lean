@@ -1,7 +1,13 @@
-import Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure
-import Mathlib.LinearAlgebra.FiniteDimensional.Basic
-import Mathlib.RingTheory.IntegralClosure.IsIntegral.Basic
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
+module
+
+public import Mathlib.FieldTheory.IsAlgClosed.AlgebraicClosure
+public import Mathlib.LinearAlgebra.FiniteDimensional.Basic
+public import Mathlib.RingTheory.IntegralClosure.IsIntegral.Basic
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
+
+public section
+
+@[expose] section
 
 namespace OAI.MatrixMultiplication.Foundation.Tensor
 

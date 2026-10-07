@@ -1,7 +1,13 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexEntropyContinuity
-import Mathlib.Analysis.SpecialFunctions.BinaryEntropy
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Tactic.FinCases
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexEntropyContinuity
+public import Mathlib.Analysis.SpecialFunctions.BinaryEntropy
+public import Mathlib.Analysis.SpecialFunctions.Pow.Real
+public import Mathlib.Tactic.FinCases
+
+public section
+
+@[expose] section
 
 namespace OAI
 

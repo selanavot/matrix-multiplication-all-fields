@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
-import Mathlib.Data.Fintype.BigOperators
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
+public import Mathlib.Data.Fintype.BigOperators
+
+public section
+
+@[expose] section
 
 namespace OAI
 

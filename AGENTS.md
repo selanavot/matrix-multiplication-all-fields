@@ -77,7 +77,7 @@ recursion level. Descend all powers with one fixed coefficient algebra.
 - Record verified facts separately from drafted/uncompiled statements.
 - Run Lake and verification commands from the repository root. `lakefile.lean`,
   `lake-manifest.json`, and `lean-toolchain` live there; `srcDir := "lean"`
-  retains the source paths, and compatibility patches stay in `lean/patches/`.
+  retains the source paths, and the historical compatibility patch stays in `lean/patches/`.
   Dependencies and build outputs live in the root `.lake/`. When upgrading an
   older checkout with a nested Lake project, rerun `bash scripts/bootstrap.sh`
   before building; do not assume the historical `lean/.lake/` artifacts are
@@ -111,6 +111,18 @@ recursion level. Descend all powers with one fixed coefficient algebra.
   field-valued inputs) with formal polynomial equality. Use the separate exact
   coefficient-rank theorem when explaining the stronger algebraic guarantee.
 
-The user authorizes installing tools needed for this proof. Lean 4.34.1 is
+The user authorizes installing tools needed for this proof. Lean 4.35.0-rc2 is
 installed. Use the exact dependency pins recorded in the project manifest;
 do not silently upgrade them. No brain icons or graphics in project output.
+
+## Palomar compatibility
+
+Read `docs/palomar/README.md` before submission work. The root `comparator.json`
+records six claims including exact coefficients over finite fields. Use the
+bundled `lake comparator` for this toolchain and the pinned full reusable
+Palomar workflow for a submission preflight. All Lean sources must retain their
+`module` headers. Protected source preservation now means exact equality to the
+deterministic module-only baseline port, checked by
+`scripts/check-specification.py`; never relax that comparison. The required
+Brouwer sources are vendored with their MIT notice, not runtime-patched Git
+dependencies. The historical patch is retained only for provenance.

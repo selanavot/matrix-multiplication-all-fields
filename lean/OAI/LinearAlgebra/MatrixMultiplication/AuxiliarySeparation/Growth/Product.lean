@@ -1,5 +1,11 @@
-import Mathlib.Basic.Real.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Basic.Real.Basic
+public import Mathlib.Tactic
+
+public section
+
+@[expose] section
 
 namespace OAI
 

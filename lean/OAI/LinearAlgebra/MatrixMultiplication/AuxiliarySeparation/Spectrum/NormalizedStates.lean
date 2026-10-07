@@ -1,5 +1,11 @@
-import Mathlib.Analysis.Convex.Topology
-import Mathlib.Topology.Algebra.Order.Field
+module
+
+public import Mathlib.Analysis.Convex.Topology
+public import Mathlib.Topology.Algebra.Order.Field
+
+public section
+
+@[expose] section
 
 namespace OAI
 

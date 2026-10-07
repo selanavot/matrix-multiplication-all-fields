@@ -1,8 +1,14 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexFiniteControl
-import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexFiniteEntropy
-import Mathlib.Data.Rat.BigOperators
-import Mathlib.Algebra.Order.AbsoluteValue.Basic
-import Mathlib.Data.Rat.Floor
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexFiniteControl
+public import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexFiniteEntropy
+public import Mathlib.Data.Rat.BigOperators
+public import Mathlib.Algebra.Order.AbsoluteValue.Basic
+public import Mathlib.Data.Rat.Floor
+
+public section
+
+@[expose] section
 
 namespace OAI
 

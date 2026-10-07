@@ -1,4 +1,10 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexHierarchySeparationRates
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexHierarchySeparationRates
+
+public section
+
+@[expose] section
 
 namespace OAI
 

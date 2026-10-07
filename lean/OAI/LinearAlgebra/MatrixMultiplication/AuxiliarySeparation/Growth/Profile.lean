@@ -1,7 +1,13 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.ConcaveSlopes
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.ProfileSlopes
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.Recurrence
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.ExponentComparison
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.ConcaveSlopes
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.ProfileSlopes
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.Recurrence
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.ExponentComparison
+
+public section
+
+@[expose] section
 
 namespace OAI
 

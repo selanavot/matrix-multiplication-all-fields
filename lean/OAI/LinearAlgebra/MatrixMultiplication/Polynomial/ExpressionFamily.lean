@@ -1,6 +1,12 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Programs
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Data.Fintype.EquivFin
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Programs
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Data.Fintype.EquivFin
+
+public section
+
+@[expose] section
 
 namespace OAI
 

@@ -1,0 +1,143 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: v0.4
+project:
+  name: Matrix multiplication exponent at most 9/4 over arbitrary fields
+  description: >-
+    This development extends OpenAI's Lean proof of the matrix multiplication
+    exponent bound 9/4 from the complex numbers to every field, including finite
+    fields and fields of positive characteristic. It generalizes Fourier
+    separation and interpolation over each field's algebraic closure, descends
+    tensor powers through one fixed finite coefficient algebra, and connects the
+    resulting exact-rank bounds to the original division-free arithmetic-program
+    model. The compared statements include the arithmetic exponent upper bound,
+    nonvacuity and lower-bound checks, an explicit positive-epsilon operation-count
+    theorem, and exact coordinatewise coefficient decompositions. The original
+    numerical bound and complex-field construction are OpenAI's work; this fork
+    contributes the arbitrary-field extension and its formal verification.
+  authors: [Sela Navot]
+  responsible_maintainers: [Sela Navot]
+  license: Apache-2.0
+classification:
+  arxiv: [cs.CC, cs.DS]
+  msc2020: [68Q17, 68W30, 15A69]
+sources:
+  - title: An Upper Bound of 9/4 for the Matrix Multiplication Exponent
+    authors: [OpenAI]
+    type: paper
+    relationship: adapts
+    id: https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026
+    location: https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex
+    note: >-
+      Supplies the original 9/4 construction, complex-field proof, and arithmetic
+      specification. This project extends that proof to arbitrary fields. The
+      collective attribution follows the upstream repository; no endorsement by
+      upstream authors is claimed. Historical priority for field-independence
+      arguments has not been established.
+  - title: Fixed-point theorems in Lean 4
+    authors: [harfe]
+    type: other
+    relationship: background
+    id: https://github.com/harfe/fixed-point-theorems-lean4/tree/770940ddf9878cf61952ed53d910b92bca841838
+    license: MIT
+    note: >-
+      Five Brouwer proof modules are vendored with the compatibility patch
+      inherited from OpenAI and the module-system port. The original MIT notice
+      is preserved under lean/FixedPointTheorems/LICENSE.txt. See UPSTREAM.md.
+related_formalizations:
+  - id: https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/LinearAlgebra/MatrixMultiplication
+    relationship: builds-on
+    note: >-
+      The substantive proof development is in this submitted repository, rather
+      than an external proof exposed by a thin wrapper. The preserved extracted
+      baseline is d2336fc571f1f8cdabf0c6d3a2d3ef1ec3327653.
+status:
+  scope: >-
+    All six compared statements quantify over every field in an arbitrary
+    universe. In epsilon_cost one positive constant, depending on the field and
+    epsilon, bounds the operation count at every positive matrix size. Scalar
+    addition, subtraction and multiplication cost one; input and constant loads
+    are free. The program may depend on matrix size and correctness is required
+    for every input pair. exact_coefficients additionally asserts exact
+    coordinatewise tensor identities, including over finite fields. No effective
+    uniform program generator, practical constants, bit-complexity bound,
+    rectangular or dual exponent bound, or exact value of the exponent is claimed.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: [propext, Classical.choice, Quot.sound]
+automation:
+  methods:
+    - method: agent
+      models: [GPT-6 Astra, GPT-6.1 Sol]
+      framework: Codex
+      tool_setup: >-
+        Consumer-grade agents developed and formalized the field extension under
+        Sela Navot's direction, using Lean and pinned Mathlib. Follow-up agent
+        work prepared the Comparator harness and Palomar compatibility port.
+      prompting_notes: >-
+        Preserve the original arithmetic model, generalize to every field,
+        discharge all proof obligations without extra axioms, and audit the
+        relationship between the formal statement and the informal claim.
+  spend_usd: subscription-based; total not tracked
+  notes: >-
+    Sela directed the work and is the responsible maintainer. AI systems made
+    substantive mathematical and formalization contributions. The source proof
+    and numerical bound were supplied by OpenAI. See README.md and the audit
+    records for the exact roles and verification scope.
+fidelity:
+  divergences: >-
+    The original complex-field result is generalized to arbitrary fields. The
+    original program correctness predicate is functional equality on field-valued
+    inputs, which is weaker than polynomial equality over finite fields. The
+    separate exact_coefficients theorem supplies the stronger algebraic identity
+    and prevents reliance on finite-field function coincidences. Eleven protected
+    specification and builder files match the upstream baseline exactly after
+    the deterministic module-only port; no mathematical definition in those
+    files is changed. The submission does not include OpenAI's other bounds.
+review:
+  status: agent-reviewed
+  reviewers: [Fresh OpenAI agent sessions, Anthropic Claude Opus 5.5]
+  notes: >-
+    The original field extension underwent three adversarial agent reviews and a
+    separate Claude re-verification, as recorded in docs/field-port/VERIFICATION.md
+    and docs/field-port/ADVERSARIAL.md. These are AI reviews, not human peer review.
+    Sela reports positive community feedback on Lean Zulip; this is not represented
+    as formal refereeing or independent mechanical verification. Historical
+    verification records apply to the commits they name. See
+    docs/palomar/README.md for the compatibility port's current preflight status.
+alignment:
+  namespace: ComparatorChecks
+  statements:
+    - source: Arbitrary-field extension of the square arithmetic exponent bound
+      lean: ComparatorChecks.omega_bound
+      module: ComparatorAudit.Solution
+      status: proved
+      note: Every field, without characteristic or algebraic-closedness assumptions.
+    - source: Nonvacuity of the real infimum defining the exponent
+      lean: ComparatorChecks.admissible_bddBelow
+      module: ComparatorAudit.Solution
+      status: proved
+      note: The set of admissible arithmetic exponents is bounded below.
+    - source: Nonvacuity of the real infimum defining the exponent
+      lean: ComparatorChecks.admissible_nonempty
+      module: ComparatorAudit.Solution
+      status: proved
+      note: At least one arithmetic exponent is admissible.
+    - source: Elementary lower bound on the arithmetic exponent
+      lean: ComparatorChecks.omega_lower
+      module: ComparatorAudit.Solution
+      status: proved
+      note: The exponent is at least two for every field.
+    - source: Explicit arithmetic-program operation-count formulation
+      lean: ComparatorChecks.epsilon_cost
+      module: ComparatorAudit.Solution
+      status: proved
+      note: For every positive epsilon, one constant works at all positive sizes.
+    - source: Exact tensor-coefficient rank formulation over arbitrary fields
+      lean: ComparatorChecks.exact_coefficients
+      module: ComparatorAudit.Solution
+      status: proved
+      note: Exact coordinatewise rank-one identities with every positive exponent slack.
+acknowledgements: >-
+  OpenAI for the original construction, complex-field proof and source repository;
+  harfe for the MIT-licensed fixed-point formalization; Lean, Mathlib and their
+  dependencies; the AI systems disclosed above; and community feedback on Lean Zulip.

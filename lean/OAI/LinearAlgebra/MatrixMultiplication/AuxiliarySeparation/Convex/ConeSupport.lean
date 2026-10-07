@@ -1,6 +1,12 @@
-import Mathlib.Analysis.Convex.Caratheodory
-import Mathlib.Geometry.Convex.Cone.Pointed
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Convex.Caratheodory
+public import Mathlib.Geometry.Convex.Cone.Pointed
+public import Mathlib.Tactic
+
+public section
+
+@[expose] section
 
 namespace OAI
 

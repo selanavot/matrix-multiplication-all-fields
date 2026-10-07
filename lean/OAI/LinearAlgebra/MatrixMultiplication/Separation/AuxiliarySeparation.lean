@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexAuxiliarySeparation
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexStageHierarchyResources
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexAuxiliarySeparation
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexStageHierarchyResources
+
+public section
+
+@[expose] section
 
 namespace OAI
 

@@ -1,6 +1,12 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.NaiveAlgorithm
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.LowerBound
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Padding
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.NaiveAlgorithm
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.LowerBound
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Padding
+
+public section
+
+@[expose] section
 
 namespace OAI
 

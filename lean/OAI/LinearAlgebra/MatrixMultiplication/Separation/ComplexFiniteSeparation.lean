@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexGroupTensor
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexModularSeparation
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexGroupTensor
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexModularSeparation
+
+public section
+
+@[expose] section
 
 namespace OAI
 

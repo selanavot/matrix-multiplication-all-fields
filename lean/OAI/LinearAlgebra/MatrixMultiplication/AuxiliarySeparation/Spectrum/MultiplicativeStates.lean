@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.FixedPoint
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.NormalizedStates
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.FixedPoint
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.NormalizedStates
+
+public section
+
+@[expose] section
 
 namespace OAI
 

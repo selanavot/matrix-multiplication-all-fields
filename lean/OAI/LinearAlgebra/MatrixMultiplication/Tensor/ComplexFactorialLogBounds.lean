@@ -1,7 +1,13 @@
-import Mathlib.Analysis.SpecialFunctions.Stirling
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Ring
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Stirling
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.Ring
+
+public section
+
+@[expose] section
 
 namespace OAI
 

@@ -1,4 +1,10 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Main
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Main
+
+public section
+
+@[expose] section
 
 /-!
 # The all-fields matrix multiplication bound

@@ -1,8 +1,14 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexFiniteSeparation
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexAuxiliarySeparation
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexFiniteControl
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexLocalMaps
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexSharedAuxiliaryBank
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexFiniteSeparation
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexAuxiliarySeparation
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexFiniteControl
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexLocalMaps
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexSharedAuxiliaryBank
+
+public section
+
+@[expose] section
 
 namespace OAI
 

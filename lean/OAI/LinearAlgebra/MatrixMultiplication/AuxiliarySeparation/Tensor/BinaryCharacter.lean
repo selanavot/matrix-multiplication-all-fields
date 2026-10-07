@@ -1,11 +1,17 @@
+module
+
 /-
 Upstream source and modification notice
 Modified from OpenAI's matrix-multiplication sources to support arbitrary fields.
 See UPSTREAM.md for provenance and changes; Apache-2.0 license retained in LICENSE.
 -/
 
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.CharacterBounds
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.DirectSum
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.CharacterBounds
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.DirectSum
+
+public section
+
+@[expose] section
 
 namespace OAI
 

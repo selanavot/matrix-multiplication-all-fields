@@ -1,5 +1,11 @@
-import Mathlib.LinearAlgebra.Finsupp.LinearCombination
-import Mathlib.Basic.Real.Basic
+module
+
+public import Mathlib.LinearAlgebra.Finsupp.LinearCombination
+public import Mathlib.Basic.Real.Basic
+
+public section
+
+@[expose] section
 
 namespace OAI
 

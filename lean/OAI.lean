@@ -1,2 +1,8 @@
+module
+
 -- Default package entry point: the public theorem and its axiom audit.
-import OAI.LinearAlgebra.MatrixMultiplication.AllFieldsAudit
+public import OAI.LinearAlgebra.MatrixMultiplication.AllFieldsAudit
+
+public section
+
+@[expose] section

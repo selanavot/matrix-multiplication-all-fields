@@ -1,4 +1,10 @@
-import Mathlib
+module
+
+public import Mathlib
+
+public section
+
+@[expose] section
 
 namespace OAI
 
@@ -114,7 +120,7 @@ end
 end OAI
 
 -- COMPARATOR FROZEN MODEL ENDS HERE
--- The preceding bytes are the unchanged OpenAI model from the pinned baseline.
+-- The preceding source is the exact module-only port of the pinned OpenAI model.
 -- These theorem holes specify the challenge, not a proof. Never import this module
 -- into the solution or into OAI. Comparator rejects sorryAx in solution proofs.
 
@@ -144,6 +150,20 @@ theorem epsilon_cost (F : Type u) [Field F] (ε : ℝ) (hε : 0 < ε) :
       ∃ P : Arithmetic.MatrixAlgorithm F n n n,
         P.Correct ∧ (P.cost : ℝ) ≤
           C * (n : ℝ) ^ ((9 : ℝ) / 4 + ε) :=
+  by sorry
+
+/-- Exact coefficient identities for matrix multiplication, over every field.
+For every positive exponent slack there is a block of size at least two whose
+rank-one decomposition has at most n^(9/4 + ε) terms. Equality is coordinatewise,
+so it is stronger than equality of functions on finite-field inputs. -/
+theorem exact_coefficients (F : Type u) [Field F] (ε : ℝ) (hε : 0 < ε) :
+    ∃ n R : ℕ, 2 ≤ n ∧ (R : ℝ) ≤ (n : ℝ) ^ ((9 : ℝ) / 4 + ε) ∧
+      ∃ (a : Fin R → (Fin n × Fin n) → F)
+        (b : Fin R → (Fin n × Fin n) → F)
+        (c : Fin R → (Fin n × Fin n) → F),
+        ∀ x y z : Fin n × Fin n,
+          (if x.2 = y.1 ∧ y.2 = z.1 ∧ z.2 = x.1 then 1 else 0 : F) =
+            ∑ i, a i x * b i y * c i z :=
   by sorry
 
 end ComparatorChecks

@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexSeparationAsymptotics
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexSeparatedTensorDecomposition
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexSeparationAsymptotics
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexSeparatedTensorDecomposition
+
+public section
+
+@[expose] section
 
 namespace OAI
 

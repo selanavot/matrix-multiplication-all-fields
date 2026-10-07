@@ -1,13 +1,19 @@
+module
+
 /-
 Upstream source and modification notice
 Modified from OpenAI's matrix-multiplication sources to support arbitrary fields.
 See UPSTREAM.md for provenance and changes; Apache-2.0 license retained in LICENSE.
 -/
 
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convolution.Basic
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Kernel
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Basis
-import OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ComplexPolynomialDegenerationComposition
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convolution.Basic
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Kernel
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Basis
+public import OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ComplexPolynomialDegenerationComposition
+
+public section
+
+@[expose] section
 
 namespace OAI
 

@@ -1,7 +1,13 @@
-import OAI.LinearAlgebra.MatrixMultiplication.ComplexArithmetic.Complexity
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorBatching
-import Mathlib.Tactic.SplitIfs
-import Mathlib.Algebra.BigOperators.GroupWithZero.Finset
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.ComplexArithmetic.Complexity
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorBatching
+public import Mathlib.Tactic.SplitIfs
+public import Mathlib.Algebra.BigOperators.GroupWithZero.Finset
+
+public section
+
+@[expose] section
 
 namespace OAI
 

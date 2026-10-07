@@ -1,5 +1,11 @@
-import FixedPointTheorems.brouwer
-import Mathlib.Analysis.Convex.PartitionOfUnity
+module
+
+public import FixedPointTheorems.brouwer
+public import Mathlib.Analysis.Convex.PartitionOfUnity
+
+public section
+
+@[expose] section
 
 namespace OAI
 

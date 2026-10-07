@@ -14,6 +14,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+from specification import module_port
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -50,7 +51,7 @@ def verify_spec():
     challenge = (SOURCES / "ComparatorAudit/Challenge.lean").read_bytes()
     if challenge.count(MARKER) != 1:
         raise RuntimeError("Missing or duplicated frozen-model boundary")
-    if challenge.split(MARKER)[0] != original or current != original:
+    if challenge.split(MARKER)[0] != module_port(original) or current != module_port(original):
         raise RuntimeError("Challenge/current model differs from immutable baseline")
     config = json.loads((SPEC / "config.json").read_text())
     if config.get("definition_names"):
@@ -59,7 +60,7 @@ def verify_spec():
         raise RuntimeError("Unexpected permitted axioms")
     expected_theorems = [f"ComparatorChecks.{name}" for name in [
         "omega_bound", "admissible_bddBelow", "admissible_nonempty",
-        "omega_lower", "epsilon_cost",
+        "omega_lower", "epsilon_cost", "exact_coefficients",
     ]]
     if config != {
         "challenge_module": "ComparatorAudit.Challenge",
@@ -67,7 +68,7 @@ def verify_spec():
         "theorem_names": expected_theorems,
         "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"],
     }:
-        raise RuntimeError("Comparator configuration differs from the five-theorem audit")
+        raise RuntimeError("Comparator configuration differs from the six-theorem audit")
     if (ROOT / "lean-toolchain").read_text().strip() != PINS["toolchain"]:
         raise RuntimeError("Project toolchain differs from Comparator pins")
     print(f"Frozen model SHA-256: {hashlib.sha256(original).hexdigest()}", flush=True)
@@ -85,43 +86,17 @@ def main():
     args = parser.parse_args()
     before = verify_spec()
     run([sys.executable, ROOT / "scripts/verify-dependencies.py", ROOT])
-    tool = args.comparator_dir.resolve()
     env = os.environ.copy()
-    env["ELAN_TOOLCHAIN"] = PINS["toolchain"]
     env["LEAN_NUM_THREADS"] = "1"
-    if args.trusted_local:
-        print("MODE: trusted local sources; NO Comparator build sandbox; Lean kernel only.",
-              flush=True)
-    elif sys.platform != "linux" or not shutil.which("landrun"):
-        raise RuntimeError("Linux Landrun required; for trusted sources only, explicitly use --trusted-local")
-    if not tool.exists():
-        tool.parent.mkdir(parents=True, exist_ok=True)
-        run(["git", "clone", "--no-checkout", "https://github.com/leanprover/comparator.git", tool])
-        run(["git", "checkout", "--detach", PINS["comparator"]], cwd=tool)
-    require_clean_pin(tool, PINS["comparator"])
-    manifest = json.loads((tool / "lake-manifest.json").read_text())
-    exporter_pin = next(p["rev"] for p in manifest["packages"] if p["name"] == "lean4export")
-    if exporter_pin != PINS["lean4export"]:
-        raise RuntimeError("Unexpected exporter manifest pin")
-    run(["lake", "build", "lean4export", "comparator"], cwd=tool, env=env)
-    exporter = tool / ".lake/packages/lean4export"
-    require_clean_pin(exporter, PINS["lean4export"])
-    print(f"Comparator: {revision(tool)}\nlean4export: {revision(exporter)}", flush=True)
-    run(["lean", "--version"], cwd=ROOT, env=env)
-    env["COMPARATOR_LEAN4EXPORT"] = str(exporter / ".lake/build/bin/lean4export")
-    if args.trusted_local:
-        env["COMPARATOR_LANDRUN"] = str(tool / "scripts/fake-landrun.sh")
-    else:
-        env["COMPARATOR_LANDRUN"] = shutil.which("landrun")
-    # Only prebuild outside Landrun when explicitly trusting local sources.
-    if args.trusted_local:
-        run(["lake", "build", "ComparatorAudit.Challenge", "ComparatorAudit.Solution"],
-            cwd=ROOT, env=env)
-    command = ["lake", "env", tool / ".lake/build/bin/comparator"]
+    if not args.trusted_local:
+        raise RuntimeError("Use the Palomar full preflight workflow for Linux sandbox verification")
+    print("MODE: trusted local sources; native lake comparator with bundled independent kernels.", flush=True)
+    run(["lake", "build", "ComparatorAudit.Challenge", "ComparatorAudit.Solution"], env=env)
+    command = ["lake", "comparator", "--unsafe"]
     run(command + [SPEC / "config.json"], cwd=ROOT, env=env)
     if verify_spec() != before:
         raise RuntimeError("Frozen challenge changed during verification")
-    print("PASS: five theorems, frozen definitions, standard axioms, Lean kernel replay.",
+    print("PASS: six theorems, frozen definitions, standard axioms, Lean kernel replay.",
           flush=True)
     if args.negative_controls:
         negative_controls(command, env, args.trusted_local)

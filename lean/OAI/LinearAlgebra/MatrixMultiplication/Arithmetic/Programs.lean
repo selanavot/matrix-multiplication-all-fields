@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Complexity
-import Lean.Elab.Tactic.Omega
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Complexity
+public import Lean.Elab.Tactic.Omega
+
+public section
+
+@[expose] section
 
 namespace OAI
 

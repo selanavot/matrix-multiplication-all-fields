@@ -1,6 +1,12 @@
-import Mathlib.Analysis.Asymptotics.SpecificAsymptotics
-import Mathlib.Topology.Order.MonotoneConvergence
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.Asymptotics.SpecificAsymptotics
+public import Mathlib.Topology.Order.MonotoneConvergence
+public import Mathlib.Tactic
+
+public section
+
+@[expose] section
 
 namespace OAI
 

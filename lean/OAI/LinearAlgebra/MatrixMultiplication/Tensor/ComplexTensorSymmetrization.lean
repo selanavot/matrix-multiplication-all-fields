@@ -1,4 +1,10 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexMatrixTensor
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexMatrixTensor
+
+public section
+
+@[expose] section
 
 namespace OAI
 

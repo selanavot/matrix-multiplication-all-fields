@@ -1,6 +1,12 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorRestrictionComposition
-import Mathlib.Logic.Equiv.Sum
-import Mathlib.Logic.Equiv.Prod
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorRestrictionComposition
+public import Mathlib.Logic.Equiv.Sum
+public import Mathlib.Logic.Equiv.Prod
+
+public section
+
+@[expose] section
 
 namespace OAI
 

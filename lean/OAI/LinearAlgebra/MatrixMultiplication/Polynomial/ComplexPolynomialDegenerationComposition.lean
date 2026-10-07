@@ -1,7 +1,13 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ComplexPolynomialApproximation
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorSymmetrization
-import Mathlib.Algebra.Polynomial.Expand
-import Lean.Elab.Tactic.Omega
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ComplexPolynomialApproximation
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorSymmetrization
+public import Mathlib.Algebra.Polynomial.Expand
+public import Lean.Elab.Tactic.Omega
+
+public section
+
+@[expose] section
 
 namespace OAI
 

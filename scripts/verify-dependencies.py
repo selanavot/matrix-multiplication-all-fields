@@ -54,8 +54,8 @@ def main() -> int:
         raise RuntimeError('Working compatibility patch differs from HEAD.')
     packages_dir = (root / manifest['packagesDir']).resolve()
     packages = manifest['packages']
-    if len(packages) != 10:
-        raise RuntimeError(f'Expected ten pinned packages; found {len(packages)}.')
+    if len(packages) != 9:
+        raise RuntimeError(f'Expected nine pinned packages; found {len(packages)}.')
     seen = set()
     errors = []
     for package in packages:
@@ -107,12 +107,12 @@ def main() -> int:
                         '--no-renames', '--no-color', '--no-relative', '--src-prefix=a/',
                         '--dst-prefix=b/', '--unified=3', '--abbrev=7',
                         '--diff-algorithm=myers', '--indent-heuristic', '--')
-            expected = patch if name == FIXED_POINT else b''
+            expected = b''
             if delta != expected:
                 raise RuntimeError(f'{name}: working delta is not the exact allowed delta '
                                    f'(actual SHA-256 {hashlib.sha256(delta).hexdigest()}, '
                                    f'expected {hashlib.sha256(expected).hexdigest()})')
-            label = 'exact compatibility patch' if name == FIXED_POINT else 'clean'
+            label = 'clean'
             print(f'PASS {name}: {head} ({label})')
         except (RuntimeError, OSError) as exc:
             errors.append(str(exc))
@@ -120,7 +120,7 @@ def main() -> int:
         print(f'FAIL {error}', file=sys.stderr)
     if errors:
         return 1
-    print('PASS all ten source dependencies match committed pins and allowed changes.')
+    print('PASS all nine source dependencies match committed pins and allowed changes.')
     print('Scope: generated ignored .lake build artifacts are reused and not source-verified here.')
     return 0
 

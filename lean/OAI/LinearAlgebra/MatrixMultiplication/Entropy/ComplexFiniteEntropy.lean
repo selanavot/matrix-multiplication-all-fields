@@ -1,10 +1,16 @@
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Algebra.BigOperators.Field
-import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
-import Mathlib.Algebra.Order.BigOperators.Group.Finset
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Ring
+module
+
+public import Mathlib.Analysis.SpecialFunctions.Log.Basic
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Algebra.BigOperators.Field
+public import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
+public import Mathlib.Algebra.Order.BigOperators.Group.Finset
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Ring
+
+public section
+
+@[expose] section
 
 namespace OAI
 

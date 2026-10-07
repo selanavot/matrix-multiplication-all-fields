@@ -1,6 +1,12 @@
-import Mathlib.Basic.Real.Basic
-import Mathlib.Algebra.Algebra.Rat
-import Mathlib.LinearAlgebra.Dual.Lemmas
+module
+
+public import Mathlib.Basic.Real.Basic
+public import Mathlib.Algebra.Algebra.Rat
+public import Mathlib.LinearAlgebra.Dual.Lemmas
+
+public section
+
+@[expose] section
 
 namespace OAI
 

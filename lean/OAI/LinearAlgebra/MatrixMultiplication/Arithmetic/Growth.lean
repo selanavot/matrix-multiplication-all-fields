@@ -1,3 +1,5 @@
+module
+
 /-
 Upstream source and modification notice
 Adapted from OpenAI's matrix-multiplication sources (upstream `ComplexArithmetic/Growth.lean`,
@@ -5,14 +7,18 @@ omitted from this extraction) to support arbitrary fields.
 See UPSTREAM.md for provenance and changes; Apache-2.0 license retained in LICENSE.
 -/
 
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Complexity
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Padding
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.RecursiveBlockPrograms
-import Mathlib.Data.Nat.Log
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Ring
-import Lean.Elab.Tactic.Omega
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Complexity
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Padding
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.RecursiveBlockPrograms
+public import Mathlib.Data.Nat.Log
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.Ring
+public import Lean.Elab.Tactic.Omega
+
+public section
+
+@[expose] section
 
 namespace OAI
 

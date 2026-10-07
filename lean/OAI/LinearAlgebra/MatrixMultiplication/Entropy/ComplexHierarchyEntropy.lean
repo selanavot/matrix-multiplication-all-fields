@@ -1,4 +1,10 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexFiniteEntropy
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexFiniteEntropy
+
+public section
+
+@[expose] section
 
 namespace OAI
 

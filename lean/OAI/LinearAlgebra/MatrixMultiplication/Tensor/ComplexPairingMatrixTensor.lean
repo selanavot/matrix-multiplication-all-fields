@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexDotPairing
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorSymmetrization
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexDotPairing
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorSymmetrization
+
+public section
+
+@[expose] section
 
 namespace OAI
 

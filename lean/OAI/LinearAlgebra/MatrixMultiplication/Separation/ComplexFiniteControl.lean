@@ -1,14 +1,20 @@
-import Mathlib.Data.Fintype.EquivFin
-import Mathlib.Data.Fintype.BigOperators
-import Mathlib.Logic.Equiv.Sum
-import Mathlib.Algebra.Order.BigOperators.Ring.Finset
-import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
-import Mathlib.Combinatorics.Additive.AP.Three.Defs
-import Mathlib.Basic.Real.Basic
-import Mathlib.Data.Rat.Lemmas
-import Mathlib.Tactic.FieldSimp
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Ring
+module
+
+public import Mathlib.Data.Fintype.EquivFin
+public import Mathlib.Data.Fintype.BigOperators
+public import Mathlib.Logic.Equiv.Sum
+public import Mathlib.Algebra.Order.BigOperators.Ring.Finset
+public import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
+public import Mathlib.Combinatorics.Additive.AP.Three.Defs
+public import Mathlib.Basic.Real.Basic
+public import Mathlib.Data.Rat.Lemmas
+public import Mathlib.Tactic.FieldSimp
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.Ring
+
+public section
+
+@[expose] section
 
 namespace OAI
 

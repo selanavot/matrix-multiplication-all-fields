@@ -1,5 +1,11 @@
-import Mathlib.Algebra.Order.Group.Unbundled.Int
-import Lean.Elab.Tactic.Omega
+module
+
+public import Mathlib.Algebra.Order.Group.Unbundled.Int
+public import Lean.Elab.Tactic.Omega
+
+public section
+
+@[expose] section
 
 namespace OAI
 

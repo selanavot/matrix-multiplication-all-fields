@@ -1,9 +1,15 @@
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Data.Fintype.EquivFin
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Topology.Basic
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FunProp
+module
+
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Data.Fintype.EquivFin
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Topology.Basic
+public import Mathlib.Tactic.Ring
+public import Mathlib.Tactic.FunProp
+
+public section
+
+@[expose] section
 
 namespace OAI
 

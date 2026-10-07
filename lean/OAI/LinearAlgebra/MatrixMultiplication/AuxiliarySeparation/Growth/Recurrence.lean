@@ -1,4 +1,10 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.Product
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.Product
+
+public section
+
+@[expose] section
 
 namespace OAI
 

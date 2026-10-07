@@ -1,14 +1,20 @@
+module
+
 /-
 Upstream source and modification notice
 Modified from OpenAI's matrix-multiplication sources to support arbitrary fields.
 See UPSTREAM.md for provenance and changes; Apache-2.0 license retained in LICENSE.
 -/
 
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorRestrictionComposition
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.DirectSum
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.RankExponent
-import Mathlib.Order.Antisymmetrization
-import Mathlib.Algebra.Order.Ring.Defs
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorRestrictionComposition
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.DirectSum
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.RankExponent
+public import Mathlib.Order.Antisymmetrization
+public import Mathlib.Algebra.Order.Ring.Defs
+
+public section
+
+@[expose] section
 
 namespace OAI
 

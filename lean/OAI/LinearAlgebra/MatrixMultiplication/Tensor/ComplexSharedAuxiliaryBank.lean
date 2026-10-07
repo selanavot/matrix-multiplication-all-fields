@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexLocalMaps
-import Mathlib.Logic.Equiv.Basic
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexLocalMaps
+public import Mathlib.Logic.Equiv.Basic
+
+public section
+
+@[expose] section
 
 namespace OAI
 

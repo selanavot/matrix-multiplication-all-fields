@@ -1,4 +1,10 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.ProgramComposition
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.ProgramComposition
+
+public section
+
+@[expose] section
 
 namespace OAI
 

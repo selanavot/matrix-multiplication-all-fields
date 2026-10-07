@@ -1,15 +1,21 @@
+module
+
 /-
 Upstream source and modification notice
 Modified from OpenAI's matrix-multiplication sources to support arbitrary fields.
 See UPSTREAM.md for provenance and changes; Apache-2.0 license retained in LICENSE.
 -/
 
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Sector.Degeneration
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Degeneration
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Polynomial.Laws
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.TagInequality
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Sector.Branches
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Separation.BranchTagging
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Sector.Degeneration
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Degeneration
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Polynomial.Laws
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.TagInequality
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Sector.Branches
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Separation.BranchTagging
+
+public section
+
+@[expose] section
 
 namespace OAI
 

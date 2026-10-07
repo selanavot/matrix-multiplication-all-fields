@@ -1,4 +1,10 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Main
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Main
+
+public section
+
+@[expose] section
 
 /-! Proofs for the separately frozen Comparator challenge.
 This file must not import `ComparatorAudit.Challenge`. -/
@@ -30,5 +36,30 @@ theorem epsilon_cost (F : Type u) [Field F] (ε : ℝ) (hε : 0 < ε) :
         P.Correct ∧ (P.cost : ℝ) ≤
           C * (n : ℝ) ^ ((9 : ℝ) / 4 + ε) :=
   AuxiliarySeparation.matrix_multiplication_cost_le F ε hε
+
+/-- Exact coefficient identities for matrix multiplication, over every field.
+For every positive exponent slack there is a block of size at least two whose
+rank-one decomposition has at most n^(9/4 + ε) terms. Equality is coordinatewise,
+so it is stronger than equality of functions on finite-field inputs. -/
+theorem exact_coefficients (F : Type u) [Field F] (ε : ℝ) (hε : 0 < ε) :
+    ∃ n R : ℕ, 2 ≤ n ∧ (R : ℝ) ≤ (n : ℝ) ^ ((9 : ℝ) / 4 + ε) ∧
+      ∃ (a : Fin R → (Fin n × Fin n) → F)
+        (b : Fin R → (Fin n × Fin n) → F)
+        (c : Fin R → (Fin n × Fin n) → F),
+        ∀ x y z : Fin n × Fin n,
+          (if x.2 = y.1 ∧ y.2 = z.1 ∧ z.2 = x.1 then 1 else 0 : F) =
+            ∑ i, a i x * b i y * c i z :=
+  by
+    obtain ⟨n, R, hn, hRank, hR⟩ :=
+      AuxiliarySeparation.exists_rankAtMost_of_exponent_slack (K := F) hε
+    have hBound : (R : ℝ) ≤ (n : ℝ) ^ ((9 : ℝ) / 4 + ε) := by
+      apply hR.trans
+      apply Real.rpow_le_rpow_of_exponent_le
+      · exact_mod_cast (show 1 ≤ n by omega)
+      · linarith [AuxiliarySeparation.exactRankExponent_le_nine_quarters_allFields F]
+    obtain ⟨a, b, c, h⟩ := hRank
+    refine ⟨n, R, hn, hBound, a, b, c, ?_⟩
+    intro x y z
+    exact congrFun (congrFun (congrFun h x) y) z
 
 end ComparatorChecks

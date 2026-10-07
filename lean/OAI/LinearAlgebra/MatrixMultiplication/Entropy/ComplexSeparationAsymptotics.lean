@@ -1,14 +1,20 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexSeparationCounting
-import Mathlib.Data.Nat.Find
-import Mathlib.Analysis.SpecialFunctions.Log.Basic
-import Mathlib.Algebra.BigOperators.Ring.Finset
-import Mathlib.Topology.Algebra.Monoid
-import Mathlib.Topology.Order.Basic
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Positivity
-import Mathlib.Tactic.Ring
-import Mathlib.Tactic.GCongr
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexSeparationCounting
+public import Mathlib.Data.Nat.Find
+public import Mathlib.Analysis.SpecialFunctions.Log.Basic
+public import Mathlib.Algebra.BigOperators.Ring.Finset
+public import Mathlib.Topology.Algebra.Monoid
+public import Mathlib.Topology.Order.Basic
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Positivity
+public import Mathlib.Tactic.Ring
+public import Mathlib.Tactic.GCongr
+
+public section
+
+@[expose] section
 
 namespace OAI
 

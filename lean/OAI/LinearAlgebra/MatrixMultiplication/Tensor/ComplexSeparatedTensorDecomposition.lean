@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexFiniteSeparation
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexDotPairing
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexFiniteSeparation
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexDotPairing
+
+public section
+
+@[expose] section
 
 namespace OAI
 

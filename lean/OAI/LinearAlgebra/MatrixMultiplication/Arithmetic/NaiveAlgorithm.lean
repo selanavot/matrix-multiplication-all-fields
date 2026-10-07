@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ExpressionFamily
-import Mathlib.Tactic.NormNum
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ExpressionFamily
+public import Mathlib.Tactic.NormNum
+
+public section
+
+@[expose] section
 
 namespace OAI
 

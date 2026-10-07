@@ -1,7 +1,13 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Entropy.Optimization
-import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
-import Mathlib.Tactic.Linarith
-import Mathlib.Tactic.Positivity
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Entropy.Optimization
+public import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
+public import Mathlib.Tactic.Linarith
+public import Mathlib.Tactic.Positivity
+
+public section
+
+@[expose] section
 
 namespace OAI
 

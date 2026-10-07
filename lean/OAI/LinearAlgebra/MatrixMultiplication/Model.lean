@@ -1,4 +1,10 @@
-import Mathlib
+module
+
+public import Mathlib
+
+public section
+
+@[expose] section
 
 namespace OAI
 

@@ -1,6 +1,12 @@
-import Mathlib.Algebra.Order.Ring.Rat
-import Mathlib.Data.Fintype.BigOperators
-import Mathlib.Tactic
+module
+
+public import Mathlib.Algebra.Order.Ring.Rat
+public import Mathlib.Data.Fintype.BigOperators
+public import Mathlib.Tactic
+
+public section
+
+@[expose] section
 
 namespace OAI
 

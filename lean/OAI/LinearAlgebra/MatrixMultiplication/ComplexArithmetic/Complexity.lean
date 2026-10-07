@@ -1,6 +1,12 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
-import Mathlib.Analysis.SpecialFunctions.Pow.Real
-import Mathlib.Data.Matrix.Mul
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
+public import Mathlib.Analysis.SpecialFunctions.Pow.Real
+public import Mathlib.Data.Matrix.Mul
+
+public section
+
+@[expose] section
 
 namespace OAI
 

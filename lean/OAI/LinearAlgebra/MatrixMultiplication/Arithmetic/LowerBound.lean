@@ -1,7 +1,13 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Complexity
-import Mathlib.Algebra.Order.BigOperators.Group.Finset
-import Mathlib.Tactic.Linarith
-import Lean.Elab.Tactic.Omega
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Complexity
+public import Mathlib.Algebra.Order.BigOperators.Group.Finset
+public import Mathlib.Tactic.Linarith
+public import Lean.Elab.Tactic.Omega
+
+public section
+
+@[expose] section
 
 namespace OAI
 

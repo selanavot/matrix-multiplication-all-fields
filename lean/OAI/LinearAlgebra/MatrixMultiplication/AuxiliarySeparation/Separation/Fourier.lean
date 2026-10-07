@@ -1,14 +1,20 @@
+module
+
 /-
 Upstream source and modification notice
 Modified from OpenAI's matrix-multiplication sources to support arbitrary fields.
 See UPSTREAM.md for provenance and changes; Apache-2.0 license retained in LICENSE.
 -/
 
-import Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed
-import Mathlib.Algebra.Ring.GeomSum
-import Mathlib.Algebra.Order.Group.Unbundled.Int
-import Lean.Elab.Tactic.Omega
-import Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots
+public import Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed
+public import Mathlib.Algebra.Ring.GeomSum
+public import Mathlib.Algebra.Order.Group.Unbundled.Int
+public import Lean.Elab.Tactic.Omega
+public import Mathlib.RingTheory.RootsOfUnity.PrimitiveRoots
+
+public section
+
+@[expose] section
 
 namespace OAI
 

@@ -1,7 +1,13 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexTypeEntropy
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexHierarchyTypeCounting
-import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexSeparationAsymptotics
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexLabelHierarchySeparation
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexTypeEntropy
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexHierarchyTypeCounting
+public import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexSeparationAsymptotics
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexLabelHierarchySeparation
+
+public section
+
+@[expose] section
 
 namespace OAI
 

@@ -10,8 +10,8 @@ if ! command -v lake >/dev/null 2>&1; then
   exit 1
 fi
 
-# The committed configuration pins every direct dependency. Its post-update
-# hook applies the included upstream fixed-point compatibility patch.
+# The committed configuration pins every dependency. Brouwer sources, including
+# the historical compatibility patch, are now vendored under lean/FixedPointTheorems.
 lake update
 git -C "$project_root" diff --exit-code HEAD -- lake-manifest.json lean-toolchain
 python3 "$project_root/scripts/verify-dependencies.py" "$project_root"

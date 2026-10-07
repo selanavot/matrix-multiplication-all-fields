@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Kernel
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Kernel
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+
+public section
+
+@[expose] section
 
 namespace OAI
 

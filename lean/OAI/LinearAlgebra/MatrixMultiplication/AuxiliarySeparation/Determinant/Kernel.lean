@@ -1,5 +1,11 @@
-import Mathlib.RingTheory.Polynomial.DegreeLT
-import Mathlib.Tactic
+module
+
+public import Mathlib.RingTheory.Polynomial.DegreeLT
+public import Mathlib.Tactic
+
+public section
+
+@[expose] section
 
 namespace OAI
 

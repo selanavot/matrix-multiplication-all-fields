@@ -1,16 +1,22 @@
+module
+
 /-
 Upstream source and modification notice
 Modified from OpenAI's matrix-multiplication sources to support arbitrary fields.
 See UPSTREAM.md for provenance and changes; Apache-2.0 license retained in LICENSE.
 -/
 
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convolution.Symmetry
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Permutation
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Polynomial.Laws
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Character
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Sector.Character
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Polynomial.ProductBounds
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.Profile
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convolution.Symmetry
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Permutation
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Polynomial.Laws
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Character
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Sector.Character
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Polynomial.ProductBounds
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.Profile
+
+public section
+
+@[expose] section
 
 namespace OAI
 

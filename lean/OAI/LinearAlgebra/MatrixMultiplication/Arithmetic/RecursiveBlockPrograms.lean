@@ -1,8 +1,14 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ExpressionFamily
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.ProgramComposition
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexMatrixTensor
-import Mathlib.Logic.Equiv.Fin.Basic
-import Mathlib.Tactic.Ring
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ExpressionFamily
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.ProgramComposition
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexMatrixTensor
+public import Mathlib.Logic.Equiv.Fin.Basic
+public import Mathlib.Tactic.Ring
+
+public section
+
+@[expose] section
 
 namespace OAI
 

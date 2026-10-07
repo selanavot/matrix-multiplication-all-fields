@@ -1,17 +1,23 @@
+module
+
 /-
 Upstream source and modification notice
 Modified from OpenAI's matrix-multiplication sources to support arbitrary fields.
 See UPSTREAM.md for provenance and changes; Apache-2.0 license retained in LICENSE.
 -/
 
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Separation.FiniteProjection
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexDotPairing
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorSymmetrization
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorRestrictionComposition
-import OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ComplexPolynomialApproximation
-import Mathlib.RingTheory.RootsOfUnity.Complex
-import Mathlib.Tactic
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Separation.FiniteProjection
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexDotPairing
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorSymmetrization
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorRestrictionComposition
+public import OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ComplexPolynomialApproximation
+public import Mathlib.RingTheory.RootsOfUnity.Complex
+public import Mathlib.Tactic
+
+public section
+
+@[expose] section
 
 namespace OAI
 

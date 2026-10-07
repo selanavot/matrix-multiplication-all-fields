@@ -1,13 +1,19 @@
+module
+
 /-
 Upstream source and modification notice
 Modified from OpenAI's matrix-multiplication sources to support arbitrary fields.
 See UPSTREAM.md for provenance and changes; Apache-2.0 license retained in LICENSE.
 -/
 
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.ExponentComparison
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Basic
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.RankExponent
-import Mathlib.Algebra.Order.Floor.Ring
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.ExponentComparison
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Basic
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.RankExponent
+public import Mathlib.Algebra.Order.Floor.Ring
+
+public section
+
+@[expose] section
 
 namespace OAI
 

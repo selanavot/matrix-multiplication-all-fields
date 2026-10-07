@@ -1,4 +1,10 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ConditionalLabels
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ConditionalLabels
+
+public section
+
+@[expose] section
 
 namespace OAI
 

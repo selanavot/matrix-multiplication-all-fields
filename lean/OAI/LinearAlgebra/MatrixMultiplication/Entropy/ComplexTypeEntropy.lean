@@ -1,12 +1,18 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexFactorialLogBounds
-import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexFiniteEntropy
-import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexEntropyContinuity
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexRationalTypes
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexTypeCounting
-import Mathlib.Data.Nat.Choose.Multinomial
-import Mathlib.Algebra.BigOperators.Field
-import Mathlib.Tactic.NormNum
-import Mathlib.Tactic.Positivity
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexFactorialLogBounds
+public import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexFiniteEntropy
+public import OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexEntropyContinuity
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexRationalTypes
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexTypeCounting
+public import Mathlib.Data.Nat.Choose.Multinomial
+public import Mathlib.Algebra.BigOperators.Field
+public import Mathlib.Tactic.NormNum
+public import Mathlib.Tactic.Positivity
+
+public section
+
+@[expose] section
 
 namespace OAI
 

@@ -1,7 +1,13 @@
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.ConeSupport
-import Mathlib.Geometry.Convex.Cone.Pointed
-import Mathlib.Topology.Algebra.Module.FiniteDimension
-import Mathlib.Tactic
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.ConeSupport
+public import Mathlib.Geometry.Convex.Cone.Pointed
+public import Mathlib.Topology.Algebra.Module.FiniteDimension
+public import Mathlib.Tactic
+
+public section
+
+@[expose] section
 
 namespace OAI
 

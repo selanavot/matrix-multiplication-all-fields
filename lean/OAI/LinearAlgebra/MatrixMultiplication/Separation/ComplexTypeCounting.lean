@@ -1,7 +1,13 @@
-import Mathlib.Data.Nat.Choose.Multinomial
-import Mathlib.Data.Fintype.EquivFin
-import Mathlib.GroupTheory.Perm.DomMulAct
-import Mathlib.GroupTheory.GroupAction.Quotient
+module
+
+public import Mathlib.Data.Nat.Choose.Multinomial
+public import Mathlib.Data.Fintype.EquivFin
+public import Mathlib.GroupTheory.Perm.DomMulAct
+public import Mathlib.GroupTheory.GroupAction.Quotient
+
+public section
+
+@[expose] section
 
 namespace OAI
 

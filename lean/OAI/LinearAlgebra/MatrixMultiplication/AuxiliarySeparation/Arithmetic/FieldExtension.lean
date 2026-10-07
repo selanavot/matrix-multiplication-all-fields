@@ -1,6 +1,12 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.FieldDescent
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.RankExponent
-import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.PolynomialOverhead
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.FieldDescent
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.RankExponent
+public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.PolynomialOverhead
+
+public section
+
+@[expose] section
 
 namespace OAI.MatrixMultiplication.AuxiliarySeparation
 

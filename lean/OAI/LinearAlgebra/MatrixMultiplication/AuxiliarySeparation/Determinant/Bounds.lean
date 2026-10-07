@@ -1,6 +1,12 @@
-import Mathlib.RingTheory.Polynomial.DegreeLT
-import Mathlib.Tactic.Ring
-import Lean.Elab.Tactic.Omega
+module
+
+public import Mathlib.RingTheory.Polynomial.DegreeLT
+public import Mathlib.Tactic.Ring
+public import Lean.Elab.Tactic.Omega
+
+public section
+
+@[expose] section
 
 namespace OAI
 

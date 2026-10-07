@@ -1,6 +1,12 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Model
-import OAI.LinearAlgebra.MatrixMultiplication.ComplexArithmetic.Complexity
-import Mathlib.Algebra.Order.Floor.Semiring
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Model
+public import OAI.LinearAlgebra.MatrixMultiplication.ComplexArithmetic.Complexity
+public import Mathlib.Algebra.Order.Floor.Semiring
+
+public section
+
+@[expose] section
 
 namespace OAI
 

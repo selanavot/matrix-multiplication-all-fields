@@ -1,5 +1,11 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
-import Mathlib.Analysis.Fourier.FiniteAbelian.PontryaginDuality
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor
+public import Mathlib.Analysis.Fourier.FiniteAbelian.PontryaginDuality
+
+public section
+
+@[expose] section
 
 namespace OAI
 

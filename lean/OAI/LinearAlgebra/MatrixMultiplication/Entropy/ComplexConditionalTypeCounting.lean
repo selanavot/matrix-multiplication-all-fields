@@ -1,4 +1,10 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexTypeCounting
+module
+
+public import OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexTypeCounting
+
+public section
+
+@[expose] section
 
 namespace OAI
 
