@@ -38,8 +38,9 @@ the full upstream repository history or GitHub fork relationship.
   overhead across all tensor powers.
 - Connect exact rank over arbitrary fields to the existing generic arithmetic
   program builder and original exponent definition.
-- Export an arbitrary-field theorem, retain the public complex specialization,
-  and add specification, representative-field, and axiom audits.
+- Export an arbitrary-field theorem and the public complex specialization from
+  a new `AllFields` module, re-exported unchanged by `Main`, and add
+  specification, representative-field, and axiom audits.
 
 The original `Model.lean` and ten protected specification/builder files are
 unchanged. Retained upstream rectangular and dual-exponent results keep their

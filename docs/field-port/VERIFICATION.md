@@ -127,6 +127,9 @@ bash scripts/check-kernel.sh
 ```
 
 The final command repeats the proof checks before fresh kernel replay.
+Both scripts now check only the all-fields core: `AllFieldsAudit` imports
+`AllFields` rather than `Main`, and the kernel replay targets `AllFieldsAudit`.
+The runs recorded above predate that change.
 Scripts default to one worker because whole-Mathlib imports can exhaust
 memory when several compiler processes run together. The manifest contains
 ten exact dependency revisions, and the bootstrap script rejects pin drift.
