@@ -116,6 +116,36 @@ They must fail because the actual lists include `adversarialInjected` and
 `sorryAx`, respectively. Those declarations are not repository proof sources
 or imports. Both guards failed for exactly those reasons. The only other diagnostic was the expected warning that the deliberately unfinished scratch theorem uses `sorry`.
 
+## Comparator check on 2026-10-07
+
+The [Comparator harness](../../verification/comparator/README.md) passed at
+checkpoint `1b763143a3a8bc2de4caf380a1e5b8b00b770533`, based on proof tree
+`76b2937ebeb56ace5f2f4a895238d195722c5069`. It compares five solution theorems
+against a separate challenge that contains the byte-identical original model
+from the immutable baseline. The targets are the all-fields upper bound,
+boundedness below and nonemptiness of the admissible-exponent set, the lower
+bound of 2, and the explicit positive-ε circuit-cost statement. No definition
+holes are allowed; only the three standard axioms are permitted.
+
+Comparator accepted the matching declarations and their dependent definitions,
+accepted the axiom dependencies, and replayed the exported proof through Lean's
+default kernel. An altered multiplication cost was rejected specifically for
+`Gate.cost` mismatch. Replacing the explicit cost proof with `sorry` was rejected
+for `sorryAx`. The complete runner exited 0, and the challenge hash was unchanged
+before and after. The [selected transcript](../../verification/comparator/result.txt)
+records these results and the exact tool revisions.
+
+Both tools were built with the proof project's Lean 4.34.1. The native macOS run
+explicitly used upstream's unsandboxed development runner with trusted source;
+it did not test Linux hostile-build isolation or use an independent kernel.
+Pinned dependency/project caches were reused. The original proof and arithmetic
+model were not modified.
+
+The existing `bash scripts/check-proof.sh` audit was then rerun and exited 0:
+the eleven original files and all ten dependency pins matched, and the public
+Main plus `AllFieldsAudit` and its guarded axiom checks built successfully.
+Its 9437-job graph was incremental.
+
 ## Reproduction, attribution changes, and limits
 
 From a normal checkout, run sequentially:

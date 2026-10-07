@@ -75,6 +75,12 @@ recursion level. Descend all powers with one fixed coefficient algebra.
 - Coordinate file ownership before editing shared files. All agents use one
   shared checkout and branch; do not revert or reset another agent's work.
 - Record verified facts separately from drafted/uncompiled statements.
+- For Comparator verification, use `python3 scripts/check-comparator.py
+  --trusted-local --negative-controls` only for trusted local sources. See
+  `verification/comparator/README.md` for the pinned setup and Linux option.
+  The macOS development runner has no build sandbox and uses Lean's own kernel.
+  `ComparatorAudit.Challenge` contains deliberate specification holes; never
+  import it into OAI or the solution, or permit `sorryAx` in solution proofs.
 - Prefer focused `lake build <module>` checks; once dependencies compile,
   build the final theorem and inspect `#print axioms` for its declaration.
 - Run `bash scripts/check-proof.sh` for the complete public theorem and

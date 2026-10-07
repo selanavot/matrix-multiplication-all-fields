@@ -100,4 +100,33 @@ diagnostic logs are left under `lean/.lake/`.
 
 ## Recorded outcome
 
-Verification is in progress. No successful Comparator result is recorded yet.
+**Passed on 2026-10-07**, on arm64 macOS with the explicitly selected trusted
+local runner and Lean 4.34.1. The complete runner exited 0. Comparator accepted
+all five real solution theorems after definition comparison, axiom checking,
+and kernel replay. Both negative controls exited 1 for their expected reasons:
+
+```text
+Lean default kernel accepts the solution
+Your solution is okay!
+uncaught exception: Const does not match between challenge and target 'OAI.MatrixMultiplication.Arithmetic.Gate.cost'
+uncaught exception: Illegal axiom detected: 'sorryAx'
+```
+
+The first two lines are the positive run; the final two are separate, deliberate
+negative runs. A [selected transcript](result.txt) records the tool pins, source
+checkpoint, source hashes, and results without machine-specific paths.
+
+The verified harness checkpoint is
+`1b763143a3a8bc2de4caf380a1e5b8b00b770533`, based on proof tree
+`76b2937ebeb56ace5f2f4a895238d195722c5069`. Subsequent outcome documentation does
+not alter the challenge, solution, runner, or original proof. The frozen
+challenge SHA-256 stayed
+`22c1867ae6ed025318a6010447f997e14513cfe421d11c619cf1950985df1106`.
+
+The standard `bash scripts/check-proof.sh` audit also exited 0 after the
+Comparator run, including the original-file comparison, pinned dependencies,
+public entry point, and guarded axiom checks in `AllFieldsAudit`.
+
+Compilation reused pinned dependency and project build caches. This result is
+not a full source rebuild, an independent-kernel check, a Linux sandbox test,
+or a new uniform-algorithm theorem.

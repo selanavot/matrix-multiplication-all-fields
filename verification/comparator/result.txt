@@ -1,0 +1,37 @@
+Comparator run: 2026-10-07
+Harness/source checkpoint: 1b763143a3a8bc2de4caf380a1e5b8b00b770533
+Proof base: 76b2937ebeb56ace5f2f4a895238d195722c5069
+Command: python3 scripts/check-comparator.py --trusted-local --comparator-dir <pinned-comparator-checkout> --negative-controls
+Overall exit code: 0
+This is a selected transcript; routine build output and machine paths omitted.
+
+Frozen model SHA-256: eafe9983c1968b1b5ffa56d0ebc4a8ce123d8c82323e01ae05d1fd0281fe16f5
+PASS all ten source dependencies match committed pins and allowed changes.
+Scope: generated ignored .lake build artifacts are reused and not source-verified here.
+MODE: trusted local sources; NO Comparator build sandbox; Lean kernel only.
+Comparator: d03acab154d269c06e60e4de7e4cc85deebff94b
+lean4export: 076e8e57707e813375e8f9da8bf989799ace9680
+Lean (version 4.34.1, arm64-apple-darwin24.6.0, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+Frozen model SHA-256: eafe9983c1968b1b5ffa56d0ebc4a8ce123d8c82323e01ae05d1fd0281fe16f5
+PASS: five theorems, frozen definitions, standard axioms, Lean kernel replay.
+PASS negative control ChangedCost: exit 1; Const does not match between challenge and target
+PASS negative control SorryProof: exit 1; Illegal axiom detected: 'sorryAx'
+Frozen model SHA-256: eafe9983c1968b1b5ffa56d0ebc4a8ce123d8c82323e01ae05d1fd0281fe16f5
+
+ChangedCost exact rejection:
+uncaught exception: Const does not match between challenge and target 'OAI.MatrixMultiplication.Arithmetic.Gate.cost'
+
+SorryProof exact rejection:
+uncaught exception: Illegal axiom detected: 'sorryAx'
+
+Challenge SHA-256 (unchanged before and after): 22c1867ae6ed025318a6010447f997e14513cfe421d11c619cf1950985df1106
+
+Standard repository audit: bash scripts/check-proof.sh
+Exit code: 0
+Eleven original specification/builder files match the immutable baseline.
+All ten dependency source pins and the permitted patch match.
+Public Main and AllFieldsAudit built successfully (9437-job incremental graph).
+The guarded axiom checks passed.
