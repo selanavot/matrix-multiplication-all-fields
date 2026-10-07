@@ -53,6 +53,12 @@ eleven protected upstream files and the frozen Challenge model with an exact,
 deterministic module-only transformation of the immutable baseline. It does not
 ignore arbitrary source changes or weaken the mathematical definitions.
 
+Outside those protected files, the port also makes proof helpers used inside
+exposed definitions public, supplies an ordered-sum import explicitly, and
+uses Mathlib's public entropy rewrite lemmas in place of unfolding hidden
+implementation bodies. These are compatibility changes to proofs and module
+interfaces, not changes to the six stated claims.
+
 The five MIT-licensed Brouwer modules previously supplied by a runtime-patched
 Git dependency are vendored in `lean/FixedPointTheorems`. This lets a clean,
 network-isolated Palomar build consume the actual patched sources without a
@@ -78,6 +84,12 @@ Palomar workflow in `mode: full`, pinned to pipeline commit
 `d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44`. A local build alone is not a passing
 Palomar preflight. Inspect the uploaded mechanical report and require
 `status: pass` for the exact source SHA before requesting intake.
+
+Before the full reusable verifier, the workflow runs the ordinary build,
+fresh-environment replay and native Comparator rejection controls on a separate
+clean Linux runner. Its complete compiler log makes compatibility failures
+visible even when they fall outside Palomar's bounded report tail. This job
+does not replace the full sandboxed Palomar verification.
 
 The PR checks and uploaded mechanical report are the authority for the current
 candidate: require `status: pass` bound to the exact submitted source SHA.

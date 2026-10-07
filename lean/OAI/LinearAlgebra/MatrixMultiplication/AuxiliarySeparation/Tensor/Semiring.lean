@@ -292,7 +292,7 @@ theorem classOf_zero {X Y Z : Type*} [Fintype X] [Fintype Y] [Fintype Z] :
     classOf (0 : Tensor K X Y Z) = 0 :=
   (classOf_eq_iff _ _).mpr ⟨IsRestriction.zero _, IsRestriction.zero _⟩
 
-private theorem class_add_assoc (a b c : (TensorClass K)) : (a + b) + c = a + (b + c) := by
+theorem class_add_assoc (a b c : (TensorClass K)) : (a + b) + c = a + (b + c) := by
   induction a using Quotient.inductionOn with | h a =>
   induction b using Quotient.inductionOn with | h b =>
   induction c using Quotient.inductionOn with | h c =>
@@ -302,7 +302,7 @@ private theorem class_add_assoc (a b c : (TensorClass K)) : (a + b) + c = a + (b
   simp only [← classOf_sum]
   exact classOf_eq_of_reindex _ _ _ (sumTensor_assoc a.coeff b.coeff c.coeff)
 
-private theorem class_add_comm (a b : (TensorClass K)) : a + b = b + a := by
+theorem class_add_comm (a b : (TensorClass K)) : a + b = b + a := by
   induction a using Quotient.inductionOn with | h a =>
   induction b using Quotient.inductionOn with | h b =>
   change tensorClass a + tensorClass b = tensorClass b + tensorClass a
@@ -310,7 +310,7 @@ private theorem class_add_comm (a b : (TensorClass K)) : a + b = b + a := by
   simp only [← classOf_sum]
   exact classOf_eq_of_reindex _ _ _ (sumTensor_comm a.coeff b.coeff)
 
-private theorem class_add_zero (a : (TensorClass K)) : a + 0 = a := by
+theorem class_add_zero (a : (TensorClass K)) : a + 0 = a := by
   induction a using Quotient.inductionOn with | h a =>
   change tensorClass a + 0 = tensorClass a
   rw [← classOf_coeff a]
@@ -319,10 +319,10 @@ private theorem class_add_zero (a : (TensorClass K)) : a + 0 = a := by
   exact (classOf_eq_of_reindex _ _ _ (sumTensor_empty_right a.coeff
     (0 : Tensor K Empty Empty Empty))).symm
 
-private theorem class_zero_add (a : (TensorClass K)) : 0 + a = a :=
+theorem class_zero_add (a : (TensorClass K)) : 0 + a = a :=
   (class_add_comm 0 a).trans (class_add_zero a)
 
-private theorem class_mul_assoc (a b c : (TensorClass K)) : (a * b) * c = a * (b * c) := by
+theorem class_mul_assoc (a b c : (TensorClass K)) : (a * b) * c = a * (b * c) := by
   induction a using Quotient.inductionOn with | h a =>
   induction b using Quotient.inductionOn with | h b =>
   induction c using Quotient.inductionOn with | h c =>
@@ -332,7 +332,7 @@ private theorem class_mul_assoc (a b c : (TensorClass K)) : (a * b) * c = a * (b
   simp only [← classOf_product]
   exact classOf_eq_of_reindex _ _ _ (tensorProduct_assoc a.coeff b.coeff c.coeff)
 
-private theorem class_mul_comm (a b : (TensorClass K)) : a * b = b * a := by
+theorem class_mul_comm (a b : (TensorClass K)) : a * b = b * a := by
   induction a using Quotient.inductionOn with | h a =>
   induction b using Quotient.inductionOn with | h b =>
   change tensorClass a * tensorClass b = tensorClass b * tensorClass a
@@ -340,7 +340,7 @@ private theorem class_mul_comm (a b : (TensorClass K)) : a * b = b * a := by
   simp only [← classOf_product]
   exact classOf_eq_of_reindex _ _ _ (tensorProduct_comm a.coeff b.coeff)
 
-private theorem class_mul_one (a : (TensorClass K)) : a * 1 = a := by
+theorem class_mul_one (a : (TensorClass K)) : a * 1 = a := by
   induction a using Quotient.inductionOn with | h a =>
   change tensorClass a * 1 = tensorClass a
   rw [← classOf_coeff a]
@@ -348,10 +348,10 @@ private theorem class_mul_one (a : (TensorClass K)) : a * 1 = a := by
   rw [← classOf_product]
   exact (classOf_eq_of_reindex _ _ _ (tensorProduct_one_right a.coeff)).symm
 
-private theorem class_one_mul (a : (TensorClass K)) : 1 * a = a :=
+theorem class_one_mul (a : (TensorClass K)) : 1 * a = a :=
   (class_mul_comm 1 a).trans (class_mul_one a)
 
-private theorem class_mul_zero (a : (TensorClass K)) : a * 0 = 0 := by
+theorem class_mul_zero (a : (TensorClass K)) : a * 0 = 0 := by
   induction a using Quotient.inductionOn with | h a =>
   change tensorClass a * 0 = 0
   rw [← classOf_coeff a]
@@ -362,10 +362,10 @@ private theorem class_mul_zero (a : (TensorClass K)) : a * 0 = 0 := by
     simp [Tensor.product]
   rw [heq, classOf_zero]
 
-private theorem class_zero_mul (a : (TensorClass K)) : 0 * a = 0 :=
+theorem class_zero_mul (a : (TensorClass K)) : 0 * a = 0 :=
   (class_mul_comm 0 a).trans (class_mul_zero a)
 
-private theorem class_left_distrib (a b c : (TensorClass K)) : a * (b + c) = a * b + a * c := by
+theorem class_left_distrib (a b c : (TensorClass K)) : a * (b + c) = a * b + a * c := by
   induction a using Quotient.inductionOn with | h a =>
   induction b using Quotient.inductionOn with | h b =>
   induction c using Quotient.inductionOn with | h c =>
@@ -375,7 +375,7 @@ private theorem class_left_distrib (a b c : (TensorClass K)) : a * (b + c) = a *
   simp only [← classOf_product, ← classOf_sum]
   exact (classOf_eq_of_reindex _ _ _ (product_sumTensor a.coeff b.coeff c.coeff)).symm
 
-private theorem class_right_distrib (a b c : (TensorClass K)) : (a + b) * c = a * c + b * c := by
+theorem class_right_distrib (a b c : (TensorClass K)) : (a + b) * c = a * c + b * c := by
   rw [class_mul_comm, class_left_distrib, class_mul_comm c a, class_mul_comm c b]
 
 instance : CommSemiring (TensorClass K) where

@@ -204,7 +204,7 @@ def originalBasis (e : ℕ) :
     Module.Basis (OriginalIndex e) K (DeterminantBasis.BoundedPair K e) :=
   (Polynomial.degreeLT.basis K (e + 1)).prod (Polynomial.degreeLT.basis K (e + 1))
 
-private theorem degree_shift_lt (d e : ℕ) (i : Fin (d + 1))
+theorem degree_shift_lt (d e : ℕ) (i : Fin (d + 1))
     (p : Polynomial.degreeLT K (e + 1)) :
     ((X : K[X]) ^ i.val * (p : K[X])).degree < (d + e + 1 : ℕ) := by
   rw [Polynomial.degree_lt_iff_coeff_zero]

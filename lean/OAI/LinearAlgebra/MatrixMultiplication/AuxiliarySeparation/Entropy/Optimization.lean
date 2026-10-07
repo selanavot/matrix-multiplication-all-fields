@@ -34,8 +34,8 @@ theorem binary_entropy_log_partition {A B : ℝ} (hA : 0 < A) (hB : 0 < B) :
   have hcomplement : 1 - A / (A + B) = B / (A + B) := by
     field_simp
     ring
-  rw [Real.binEntropy, hcomplement, Real.log_inv, Real.log_inv,
-    Real.log_div hA.ne' hsum, Real.log_div hB.ne' hsum]
+  simp only [Real.binEntropy_eq_negMulLog_add_negMulLog_one_sub, Real.negMulLog_def]
+  rw [hcomplement, Real.log_div hA.ne' hsum, Real.log_div hB.ne' hsum]
   field_simp
   ring
 
@@ -57,7 +57,7 @@ theorem binary_entropy_variational_identity_of_ratio {A B q : ℝ}
       -(A / (A + B)) * Real.log (A / (A + B)) -
           (1 - A / (A + B)) * Real.log (1 - A / (A + B)) =
         Real.binEntropy (A / (A + B)) := by
-    simp only [Real.binEntropy, Real.log_inv]
+    simp only [Real.binEntropy_eq_negMulLog_add_negMulLog_one_sub, Real.negMulLog_def]
     ring
   rw [hentropy]
   exact binary_entropy_variational_identity hA hB
