@@ -40,8 +40,7 @@ The user wants a comprehensible diff against that baseline.
 
 ## Restart procedure
 
-1. Read this file, `docs/field-port/STATUS.md`, and your agent note under
-   `docs/field-port/agents/`.
+1. Read this file, `README.md`, and `docs/field-port/VERIFICATION.md`.
 2. Inspect `git status`, the latest commits, and the active branch. Preserve
    other agents' uncommitted work.
 3. Check the current build environment and last successful target. Treat
@@ -73,11 +72,6 @@ recursion level. Descend all powers with one fixed coefficient algebra.
 
 ## Collaboration and durable progress
 
-- `docs/field-port/STATUS.md` is maintained by the root coordinator.
-- Each agent owns its corresponding note in `docs/field-port/agents/` and
-  updates it before stopping, after a material build result, or before a
-  context reset. Record exact file ownership, commands, verified targets,
-  remaining failures, and next steps. Never overwrite another agent's note.
 - Coordinate file ownership before editing shared files. All agents use one
   shared checkout and branch; do not revert or reset another agent's work.
 - Record verified facts separately from drafted/uncompiled statements.
