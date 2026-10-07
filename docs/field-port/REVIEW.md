@@ -7,7 +7,7 @@ intentional axiom/sorry rejection controls also passed. See
 [ADVERSARIAL.md](ADVERSARIAL.md) and [VERIFICATION.md](VERIFICATION.md) for
 scope, evidence, and the use of pinned third-party caches.
 
-The source baseline is preserved by tag `openai-baseline-adc7f12`, at private
+The source baseline is preserved by tag `openai-baseline-adc7f12`, at
 commit `d2336fc`. It contains OpenAI's
 `adc7f1241b42e322a6451854ab7e4b4c146bf78a` MatrixMultiplication subtree.
 Review against that tag, even after development changes are merged into

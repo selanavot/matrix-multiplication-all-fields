@@ -1,6 +1,11 @@
-# Independent adversarial review: trust, reproduction, and claims
+# Adversarial review: trust, reproduction, and claims
 
-Reviewed 2026-10-06. Reviewer role: adversarial reviewer, not proof author. Repository was read-only throughout; no Lake build or source change was performed by this reviewer. This report is outside the repository.
+> **AI-generated review report.** Written on 2026-10-06 by a fresh AI-agent session that did not
+> write the proof, while the repository was private. It is not human peer review. Preserved as
+> written, apart from redacted machine paths; see [ADVERSARIAL.md](../ADVERSARIAL.md) for how its
+> findings were resolved.
+
+Reviewed 2026-10-06. Reviewer role: adversarial reviewer (a fresh AI-agent session), not proof author. Repository was read-only throughout; no Lake build or source change was performed by this reviewer. This report is outside the repository.
 
 Target: `all-fields-proof-v1`, peeled commit `9bd2a64fa47efe678664b5401b6a8ea6d93238ad`. Baseline: `openai-baseline-adc7f12`, peeled commit `d2336fc571f1f8cdabf0c6d3a2d3ef1ec3327653`, corresponding to `openai/math` commit `adc7f1241b42e322a6451854ab7e4b4c146bf78a`.
 

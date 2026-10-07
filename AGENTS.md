@@ -1,5 +1,9 @@
 # Matrix multiplication over arbitrary fields
 
+> Operating instructions for the AI coding agents that developed this fork.
+> They are kept in the public repository for transparency about how the work
+> was produced.
+
 ## Objective and trusted specification
 
 Extend OpenAI's matrix-multiplication `9/4` proof to the theorem
@@ -19,25 +23,24 @@ The public baseline is `openai/math` commit
 `lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation`.
 The user wants a comprehensible diff against that baseline.
 
-## Privacy and version control
+## Publication and version control
 
-- This project may be pushed only to a **private** repository owned by
-  `selanavot`. Verify remote visibility before the first push and when the
-  remote changes. Never create a public fork, public repository, or upstream
-  OpenAI PR for this work without new explicit user authorization.
+- The repository `selanavot/matrix-multiplication-all-fields` is public.
+  Everything committed or written in PR descriptions is publicly visible.
+  Never push to OpenAI's upstream repository or open an upstream OpenAI PR
+  for this work without new explicit user authorization.
 - Preserve an upstream baseline commit and use a separate work branch.
 - Save meaningful work in commits. Label incomplete checkpoints honestly;
   a source checkpoint is not a verified theorem.
-- Open/update a PR inside the private repository before calling the work
-  complete. The user explicitly authorizes merging private development PRs;
+- Open/update a PR in this repository before calling the work
+  complete. The user explicitly authorizes merging development PRs;
   merge verified checkpoints when useful, retaining the upstream baseline.
 - Do not commit downloaded toolchains, dependency checkouts, build caches,
-  credentials, or large generated logs.
+  credentials, machine-specific paths, or large generated logs.
 
 ## Restart procedure
 
-1. Read this file, `docs/field-port/STATUS.md`, and your agent note under
-   `docs/field-port/agents/`.
+1. Read this file, `README.md`, and `docs/field-port/VERIFICATION.md`.
 2. Inspect `git status`, the latest commits, and the active branch. Preserve
    other agents' uncommitted work.
 3. Check the current build environment and last successful target. Treat
@@ -69,11 +72,6 @@ recursion level. Descend all powers with one fixed coefficient algebra.
 
 ## Collaboration and durable progress
 
-- `docs/field-port/STATUS.md` is maintained by the root coordinator.
-- Each agent owns its corresponding note in `docs/field-port/agents/` and
-  updates it before stopping, after a material build result, or before a
-  context reset. Record exact file ownership, commands, verified targets,
-  remaining failures, and next steps. Never overwrite another agent's note.
 - Coordinate file ownership before editing shared files. All agents use one
   shared checkout and branch; do not revert or reset another agent's work.
 - Record verified facts separately from drafted/uncompiled statements.

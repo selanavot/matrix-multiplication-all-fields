@@ -2,7 +2,7 @@
 
 Date: 2026-10-06. Proof source: `all-fields-proof-v1`, peeled commit `9bd2a64fa47efe678664b5401b6a8ea6d93238ad`. Reference: OpenAI `adc7f1241b42e322a6451854ab7e4b4c146bf78a`, preserved by baseline commit `d2336fc571f1f8cdabf0c6d3a2d3ef1ec3327653`.
 
-Three fresh adversarial source reviews found no fatal mathematical, specification, or trust defect in the reviewed all-fields proof. The complete core OAI dependency chain was then rebuilt in isolation from the committed proof sources, and fresh Lean kernel replay passed. These are substantive checks of the precise claim below; they do not make human review infallible or eliminate the stated trust assumptions.
+Three adversarial source reviews found no fatal mathematical, specification, or trust defect in the reviewed all-fields proof. Each review was run by a fresh AI-agent session from the same development workflow, separate from the sessions that wrote the proof; none is human peer review. The complete core OAI dependency chain was then rebuilt in isolation from the committed proof sources, and fresh Lean kernel replay passed. These are substantive checks of the precise claim below; they do not make AI review infallible or eliminate the stated trust assumptions.
 
 ## Claim assessed
 
@@ -48,6 +48,6 @@ The isolated fresh build covered the complete core theorem chain. The broader is
 
 No historical novelty claim follows from this audit. It supports an extension of the recorded complex formal result to every field under the stated model and the stronger coefficient-rank theorem. It does not establish priority, novelty, or the original authors' reasons for their scope.
 
-Detailed evidence, file-and-line references, attempted failure modes, and reviewer-specific coverage limits are in [the proof/algebra report](adversarial/algebra.md), [the specification report](adversarial/specification.md), and [the trust/reproducibility report](adversarial/reproducibility.md). This summary incorporates the coordinator's later completed core-build and kernel results; earlier report passages describing those checks as outstanding are superseded by the completed evidence above.
+Detailed evidence, file-and-line references, attempted failure modes, and reviewer-specific coverage limits are in the AI-agent review reports: [the proof/algebra report](adversarial/algebra.md), [the specification report](adversarial/specification.md), and [the trust/reproducibility report](adversarial/reproducibility.md). This summary incorporates the coordinator's later completed core-build and kernel results; earlier report passages describing those checks as outstanding are superseded by the completed evidence above.
 
 The detailed reports preserve the reviewers' original findings; machine-specific path prefixes were later replaced with descriptive placeholders. Their line numbers refer to the reviewed proof commit, before comment-only attribution notices.

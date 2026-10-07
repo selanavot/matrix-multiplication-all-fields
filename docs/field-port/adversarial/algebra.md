@@ -1,5 +1,10 @@
 # Adversarial proof/algebra review
 
+> **AI-generated review report.** Written on 2026-10-06 by a fresh AI-agent session that did not
+> write the proof, while the repository was private. It is not human peer review. Preserved as
+> written, apart from redacted machine paths; see [ADVERSARIAL.md](../ADVERSARIAL.md) for how its
+> findings were resolved.
+
 Audited source: `<repository checkout>`, HEAD and peeled `all-fields-proof-v1` both `9bd2a64fa47efe678664b5401b6a8ea6d93238ad`. Baseline: peeled `openai-baseline-adc7f12`, `d2336fc571f1f8cdabf0c6d3a2d3ef1ec3327653`. The source tree had no differences from the audited tag when checked. Review date: 2026-10-06.
 
 ## Result and limits

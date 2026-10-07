@@ -1,9 +1,14 @@
 # Adversarial specification and semantics audit
 
-Reviewer role: independent adversarial source review, not proof author.
+> **AI-generated review report.** Written on 2026-10-06 by a fresh AI-agent session that did not
+> write the proof, while the repository was private. It is not human peer review. Preserved as
+> written, apart from redacted machine paths; see [ADVERSARIAL.md](../ADVERSARIAL.md) for how its
+> findings were resolved.
+
+Reviewer role: adversarial source review by a fresh AI-agent session, not proof author.
 Date: 2026-10-06.
-Target: private repository `matrix-multiplication-all-fields`, tag `all-fields-proof-v1`, merge commit `9bd2a64fa47efe678664b5401b6a8ea6d93238ad`.
-Reference: tag `openai-baseline-adc7f12` / private baseline `d2336fc`, compared where material with original `openai/math` commit `adc7f1241b42e322a6451854ab7e4b4c146bf78a` in the sibling `openai-math` clone.
+Target: then-private repository `matrix-multiplication-all-fields`, tag `all-fields-proof-v1`, merge commit `9bd2a64fa47efe678664b5401b6a8ea6d93238ad`.
+Reference: tag `openai-baseline-adc7f12` / baseline `d2336fc`, compared where material with original `openai/math` commit `adc7f1241b42e322a6451854ab7e4b4c146bf78a` in the sibling `openai-math` clone.
 
 All paths below are relative to `lean/OAI/LinearAlgebra/MatrixMultiplication/` in that repository, unless explicitly stated. No repository source was changed and no Lean/Lake compiler process was started by this reviewer. Compiler checks and axiom/environment integrity are the coordinator's separate responsibility.
 
