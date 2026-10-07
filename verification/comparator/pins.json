@@ -1,0 +1,7 @@
+{
+  "comparator": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+  "lean4export": "076e8e57707e813375e8f9da8bf989799ace9680",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "model_baseline": "d2336fc571f1f8cdabf0c6d3a2d3ef1ec3327653",
+  "model_path": "lean/OAI/LinearAlgebra/MatrixMultiplication/Model.lean"
+}

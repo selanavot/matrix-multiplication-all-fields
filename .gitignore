@@ -4,3 +4,4 @@ lean/lakefile.olean
 lean/lakefile.olean.trace
 lean/lakefile.ilean
 .DS_Store
+lean/ComparatorAudit/GeneratedControls/

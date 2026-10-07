@@ -13,6 +13,10 @@ require mathlib from git
 
 lean_lib OAI
 
+-- Independent environments for the frozen Comparator challenge and its solution.
+-- The challenge intentionally contains theorem holes and is never imported by OAI.
+lean_lib ComparatorAudit
+
 post_update pkg do
   let some dep ← findPackageByName? `«fixed-point-theorems»
     | error "Missing fixed-point-theorems dependency."

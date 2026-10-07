@@ -1,0 +1,12 @@
+{
+  "challenge_module": "ComparatorAudit.Challenge",
+  "solution_module": "ComparatorAudit.Solution",
+  "theorem_names": [
+    "ComparatorChecks.omega_bound",
+    "ComparatorChecks.admissible_bddBelow",
+    "ComparatorChecks.admissible_nonempty",
+    "ComparatorChecks.omega_lower",
+    "ComparatorChecks.epsilon_cost"
+  ],
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"]
+}
