@@ -7,7 +7,8 @@ cd -- "$project_root"
 bash scripts/check-proof.sh
 cd -- lean
 
-# Replay the auxiliary conclusion and all its imported declarations in a fresh
-# environment. This uses Lean's own kernel, not an independent implementation.
+# Replay the exported all-fields theorems, the audit, and all their imported
+# declarations in a fresh environment. This uses Lean's own kernel, not an
+# independent implementation.
 lake env leanchecker --fresh --verbose \
-  OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Main
+  OAI.LinearAlgebra.MatrixMultiplication.AllFieldsAudit
