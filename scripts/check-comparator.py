@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 """Run pinned Comparator against a frozen model and the real all-fields proof.
 
-The explicit --trusted-local option uses upstream's development runner, which
-does not sandbox builds. Without it, invoke this script inside the Linux
-systemd restriction documented in verification/comparator/README.md.
+The explicit --trusted-local option disables the native Comparator sandbox. Use the complete Palomar workflow for Linux sandbox/provenance verification.
 """
 
 import argparse
@@ -29,18 +27,6 @@ def run(args, *, cwd=ROOT, env=None, capture=False):
         list(map(str, args)), cwd=cwd, env=env, check=True,
         text=True, stdout=subprocess.PIPE if capture else None,
     ).stdout
-
-
-def revision(path):
-    return run(["git", "rev-parse", "HEAD"], cwd=path, capture=True).strip()
-
-
-def require_clean_pin(path, expected):
-    if revision(path) != expected:
-        raise RuntimeError(f"Unexpected revision in {path}; expected {expected}")
-    if run(["git", "status", "--porcelain", "--untracked-files=no"],
-           cwd=path, capture=True).strip():
-        raise RuntimeError(f"Tracked source changes in {path}")
 
 
 def verify_spec():
@@ -79,8 +65,6 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--trusted-local", action="store_true",
                         help="Use upstream's unsandboxed development runner")
-    parser.add_argument("--comparator-dir", type=Path,
-                        default=ROOT / ".lake/comparator-tool")
     parser.add_argument("--negative-controls", action="store_true",
                         help="Also require rejection of changed cost and sorry proofs")
     args = parser.parse_args()
@@ -96,7 +80,7 @@ def main():
     run(command + ["--config", SPEC / "config.json"], cwd=ROOT, env=env)
     if verify_spec() != before:
         raise RuntimeError("Frozen challenge changed during verification")
-    print("PASS: six theorems, frozen definitions, standard axioms, Lean kernel replay.",
+    print("PASS: six theorems, frozen definitions, standard axioms, bundled kernel checks.",
           flush=True)
     if args.negative_controls:
         negative_controls(command, env, args.trusted_local)

@@ -6,6 +6,15 @@ on:
 permissions:
   contents: read
 jobs:
+  source-audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - run: python3 scripts/check-specification.py
+      - run: git diff --check HEAD^ HEAD
   verify:
     uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44
     with:
@@ -15,4 +24,4 @@ jobs:
       request_id: allfields001
       mode: full
       execution_profile: palomar-standard-v1
-      options: '{"comparator_config_path":"comparator.json","formalization_metadata_path":"formalization.yaml"}'
+      options: '{"comparator_config_path":"comparator.json","formalization_metadata_path":"formalization.yaml","authorization_relationship":"maintainer"}'
