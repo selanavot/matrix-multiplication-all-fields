@@ -54,12 +54,14 @@ OAI build directory started empty; only the exact-pinned third-party package
 checkouts and build caches were shared. `LEAN_PATH` resolved OAI imports to
 the isolated output directory, not the original OAI cache.
 
-The broader isolated build of the entire public entry point was stopped
-before completion after the all-fields core had compiled. The remaining
-modules concern other retained upstream bounds. The later canonical public
-build checks compatibility with those results, using its existing cache.
-**This record does not claim a fresh source rebuild of the entire public
-entry point, Lean, or all third-party dependencies.**
+At `9bd2a64`, the broader isolated build of the then-public entry point,
+upstream's `Main`, was stopped before completion after the all-fields core had
+compiled. The remaining modules concerned OpenAI's other upstream bounds,
+which that `Main` re-exported and which this repository has since removed. The
+canonical build at `704431e` checked compatibility with those results, using
+its existing cache. **The runs at `9bd2a64` and `704431e` do not include a fresh
+source rebuild of upstream's `Main`, Lean, or the third-party dependencies;**
+later fresh rebuilds are recorded at the end of this file.
 
 `leanchecker --fresh` imports the target environment and then replays every
 constant into a fresh environment using Lean's own kernel. It is additional
@@ -157,13 +159,18 @@ bash scripts/check-kernel.sh
 ```
 
 The final command repeats the proof checks before fresh kernel replay.
+Since `7c4b124`, both scripts target `AllFieldsAudit`, which imports
+`AllFields` instead of upstream's `Main`, and the kernel replay targets
+`AllFieldsAudit`. The repository was then trimmed to the 126 modules that
+`AllFieldsAudit` imports, removing `Main` and OpenAI's other results. The runs
+recorded in this section and the next predate both changes.
 Scripts default to one worker because whole-Mathlib imports can exhaust
 memory when several compiler processes run together. The manifest contains
 ten exact dependency revisions, and the bootstrap script rejects pin drift.
 The fixed-point compatibility patch is the one preserved from upstream;
 its SHA-256 is `d70872e41e80b25191538d1659c4aa3a001349b5bd16f806c9e3833a502516e5`.
 
-After those Lean checks, short provenance/modification comments were added to the 41 modified pre-existing upstream Lean files. Removing only those exact comments restored every pre-insertion source byte, checked against a saved snapshot. No theorem, definition, import, or proof body changed. The unchanged specification files received no notices and remain byte-identical to baseline. The comment-only additions did not trigger another full Lean run. Documentation changes and shortened machine-specific paths in review reports likewise do not change the proof.
+After those Lean checks, short provenance/modification comments were added to the 41 modified pre-existing upstream Lean files (40 remain after the trim removed the modified copy of OpenAI's `Main.lean`; `Arithmetic/Growth.lean`, adapted from an omitted upstream file, received the notice later). Removing only those exact comments restored every pre-insertion source byte, checked against a saved snapshot. No theorem, definition, import, or proof body changed. The unchanged specification files received no notices and remain byte-identical to baseline. The comment-only additions did not trigger another full Lean run. Documentation changes and shortened machine-specific paths in review reports likewise do not change the proof.
 
 A compact transcript of the successful checks and intended guard failures is preserved in [mechanical-checks.txt](adversarial/mechanical-checks.txt).
 
@@ -179,3 +186,80 @@ linear-combination cost. Their mathematical review and its limits are in
 a separate formalization. Historical priority, the original authors' reasons
 for their scope, the exact exponent, practical constants, and an effective
 algorithm generator are not established by this audit.
+
+## Independent re-verification by Anthropic's Claude
+
+Date: 2026-10-06. Checker: Anthropic's Claude (Opus 5.5), which took no part
+in developing the proof. Toolchain: `leanprover/lean4:v4.34.1` on arm64 macOS,
+`LEAN_NUM_THREADS=1`.
+
+**Core proof, end to end.** Fresh clones from GitHub were checked at three
+commits. Each run started from an empty OAI build directory, and in each all
+ten dependency checkouts passed `verify-dependencies.py`.
+
+| Commit | Change | `check-kernel.sh` |
+| --- | --- | --- |
+| `7c4b124` | Exported theorems moved into `AllFields.lean`, unchanged; scripts target `AllFieldsAudit` | exit 0, 29 min |
+| `dc21b40` | Repository trimmed to the 126 modules `AllFieldsAudit` imports | exit 0, 31 min |
+| `620b5ed` | Modification notice added to `Arithmetic/Growth.lean`; last commit to change Lean sources or scripts | exit 0, 34 min |
+
+In each run:
+
+- the eleven protected files matched the baseline;
+- 126 OAI modules compiled with no errors or `sorry` warnings;
+- the ten guarded axiom checks passed;
+- `leanchecker --fresh` replayed `AllFieldsAudit` and all its imported
+  declarations.
+
+The source commit and a clean working tree were confirmed before and after
+each run. Pinned third-party build caches were reused, and `bootstrap.sh` was
+not rerun.
+
+**Earlier full build.** A separate fresh clone was checked at commit
+`2bb9a6f`, the `main` commit before `AllFields` was introduced. Its scripts
+built the then entry point `Main` together with OpenAI's other results (the
+dual-exponent, rectangular and conditional bounds and their certificates),
+which this repository has since removed. `check-proof.sh` completed (9437 jobs; 508
+OAI modules compiled from empty outputs, with no errors). That run was
+interrupted once and resumed from its own completed modules.
+`check-kernel.sh` then exited 0, including its fresh replay of
+`AuxiliarySeparation.Main`.
+
+**Statement checks.** Additional Lean files were elaborated against these
+builds and confirmed the following.
+
+- **The headline depends only on the specification.** The fully explicit
+  statement of `omega_le_nine_quarters` uses only `Model.lean` definitions and
+  standard Mathlib instances. A dependency walk over the types and definition
+  bodies of the exported statements reaches only Lean core, Mathlib and
+  `Model.lean`.
+- **The infimum is not vacuous.** 2 ≤ `Arithmetic.omega F`; the admissible
+  set is non-empty and bounded below; 9/4 is admissible. The headline also
+  holds with every specification definition unfolded by hand.
+- **The rank notions are the standard ones.** At ℂ, the generic matrix
+  multiplication tensor is definitionally OpenAI's original tensor.
+  `RankAtMost` is an exact sum of rank-one tensors, and the 2×2 tensor
+  provably has rank greater than 3.
+- **The proof ingredients behave as described.** The Fourier period selector
+  gives the stated values on `ZMod 2`, `ZMod 5` and ℚ. The descent,
+  Fourier, interpolation, character and bridge lemmas depend only on
+  `propext`, `Classical.choice` and `Quot.sound`.
+- **OpenAI's other exported statements (at `2bb9a6f`; since removed).** Against that full build, the same
+  dependency walk shows that OpenAI's α and rectangular statements also reach
+  only Lean core, Mathlib and `Model.lean`, and that they depend only on the
+  three standard axioms. The exact-rank statement additionally reaches only
+  the rank definitions `exactRankExponent`, `exactMatrixRank`, `exactRank`,
+  `matrixMultiplicationTensor`, `RankAtMost` and `rankOne`.
+
+**Statement review.** Separate source reviews found no specification change,
+and found that the elaborated theorem means what the README states. They also
+found that OpenAI's program model, correctness predicate and exponent match
+the textbook definition of ω:
+
+- **Infinite fields:** an exact match.
+- **Finite fields:** `Correct` is equality of functions on field-valued
+  inputs, so `Arithmetic.omega F` is at most the textbook value. The
+  exact-rank theorem gives the textbook-strength statement there.
+
+These reviews are AI review, not human peer review. The Lean checks retain
+the usual trust in Lean's kernel, Mathlib and the toolchain.

@@ -2,7 +2,8 @@
 
 **The all-fields theorem and expanded audit passed.** The core proof was
 rebuilt from committed sources in isolation and replayed in a fresh Lean
-kernel environment. The canonical public build, ten axiom guards, and
+kernel environment, first at proof commit `9bd2a64` and most recently from a
+fresh clone of the trimmed repository at `620b5ed`. Ten axiom guards and
 intentional axiom/sorry rejection controls also passed. See
 [ADVERSARIAL.md](ADVERSARIAL.md) and [VERIFICATION.md](VERIFICATION.md) for
 scope, evidence, and the use of pinned third-party caches.
@@ -11,7 +12,16 @@ The source baseline is preserved by tag `openai-baseline-adc7f12`, at
 commit `d2336fc`. It contains OpenAI's
 `adc7f1241b42e322a6451854ab7e4b4c146bf78a` MatrixMultiplication subtree.
 Review against that tag, even after development changes are merged into
-`main`, rather than against an unrelated current upstream revision.
+`main`, rather than against an unrelated current upstream revision. This
+extraction omits the upstream modules the all-fields theorem does not need, so
+exclude deletions:
+
+```sh
+git diff --diff-filter=AMR openai-baseline-adc7f12 -- lean/OAI/LinearAlgebra/MatrixMultiplication
+```
+
+Keep `R` in the filter: git shows `Arithmetic/Growth.lean` as a rename of
+upstream `ComplexArithmetic/Growth.lean`.
 
 ## Start with the specification
 
@@ -46,7 +56,7 @@ The primary arithmetic files `Complexity`, `Programs`, `RecursiveBlockPrograms`,
 | Obtain the closed-field rank bound | [RankBound](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation/Arithmetic/RankBound.lean) | Generic characters, determinant/sector constructions, real growth inequalities, and detecting characters give `ν(K) ≤ 9/4` when `K` is algebraically closed. |
 | Descend without changing the exponent | [FieldDescent](../../lean/OAI/LinearAlgebra/MatrixMultiplication/Arithmetic/FieldDescent.lean), [FieldExtension](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation/Arithmetic/FieldExtension.lean) | One finite coefficient algebra is fixed before tensor powers vary. Its dimension-squared cost is a single fixed factor, giving `ν(F) ≤ ν(AlgebraicClosure F)`. No separability premise is needed. |
 | Convert rank to the existing arithmetic exponent | [Growth](../../lean/OAI/LinearAlgebra/MatrixMultiplication/Arithmetic/Growth.lean), [Arithmetic.Exponent](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation/Arithmetic/Exponent.lean) | The unchanged generic block builder supplies the actual correct programs and pays their linear-combination cost. Padding and positive exponent slack prove `omega F ≤ ν(F)`. |
-| Assemble the conclusion | [AuxiliarySeparation.Main](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation/Main.lean), [Main](../../lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean) | The final field parameter has only `[Field F]`; the complex theorem remains a specialization. |
+| Assemble the conclusion | [AuxiliarySeparation.Main](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation/Main.lean), [AllFields](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AllFields.lean) | The final field parameter has only `[Field F]`; the complex theorem remains a specialization. |
 
 ## Arithmetic fidelity review
 
@@ -69,7 +79,8 @@ attained. Source review found no specification weakening in either bridge.
 Run `bash scripts/check-proof.sh` from the repository root after bootstrapping
 dependencies. It verifies eleven original files against an immutable baseline,
 checks all ten dependency revisions and the exact compatibility patch, and builds
-`AllFieldsAudit.lean`, which imports the public theorem, checks an arbitrary
+`AllFieldsAudit.lean`, which imports the exported all-fields theorems in
+`AllFields.lean`, checks an arbitrary
 universe and characteristic-2/3/5 examples, an infinite characteristic-two
 rational-function field, the original correctness/cost statement, and an
 expanded exact coefficient-rank witness. Ten guarded axiom checks

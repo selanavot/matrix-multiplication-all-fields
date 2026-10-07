@@ -1,4 +1,4 @@
-import OAI.LinearAlgebra.MatrixMultiplication.Main
+import OAI.LinearAlgebra.MatrixMultiplication.AllFields
 import Mathlib.Data.ZMod.Basic
 
 /-!

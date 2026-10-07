@@ -20,12 +20,24 @@ preserves the upstream sources before our changes. Do not move the tag.
 Compare against that baseline after development PRs merge:
 
 ```sh
-git diff d2336fc571f1f8cdabf0c6d3a2d3ef1ec3327653 -- lean/OAI/LinearAlgebra/MatrixMultiplication
+git diff --diff-filter=AMR d2336fc571f1f8cdabf0c6d3a2d3ef1ec3327653 -- lean/OAI/LinearAlgebra/MatrixMultiplication
 ```
+
+The filter hides the upstream modules omitted from this extraction (below).
+Git shows `Arithmetic/Growth.lean` as a rename of upstream
+`ComplexArithmetic/Growth.lean`, which it generalizes to arbitrary fields.
 
 The extraction is packaged as a standalone Lake project, keeping upstream's
 Lean 4.34.1 toolchain, Mathlib commit, fixed-point dependency, and compatibility
-patch. Other mathematical projects and their dependencies are omitted. This
+patch. Other mathematical projects and their dependencies are omitted. Within
+the matrix-multiplication subtree, only the import closure of `AllFieldsAudit`
+is kept: 126 modules, of which 120 are upstream modules (40 of them modified)
+and 6 are added by this fork. OpenAI's `Main`, its dual-exponent, rectangular
+and conditional results, their numerical certificates, and the complex-only
+program layer that the generic arithmetic bridge replaces
+(`ComplexArithmetic/*` other than `Complexity`, `Arithmetic/Compatibility`,
+`Polynomial/ComplexExpressionFamily`) are omitted. They remain available at the
+pinned upstream revision. This
 provenance describes the extracted source history; it does not claim to retain
 the full upstream repository history or GitHub fork relationship.
 
@@ -38,19 +50,20 @@ the full upstream repository history or GitHub fork relationship.
   overhead across all tensor powers.
 - Connect exact rank over arbitrary fields to the existing generic arithmetic
   program builder and original exponent definition.
-- Export an arbitrary-field theorem, retain the public complex specialization,
-  and add specification, representative-field, and axiom audits.
+- Export an arbitrary-field theorem and the complex specialization from a new
+  `AllFields` entry point, which replaces upstream's `Main`, and add
+  specification, representative-field, and axiom audits.
 
 The original `Model.lean` and ten protected specification/builder files are
-unchanged. Retained upstream rectangular and dual-exponent results keep their
-original scope. The README shows the small theorem-statement change; the
+unchanged. The README shows the small theorem-statement change; the
 [reviewer guide](docs/field-port/REVIEW.md) traces the substantive proof changes.
 
 ## Attribution and verification
 
 The original [Apache License 2.0](LICENSE) is retained. Modified pre-existing
-upstream Lean files carry prominent modification notices; their original
-headers are preserved. Those notices point here for the source revision and
+upstream Lean files carry prominent modification notices; the upstream files
+had no headers of their own. `Arithmetic/Growth.lean`, adapted from the omitted
+upstream `ComplexArithmetic/Growth.lean`, carries the same notice. Those notices point here for the source revision and
 scope. New proof and audit files are distributed under the repository license.
 
 See [VERIFICATION.md](docs/field-port/VERIFICATION.md) for exact checked commits,

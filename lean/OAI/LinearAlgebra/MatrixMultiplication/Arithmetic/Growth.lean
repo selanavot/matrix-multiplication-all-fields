@@ -1,3 +1,10 @@
+/-
+Upstream source and modification notice
+Adapted from OpenAI's matrix-multiplication sources (upstream `ComplexArithmetic/Growth.lean`,
+omitted from this extraction) to support arbitrary fields.
+See UPSTREAM.md for provenance and changes; Apache-2.0 license retained in LICENSE.
+-/
+
 import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Complexity
 import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Padding
 import OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.RecursiveBlockPrograms

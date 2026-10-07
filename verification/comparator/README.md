@@ -130,3 +130,11 @@ public entry point, and guarded axiom checks in `AllFieldsAudit`.
 Compilation reused pinned dependency and project build caches. This result is
 not a full source rebuild, an independent-kernel check, a Linux sandbox test,
 or a new uniform-algorithm theorem.
+
+After incorporating the core-only tree from `c4aaf79`, the challenge, solution,
+runner, and pins remained byte-identical. All 124 OAI source modules imported
+by the solution were retained; their only change was an attribution comment
+in `Arithmetic/Growth.lean`. The standard audit passed again against the new
+`AllFields` entry point (9055-job incremental graph). The Comparator replay
+and negative-control results above remain the earlier recorded run; they
+were not repeated for this documentation conflict resolution.

@@ -35,3 +35,11 @@ Eleven original specification/builder files match the immutable baseline.
 All ten dependency source pins and the permitted patch match.
 Public Main and AllFieldsAudit built successfully (9437-job incremental graph).
 The guarded axiom checks passed.
+
+Integration with main c4aaf79 (core-only tree), 2026-10-07:
+No changes to the Comparator challenge, solution, runner, configuration or pins.
+All 124 OAI modules in the solution's source import closure retained; only an
+attribution comment added in Arithmetic/Growth.lean. No proof-body changes.
+bash scripts/check-proof.sh: exit 0 (9055-job incremental graph).
+AllFields and AllFieldsAudit built; original-file, dependency and axiom checks passed.
+Comparator replay and negative controls were not repeated for this merge.
