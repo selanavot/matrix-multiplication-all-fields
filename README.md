@@ -4,7 +4,7 @@ This is a focused source fork of [OpenAI's mathematics repository](https://githu
 
 The extension of OpenAI's proof to arbitrary fields was found and formalized by **consumer-grade GPT-6 Astra and GPT-6.1 Sol**, working under Sela Navot's direction. Lean checked the resulting formal proof; the verification scope is documented below.
 
-The sources are extracted from the `MatrixMultiplication` subtree at OpenAI commit [`adc7f1241b42e322a6451854ab7e4b4c146bf78a`](https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/LinearAlgebra/MatrixMultiplication), packaged as a standalone Lake project. Only the 126 modules that the all-fields theorem needs are kept; OpenAI's other matrix-multiplication results in that subtree (the dual exponent, rectangular and conditional bounds, and their numerical certificates) are omitted. The preserved tag `openai-baseline-adc7f12` records that subtree before the extension. The accompanying OpenAI preprint is [*An Upper Bound of 9/4 for the Matrix Multiplication Exponent*](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex). See [UPSTREAM.md](UPSTREAM.md) for provenance.
+The sources are extracted from the `MatrixMultiplication` subtree at OpenAI commit [`adc7f1241b42e322a6451854ab7e4b4c146bf78a`](https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/LinearAlgebra/MatrixMultiplication), packaged as a standalone Lake project. Only the 126 modules in the import closure of the all-fields theorem and its audit are kept: 120 upstream modules, 40 of them modified, plus 6 new files. OpenAI's other matrix-multiplication results in that subtree (the dual exponent, rectangular and conditional bounds, and their numerical certificates) are omitted. So is the complex-only program layer through which OpenAI's complex proof reached `Model.lean`, which this fork's generic arithmetic bridge replaces. The preserved tag `openai-baseline-adc7f12` records that subtree before the extension. The accompanying OpenAI preprint is [*An Upper Bound of 9/4 for the Matrix Multiplication Exponent*](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex). See [UPSTREAM.md](UPSTREAM.md) for provenance.
 
 ## Premise and theorem-statement diff
 
@@ -92,7 +92,7 @@ All transitive revisions are recorded in [`lean/lake-manifest.json`](lean/lake-m
 
 `check-kernel.sh` first runs the proof checks, then uses `leanchecker --fresh` to replay the audit target, including the exported all-fields theorems and all their imported declarations, in a fresh environment. This uses Lean's own kernel. It is not an independent kernel implementation or a rebuild of every dependency from source. The scripts default to one worker because the large imports require substantial memory. Run only one build or replay process at a time.
 
-> **Verified on 2026-10-06.** The isolated core source rebuild and fresh kernel replay passed at proof commit `9bd2a64`. The expanded public audit passed at `704431e`, including ten axiom guards; separate controls confirmed that added axioms and `sorry` are rejected. Three adversarial source reviews, each run by a fresh AI-agent session that did not write the proof, found no fatal defect; they are not human peer review. Pinned third-party caches were reused, and the broader isolated rebuild of unrelated public results was not completed. The verification record gives the exact scope and documents subsequent comment-only attribution changes.
+> **Verified on 2026-10-06.** The isolated core source rebuild and fresh kernel replay passed at proof commit `9bd2a64`. The expanded public audit passed at `704431e`, including ten axiom guards; separate controls confirmed that added axioms and `sorry` are rejected. Three adversarial source reviews, each run by a fresh AI-agent session that did not write the proof, found no fatal defect; they are not human peer review. Pinned third-party caches were reused. The verification record gives the exact scope and documents subsequent comment-only attribution changes.
 
 **Verification by OpenAI and Anthropic models.** Both checked that the theorem statement means what it claims and that the Lean verification works end to end. The OpenAI models credited above did so while developing the proof, with the results summarized in the box above. Anthropic's Claude (Opus 5.5), which took no part in the development, then repeated both checks independently on 2026-10-06:
 
@@ -110,10 +110,10 @@ All transitive revisions are recorded in [`lean/lake-manifest.json`](lean/lake-m
 See the [verification record](docs/field-port/VERIFICATION.md) and [adversarial audit](docs/field-port/ADVERSARIAL.md) for evidence and review limits. To compare the kept sources with OpenAI's preserved subtree, showing only the files this fork added or changed:
 
 ```sh
-git diff --diff-filter=AM openai-baseline-adc7f12 -- lean/OAI/LinearAlgebra/MatrixMultiplication
+git diff --diff-filter=AMR openai-baseline-adc7f12 -- lean/OAI/LinearAlgebra/MatrixMultiplication
 ```
 
-Without `--diff-filter=AM`, the omitted upstream modules also appear as deletions.
+Git shows `Arithmetic/Growth.lean` as a rename of upstream's `ComplexArithmetic/Growth.lean`, which it generalizes to arbitrary fields. Without the filter, the omitted upstream modules also appear as deletions.
 
 ## Attribution and scope
 

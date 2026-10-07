@@ -54,12 +54,14 @@ OAI build directory started empty; only the exact-pinned third-party package
 checkouts and build caches were shared. `LEAN_PATH` resolved OAI imports to
 the isolated output directory, not the original OAI cache.
 
-The broader isolated build of the entire public entry point was stopped
-before completion after the all-fields core had compiled. The remaining
-modules concern other retained upstream bounds. The later canonical public
-build checks compatibility with those results, using its existing cache.
-**This record does not claim a fresh source rebuild of the entire public
-entry point, Lean, or all third-party dependencies.**
+At `9bd2a64`, the broader isolated build of the then-public entry point,
+upstream's `Main`, was stopped before completion after the all-fields core had
+compiled. The remaining modules concerned OpenAI's other upstream bounds,
+which that `Main` re-exported and which this repository has since removed. The
+canonical build at `704431e` checked compatibility with those results, using
+its existing cache. **The runs at `9bd2a64` and `704431e` do not include a fresh
+source rebuild of upstream's `Main`, Lean, or the third-party dependencies;**
+later fresh rebuilds are recorded at the end of this file.
 
 `leanchecker --fresh` imports the target environment and then replays every
 constant into a fresh environment using Lean's own kernel. It is additional
@@ -127,16 +129,18 @@ bash scripts/check-kernel.sh
 ```
 
 The final command repeats the proof checks before fresh kernel replay.
-Both scripts now check only the all-fields core: `AllFieldsAudit` imports
-`AllFields` rather than `Main`, and the kernel replay targets `AllFieldsAudit`.
-The runs recorded above predate that change.
+Since `7c4b124`, both scripts target `AllFieldsAudit`, which imports
+`AllFields` instead of upstream's `Main`, and the kernel replay targets
+`AllFieldsAudit`. The repository was then trimmed to the 126 modules that
+`AllFieldsAudit` imports, removing `Main` and OpenAI's other results. The runs
+recorded in this section and the next predate both changes.
 Scripts default to one worker because whole-Mathlib imports can exhaust
 memory when several compiler processes run together. The manifest contains
 ten exact dependency revisions, and the bootstrap script rejects pin drift.
 The fixed-point compatibility patch is the one preserved from upstream;
 its SHA-256 is `d70872e41e80b25191538d1659c4aa3a001349b5bd16f806c9e3833a502516e5`.
 
-After those Lean checks, short provenance/modification comments were added to the 41 modified pre-existing upstream Lean files. Removing only those exact comments restored every pre-insertion source byte, checked against a saved snapshot. No theorem, definition, import, or proof body changed. The unchanged specification files received no notices and remain byte-identical to baseline. The comment-only additions did not trigger another full Lean run. Documentation changes and shortened machine-specific paths in review reports likewise do not change the proof.
+After those Lean checks, short provenance/modification comments were added to the 41 modified pre-existing upstream Lean files (40 remain after the trim removed the modified copy of OpenAI's `Main.lean`; `Arithmetic/Growth.lean`, adapted from an omitted upstream file, received the notice later). Removing only those exact comments restored every pre-insertion source byte, checked against a saved snapshot. No theorem, definition, import, or proof body changed. The unchanged specification files received no notices and remain byte-identical to baseline. The comment-only additions did not trigger another full Lean run. Documentation changes and shortened machine-specific paths in review reports likewise do not change the proof.
 
 A compact transcript of the successful checks and intended guard failures is preserved in [mechanical-checks.txt](adversarial/mechanical-checks.txt).
 
@@ -175,9 +179,11 @@ The source commit and a clean working tree were confirmed before and after
 the run. Pinned third-party build caches were reused, and `bootstrap.sh` was
 not rerun.
 
-**Full public entry point.** A separate fresh clone was checked at the
-previous `main` commit, `2bb9a6f`. Its scripts still build `Main` together with
-OpenAI's other retained results. `check-proof.sh` completed (9437 jobs; 508
+**Earlier full build.** A separate fresh clone was checked at commit
+`2bb9a6f`, the `main` commit before `AllFields` was introduced. Its scripts
+built the then entry point `Main` together with OpenAI's other results (the
+dual-exponent, rectangular and conditional bounds and their certificates),
+which this repository has since removed. `check-proof.sh` completed (9437 jobs; 508
 OAI modules compiled from empty outputs, with no errors). That run was
 interrupted once and resumed from its own completed modules.
 `check-kernel.sh` then exited 0, including its fresh replay of
@@ -202,7 +208,7 @@ builds and confirmed the following.
   gives the stated values on `ZMod 2`, `ZMod 5` and ℚ. The descent,
   Fourier, interpolation, character and bridge lemmas depend only on
   `propext`, `Classical.choice` and `Quot.sound`.
-- **OpenAI's other exported statements.** Against the full build, the same
+- **OpenAI's other exported statements (at `2bb9a6f`; since removed).** Against that full build, the same
   dependency walk shows that OpenAI's α and rectangular statements also reach
   only Lean core, Mathlib and `Model.lean`, and that they depend only on the
   three standard axioms. The exact-rank statement additionally reaches only

@@ -11,7 +11,16 @@ The source baseline is preserved by tag `openai-baseline-adc7f12`, at
 commit `d2336fc`. It contains OpenAI's
 `adc7f1241b42e322a6451854ab7e4b4c146bf78a` MatrixMultiplication subtree.
 Review against that tag, even after development changes are merged into
-`main`, rather than against an unrelated current upstream revision.
+`main`, rather than against an unrelated current upstream revision. This
+extraction omits the upstream modules the all-fields theorem does not need, so
+exclude deletions:
+
+```sh
+git diff --diff-filter=AMR openai-baseline-adc7f12 -- lean/OAI/LinearAlgebra/MatrixMultiplication
+```
+
+Keep `R` in the filter: git shows `Arithmetic/Growth.lean` as a rename of
+upstream `ComplexArithmetic/Growth.lean`.
 
 ## Start with the specification
 
