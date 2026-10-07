@@ -54,8 +54,9 @@ the full upstream repository history or GitHub fork relationship.
   `AllFields` entry point, which replaces upstream's `Main`, and add
   specification, representative-field, and axiom audits.
 
-The original `Model.lean` and ten protected specification/builder files are
-unchanged. The README shows the small theorem-statement change; the
+The mathematical contents of the original `Model.lean` and ten protected
+specification/builder files are unchanged; the Palomar port below adds only
+module-system annotations to these files. The README shows the small theorem-statement change; the
 [reviewer guide](docs/field-port/REVIEW.md) traces the substantive proof changes.
 
 ## Attribution and verification

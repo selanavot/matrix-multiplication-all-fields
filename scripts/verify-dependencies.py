@@ -17,7 +17,6 @@ import sys
 
 PATCH_PATH = 'lean/patches/fixed-point-theorems-lean4341.patch'
 PATCH_SHA256 = 'd70872e41e80b25191538d1659c4aa3a001349b5bd16f806c9e3833a502516e5'
-FIXED_POINT = 'fixed-point-theorems'
 
 
 def git(path: Path, *args: str) -> bytes:
@@ -83,8 +82,7 @@ def main() -> int:
                               if entry and (entry[:1].islower() or entry[:1] == b'S')]
             if hidden_entries:
                 raise RuntimeError(f'{name}: assume-unchanged or skip-worktree index entries: {hidden_entries!r}')
-            # Reject staged changes, including an intentionally staged patch: the
-            # post-update hook applies its allowed patch only to the working tree.
+            # All Git dependencies must be clean; patched Brouwer sources are vendored.
             staged = git(path, 'diff', '--cached', '--name-only', '--no-ext-diff', '--no-textconv', '-z')
             if staged:
                 raise RuntimeError(f'{name}: unexpected staged changes: {staged!r}')

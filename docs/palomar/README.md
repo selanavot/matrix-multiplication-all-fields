@@ -79,7 +79,8 @@ Palomar workflow in `mode: full`, pinned to pipeline commit
 Palomar preflight. Inspect the uploaded mechanical report and require
 `status: pass` for the exact source SHA before requesting intake.
 
-Current status: preparation in progress; no successful full preflight yet.
+The PR checks and uploaded mechanical report are the authority for the current
+candidate: require `status: pass` bound to the exact submitted source SHA.
 Historical successful checks in `docs/field-port/VERIFICATION.md` apply only to
 the earlier pinned snapshots, not automatically to this compatibility port.
 

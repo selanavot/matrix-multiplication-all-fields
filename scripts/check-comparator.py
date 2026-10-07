@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Run pinned Comparator against a frozen model and the real all-fields proof.
 
-The explicit --trusted-local option disables the native Comparator sandbox. Use the complete Palomar workflow for Linux sandbox/provenance verification.
+The explicit --trusted-local option disables the native Comparator sandbox.
+Use the complete Palomar workflow for Linux sandbox/provenance verification.
 """
 
 import argparse
@@ -66,7 +67,7 @@ def verify_spec():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--trusted-local", action="store_true",
-                        help="Use upstream's unsandboxed development runner")
+                        help="Disable the native Comparator sandbox for trusted source")
     parser.add_argument("--negative-controls", action="store_true",
                         help="Also require rejection of changed cost and sorry proofs")
     args = parser.parse_args()

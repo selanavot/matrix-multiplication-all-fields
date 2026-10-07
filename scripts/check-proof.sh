@@ -9,8 +9,6 @@ cd -- "$project_root"
 
 # Keep the original specification and supporting arithmetic/tensor definitions.
 # Use an immutable commit rather than a movable tag for the trusted baseline.
-baseline=d2336fc571f1f8cdabf0c6d3a2d3ef1ec3327653
-spec_root=lean/OAI/LinearAlgebra/MatrixMultiplication
 python3 scripts/check-specification.py
 
 python3 scripts/verify-dependencies.py "$project_root"
