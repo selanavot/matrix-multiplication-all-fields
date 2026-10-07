@@ -1,0 +1,1670 @@
+{
+  "build_log_tail": "\u2714 [8724/8986] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensor (1.3s)\n\u2714 [8931/8988] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.Coordinates (1.2s)\n\u2714 [8932/8989] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexSeparation (1.2s)\n\u2714 [8933/8989] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexSeparationCounting (1.3s)\n\u2714 [8934/8989] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexDotPairing (1.2s)\n\u2714 [8935/8989] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.RationalSpan (1.4s)\n\u2714 [8936/8999] Built OAI.LinearAlgebra.MatrixMultiplication.ComplexArithmetic.Complexity (1.6s)\n\u2714 [8937/8999] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorBatching (1.5s)\n\u2714 [8938/8999] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.NormalizedStates (1.4s)\n\u2714 [8939/9006] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexGroupTensor (1.7s)\n\u2714 [8940/9006] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.RationalDenominators (1.9s)\n\u2714 [8941/9009] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.ConeSupport (2.1s)\n\u2714 [8942/9009] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorRestrictionComposition (2.1s)\n\u2714 [8943/9010] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.SpectralLimit (2.2s)\n\u2714 [8944/9016] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.Catalyst (2.3s)\n\u2714 [8945/9016] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.PolynomialOverhead (2.3s)\n\u2714 [8946/9016] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.PermutationProduct (950ms)\n\u2714 [8947/9016] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexModularSeparation (1.1s)\n\u2714 [8948/9030] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.ExponentComparison (2.1s)\n\u2714 [8949/9030] Built OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ComplexPolynomialApproximation (1.6s)\n\u2714 [8950/9030] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexMatrixTensor (1.8s)\n\u2714 [8951/9030] Built OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexFiniteEntropy (1.7s)\n\u2714 [8952/9030] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexTypeCounting (1.4s)\n\u2714 [8953/9031] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.RationalCone (2.2s)\n\u2714 [8954/9035] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.FiniteConeClosed (2.0s)\n\u2714 [8955/9035] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.MultiplicativePower (2.7s)\n\u2714 [8956/9035] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexFactorialLogBounds (1.9s)\n\u2714 [8957/9035] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexFiniteControl (1.9s)\n\u2714 [8958/9035] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexFiniteSeparation (2.0s)\n\u2714 [8959/9035] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.MatrixMultiplication (1.1s)\n\u2714 [8960/9036] Built OAI.LinearAlgebra.MatrixMultiplication.Model (3.8s)\n\u2714 [8961/9038] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorFlattening (1.4s)\n\u2714 [8962/9038] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Separation.NoWrap (907ms)\n\u2714 [8963/9040] Built FixedPointTheorems.convex_homeos (3.0s)\n\u2714 [8964/9040] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Kernel (3.1s)\n\u2714 [8965/9040] Built OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexSeparationAsymptotics (2.4s)\n\u2714 [8966/9044] Built OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexConditionalTypeCounting (1.5s)\n\u2714 [8967/9046] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexTensorSymmetrization (2.4s)\n\u2714 [8968/9046] Built OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexHierarchyEntropy (1.8s)\n\u2714 [8969/9046] Built OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexEntropyContinuity (1.7s)\n\u2714 [8970/9046] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Separation.Fourier (1.9s)\n\u2714 [8971/9046] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexLocalMaps (3.1s)\n\u2714 [8972/9048] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.Farkas (1.8s)\n\u2714 [8973/9048] Built FixedPointTheorems.cubical_sperner_prep (5.2s)\n\u2714 [8974/9048] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Basic (1.6s)\n\u2714 [8975/9048] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexRationalTypes (2.4s)\n\u2714 [8976/9048] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Separation.SquareWeights (1.9s)\n\u2714 [8977/9053] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexSeparatedTensorDecomposition (1.9s)\n\u2714 [8978/9053] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexPairingMatrixTensor (1.4s)\n\u2714 [8979/9053] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Basis (1.8s)\n\u2714 [8980/9053] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.RankExponent (2.2s)\n\u2714 [8981/9053] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Entropy.Optimization (1.3s)\n\u2714 [8982/9055] Built OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ComplexPolynomialDegenerationComposition (1.8s)\n\u2714 [8983/9055] Built OAI.LinearAlgebra.MatrixMultiplication.Tensor.ComplexSharedAuxiliaryBank (1.1s)\n\u2714 [8984/9056] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convolution.Basic (1.8s)\n\u2714 [8985/9056] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexHierarchyTypeCounting (1.5s)\n\u2714 [8986/9056] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Polynomial.Laws (1.4s)\n\u2714 [8987/9056] Built OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Complexity (2.0s)\n\u2714 [8988/9057] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Sector.Weights (2.7s)\n\u2714 [8990/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.ConcaveSlopes (1.8s)\n\u2714 [8991/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexAuxiliarySeparation (1.5s)\n\u2714 [8992/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Separation.FiniteProjection (2.0s)\n\u2714 [8993/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Polynomial.Interpolation (1.7s)\n\u2714 [8994/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Polynomial.ProductBounds (1.6s)\n\u2714 [8995/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.CharacterRounding (1.9s)\n\u2714 [8996/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Dot (1.0s)\n\u2714 [8997/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexTypeEntropy (2.4s)\n\u2714 [8998/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.Product (2.0s)\n\u2714 [8999/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.FieldDescent (1.7s)\n\u2714 [9000/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.CharacterBounds (2.8s)\n\u2714 [9001/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.StateObstruction (3.5s)\n\u2714 [9002/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Symmetrization (2.2s)\n\u2714 [9003/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.Floor (1.1s)\n\u2714 [9004/9062] Built FixedPointTheorems.cubical_sperner (3.7s)\n\u2714 [9005/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.DirectSum (8.0s)\n\u2714 [9006/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Bounds (1.9s)\n\u2714 [9007/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convolution.Rank (1.8s)\n\u2714 [9008/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.ProfileSlopes (2.2s)\n\u2714 [9009/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.Recurrence (2.1s)\n\u2714 [9010/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexLabelHierarchySeparation (2.6s)\n\u2714 [9011/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.FieldExtension (1.9s)\n\u2714 [9012/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Filtration (3.7s)\n\u2714 [9013/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Separation.Basic (2.6s)\n\u2714 [9014/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Sector.Degeneration (2.6s)\n\u2714 [9015/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.LowerBound (3.6s)\n\u2714 [9016/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Permutation (1.7s)\n\u2714 [9017/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.SupportExtension (1.8s)\n\u2714 [9018/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.SixfoldProductBounds (1.8s)\n\u2714 [9019/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Programs (3.7s)\n\u2714 [9020/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Degeneration (2.4s)\n\u2714 [9021/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.BinaryCharacter (1.6s)\n\u2714 [9022/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convolution.RankLowerBound (1.5s)\n\u2714 [9023/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.Profile (1.5s)\n\u2714 [9024/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.Semiring (2.0s)\n\u2714 [9025/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Entropy.ComplexHierarchySeparationRates (1.7s)\n\u2714 [9026/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Separation.BranchTagging (1.5s)\n\u2714 [9027/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Growth.NormalizedProfile (1.4s)\n\u2714 [9028/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.SharedPadding (1.9s)\n\u2714 [9029/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Sector.Branches (1.9s)\n\u2714 [9030/9062] Built FixedPointTheorems.apply_cubical_sperner (3.3s)\n\u2714 [9031/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.FiniteSeparation (1.6s)\n\u2714 [9032/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.DirectSumClass (1.2s)\n\u2714 [9033/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.Scalar (1.2s)\n\u2714 [9034/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Polynomial.ExpressionFamily (2.7s)\n\u2714 [9035/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convolution.Symmetry (1.4s)\n\u2714 [9036/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.ComplexStageHierarchyResources (1.6s)\n\u2714 [9037/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.ProgramComposition (2.9s)\n\u2714 [9038/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.Characters (1.5s)\n\u2714 [9039/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.Obstruction (1.8s)\n\u2714 [9040/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Separation.AuxiliarySeparation (1.4s)\n\u2714 [9041/9062] Built FixedPointTheorems.brouwer (2.8s)\n\u2714 [9042/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.NaiveAlgorithm (2.8s)\n\u2714 [9043/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Padding (2.8s)\n\u2714 [9044/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Entropy.ConditionalLabels (1.6s)\n\u2714 [9045/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.RecursiveBlockPrograms (3.5s)\n\u2714 [9046/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Entropy.ConditionalContinuity (1.3s)\n\u2714 [9047/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Convex.FixedPoint (3.2s)\n\u2714 [9048/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Exponent (2.7s)\n\u2714 [9049/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Entropy.Tag (1.7s)\n\u2714 [9050/9062] Built OAI.LinearAlgebra.MatrixMultiplication.Arithmetic.Growth (2.8s)\n\u2714 [9051/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Spectrum.MultiplicativeStates (2.7s)\n\u2714 [9052/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Tensor.TagInequality (1.8s)\n\u2714 [9053/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.Exponent (2.7s)\n\u2714 [9054/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Sector.Character (1.9s)\n\u2714 [9055/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Determinant.Character (2.3s)\n\u2714 [9056/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Character.Existence (2.9s)\n\u2714 [9057/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Polynomial.Inequalities (1.7s)\n\u2714 [9058/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Arithmetic.RankBound (2.7s)\n\u2714 [9059/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Main (2.5s)\n\u2714 [9060/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AllFields (2.5s)\n\u2139 [9061/9062] Built OAI.LinearAlgebra.MatrixMultiplication.AllFieldsAudit (2.6s)\ninfo: lean/OAI/LinearAlgebra/MatrixMultiplication/AllFieldsAudit.lean:76:0: omega_le_nine_quarters : \u2200 (F : Type u_1) [inst : Field F], Arithmetic.omega F \u2264 9 / 4\n\u2714 [9062/9062] Built ComparatorAudit.Solution (2.5s)\nBuild completed successfully (9062 jobs).",
+  "bwrap_source_tag": "v0.12.0",
+  "challenge": {
+    "bytes": 5546,
+    "canonical_olean_sha256": "6c569540d48e6c61f4b547718ffa184661cc33d86986defb80e563cc419f37c8",
+    "dependencies": [
+      {
+        "provenance": "allowlisted",
+        "repository": "leanprover-community/mathlib4"
+      }
+    ],
+    "direct_imports": [
+      "Mathlib"
+    ],
+    "lines": 171,
+    "module": "ComparatorAudit.Challenge",
+    "path": "lean/ComparatorAudit/Challenge.lean",
+    "sha256": "e742154eb81ced94a0f6d11409c947d35a3177c7ce7c85dc79badcd725112e6e",
+    "transitive_source_count": 2,
+    "trust_level": "high",
+    "untrusted_sources": []
+  },
+  "checked_at": "2026-10-07T14:57:35Z",
+  "classification": {
+    "arxiv": [
+      {
+        "code": "cs.CC",
+        "name": "Computational Complexity"
+      },
+      {
+        "code": "cs.DS",
+        "name": "Data Structures and Algorithms"
+      }
+    ],
+    "msc2020": [
+      {
+        "code": "68Q17",
+        "name": "Computational difficulty of problems (lower bounds, completeness, difficulty of approximation, etc.)"
+      },
+      {
+        "code": "68W30",
+        "name": "Symbolic computation and algebraic computation"
+      },
+      {
+        "code": "15A69",
+        "name": "Multilinear algebra, tensor calculus"
+      }
+    ]
+  },
+  "comparator": {
+    "challenge_module": "ComparatorAudit.Challenge",
+    "definition_names": [],
+    "path": "comparator.json",
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "sha256": "ed887c0bc6b777f7241ba4f2d4b7bda99ae04520780ad0b8ff5a1955217d4163",
+    "solution_module": "ComparatorAudit.Solution",
+    "theorem_names": [
+      "ComparatorChecks.omega_bound",
+      "ComparatorChecks.admissible_bddBelow",
+      "ComparatorChecks.admissible_nonempty",
+      "ComparatorChecks.omega_lower",
+      "ComparatorChecks.epsilon_cost",
+      "ComparatorChecks.exact_coefficients"
+    ]
+  },
+  "comparator_log_tail": "Running con-ron kernel on solution\ncon-ron: accepted 53448 declarations (--verified)\ncon-ron kernel accepts the solution\nRunning nanoda kernel on solution\nnanoda kernel accepts the solution\nRunning Lean default kernel on solution\nLean default kernel accepts the solution\nYour solution is okay!\n\ncon-ron: 1 inductive blocks modelled in-process: Lean.Syntax (30 generated records, checked by the fold as declarations and not counted as records of the file)",
+  "errors": [],
+  "existing_id": null,
+  "formalization": {
+    "automation_method_count": 1,
+    "path": "formalization.yaml",
+    "project_name": "Matrix multiplication exponent at most 9/4 over arbitrary fields",
+    "review_status": "agent-reviewed",
+    "sha256": "b43704c5f0715c4a9d7e89399ed005cf95f93919165589ae5b0bd85daded10e5",
+    "source_count": 2
+  },
+  "kernels": [
+    {
+      "argv": [
+        "/home/runner/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/nanoda_bin"
+      ],
+      "name": "nanoda"
+    },
+    {
+      "argv": [
+        "/home/runner/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/con-ron",
+        "--jobs=2"
+      ],
+      "name": "con-ron"
+    }
+  ],
+  "lake_manifest": {
+    "path": "lake-manifest.json",
+    "sha256": "f8dedc5d04a07a79c19038418725f6de90159080d1f99e481248d57370f95ae6"
+  },
+  "lakefile": {
+    "format": "lean",
+    "path": "lakefile.lean",
+    "sha256": "4f22280328d6f6e8b0bbab9928f05ccc8bbd6a46d916278d89ad96540756faad"
+  },
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "lean_toolchain_path": "lean-toolchain",
+  "license": {
+    "declared_identifier": "Apache-2.0",
+    "detected_identifier": "Apache-2.0",
+    "path": "LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "mathlib_cache": {
+    "available": true,
+    "required": true
+  },
+  "mathlib_toolchain": [
+    {
+      "revision": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+      "toolchain": "leanprover/lean4:v4.35.0-rc2"
+    }
+  ],
+  "orcid_validation": {
+    "checked_at": "2026-10-07T14:52:45Z",
+    "records": [],
+    "registry": "https://orcid.org",
+    "schema_version": 1
+  },
+  "phase": "verification",
+  "project_dependencies": [
+    {
+      "name": "mathlib",
+      "repository": "leanprover-community/mathlib4",
+      "revision": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+      "url": "https://github.com/leanprover-community/mathlib4.git"
+    },
+    {
+      "name": "plausible",
+      "repository": "leanprover-community/plausible",
+      "revision": "e50948299c4dc4a4c21b1c34b6a6a4fddc19f912",
+      "url": "https://github.com/leanprover-community/plausible"
+    },
+    {
+      "name": "LeanSearchClient",
+      "repository": "leanprover-community/LeanSearchClient",
+      "revision": "95e037bfdc31d3916ac615446847fb01960e2719",
+      "url": "https://github.com/leanprover-community/LeanSearchClient"
+    },
+    {
+      "name": "importGraph",
+      "repository": "leanprover-community/import-graph",
+      "revision": "10930f8138f0462dbd744a91fc03a16fae0e046f",
+      "url": "https://github.com/leanprover-community/import-graph"
+    },
+    {
+      "name": "proofwidgets",
+      "repository": "leanprover-community/ProofWidgets4",
+      "revision": "4c70ac059693669e5756e32a7a94b57ee1e99dc5",
+      "url": "https://github.com/leanprover-community/ProofWidgets4"
+    },
+    {
+      "name": "aesop",
+      "repository": "leanprover-community/aesop",
+      "revision": "75d936c7af167cc93fac0d31237682fc2204591d",
+      "url": "https://github.com/leanprover-community/aesop"
+    },
+    {
+      "name": "Qq",
+      "repository": "leanprover-community/quote4",
+      "revision": "786b7acdca7eb4e9c76c5d1d5bd810e7e5c56334",
+      "url": "https://github.com/leanprover-community/quote4"
+    },
+    {
+      "name": "batteries",
+      "repository": "leanprover-community/batteries",
+      "revision": "ed9b316aabe389fec1ef43c3326ab48c7e59be42",
+      "url": "https://github.com/leanprover-community/batteries"
+    },
+    {
+      "name": "Cli",
+      "repository": "leanprover/lean4-cli",
+      "revision": "2842b9871b04862f944c032e34052cb9448ccb71",
+      "url": "https://github.com/leanprover/lean4-cli"
+    }
+  ],
+  "protected_config": "{\n  \"challenge_module\": \"PalomarCanonicale29b8cc4954dc9bcb9130102.Challenge\",\n  \"definition_names\": [],\n  \"external_kernels\": {\n    \"con-ron\": [\n      \"/home/runner/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/con-ron\",\n      \"--jobs=2\"\n    ],\n    \"nanoda\": [\n      \"/home/runner/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/nanoda_bin\"\n    ]\n  },\n  \"permitted_axioms\": [\n    \"propext\",\n    \"Classical.choice\",\n    \"Quot.sound\"\n  ],\n  \"solution_module\": \"ComparatorAudit.Solution\",\n  \"theorem_names\": [\n    \"ComparatorChecks.omega_bound\",\n    \"ComparatorChecks.admissible_bddBelow\",\n    \"ComparatorChecks.admissible_nonempty\",\n    \"ComparatorChecks.omega_lower\",\n    \"ComparatorChecks.epsilon_cost\",\n    \"ComparatorChecks.exact_coefficients\"\n  ]\n}\n",
+  "protected_config_sha256": "2194ae934835ff7a6e30a6812f384270e886297e34c51b41022d4498d6b1abdf",
+  "provenance": {
+    "mathematical_sources": [
+      {
+        "authors": [
+          {
+            "name": "OpenAI"
+          }
+        ],
+        "identifier": "https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026",
+        "location": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex",
+        "note": "Supplies the original 9/4 construction, complex-field proof, and arithmetic specification. This project extends that proof to arbitrary fields. The collective attribution follows the upstream repository; no endorsement by upstream authors is claimed. Historical priority for field-independence arguments has not been established.",
+        "relationship": "adapts",
+        "title": "An Upper Bound of 9/4 for the Matrix Multiplication Exponent",
+        "type": "paper"
+      },
+      {
+        "authors": [
+          {
+            "name": "harfe"
+          }
+        ],
+        "identifier": "https://github.com/harfe/fixed-point-theorems-lean4/tree/770940ddf9878cf61952ed53d910b92bca841838",
+        "license": "MIT",
+        "note": "Five Brouwer proof modules are vendored with the compatibility patch inherited from OpenAI, the module-system port, and explicit proof arguments required by the new elaborator. The original MIT notice is preserved under lean/FixedPointTheorems/LICENSE.txt. See UPSTREAM.md.",
+        "relationship": "background",
+        "title": "Fixed-point theorems in Lean 4",
+        "type": "other"
+      }
+    ],
+    "related_formalizations": [
+      {
+        "identifier": "https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/LinearAlgebra/MatrixMultiplication",
+        "note": "The substantive proof development is in this submitted repository, rather than an external proof exposed by a thin wrapper. The preserved extracted baseline is d2336fc571f1f8cdabf0c6d3a2d3ef1ec3327653.",
+        "relationship": "builds-on"
+      }
+    ],
+    "repository_role": "substantive-development",
+    "responsible_maintainers": [
+      {
+        "name": "Sela Navot"
+      }
+    ],
+    "result_origin": "source-based"
+  },
+  "resource_usage": [
+    {
+      "elapsed_seconds": 0.012,
+      "max_rss_kib": 13476,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 0,
+      "system_cpu_seconds": 0.012,
+      "user_cpu_seconds": 0.028,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 45757000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 9629696,
+      "phase": "confinement-initial:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.02,
+      "max_rss_kib": 13384,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 0,
+      "system_cpu_seconds": 0.019,
+      "user_cpu_seconds": 0.027,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 53869000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 13438976,
+      "phase": "confinement-initial:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.009,
+      "max_rss_kib": 13400,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 1,
+      "system_cpu_seconds": 0.004,
+      "user_cpu_seconds": 0.022,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 30374000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 9555968,
+      "phase": "confinement-initial:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.028,
+      "max_rss_kib": 13448,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 0,
+      "system_cpu_seconds": 0.015,
+      "user_cpu_seconds": 0.031,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 51227000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 13660160,
+      "phase": "confinement-initial:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.025,
+      "max_rss_kib": 13384,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 1,
+      "system_cpu_seconds": 0.008,
+      "user_cpu_seconds": 0.041,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 54854000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 13955072,
+      "phase": "confinement-initial:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.022,
+      "max_rss_kib": 13464,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 1,
+      "system_cpu_seconds": 0.008,
+      "user_cpu_seconds": 0.033,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 45905000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 13959168,
+      "phase": "confinement-initial:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.018,
+      "max_rss_kib": 13452,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-initial",
+      "returncode": 1,
+      "system_cpu_seconds": 0.004,
+      "user_cpu_seconds": 0.045,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 55975000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 13164544,
+      "phase": "confinement-initial:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.044,
+      "max_rss_kib": 26396,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "source-requirements",
+      "returncode": 0,
+      "system_cpu_seconds": 0.024,
+      "user_cpu_seconds": 0.045,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 75901000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 27287552,
+      "phase": "source-requirements:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.046,
+      "max_rss_kib": 26364,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "source-requirements",
+      "returncode": 0,
+      "system_cpu_seconds": 0.013,
+      "user_cpu_seconds": 0.06,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 80451000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 27037696,
+      "phase": "source-requirements:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.036,
+      "max_rss_kib": 24104,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "source-requirements",
+      "returncode": 0,
+      "system_cpu_seconds": 0.019,
+      "user_cpu_seconds": 0.037,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 60408000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 24940544,
+      "phase": "source-requirements:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.149,
+      "max_rss_kib": 79268,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "comparator-preflight",
+      "returncode": 0,
+      "system_cpu_seconds": 0.048,
+      "user_cpu_seconds": 0.121,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 173994000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 81211392,
+      "phase": "comparator-preflight:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.434,
+      "max_rss_kib": 350884,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "comparator-preflight",
+      "returncode": 0,
+      "system_cpu_seconds": 0.235,
+      "user_cpu_seconds": 0.218,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 457522000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 359563264,
+      "phase": "comparator-preflight:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.142,
+      "max_rss_kib": 79784,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "comparator-preflight",
+      "returncode": 0,
+      "system_cpu_seconds": 0.041,
+      "user_cpu_seconds": 0.13,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 175739000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 81956864,
+      "phase": "comparator-preflight:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.359,
+      "max_rss_kib": 350884,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "comparator-preflight",
+      "returncode": 0,
+      "system_cpu_seconds": 0.169,
+      "user_cpu_seconds": 0.217,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 393692000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 359563264,
+      "phase": "comparator-preflight:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.146,
+      "max_rss_kib": 79312,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "comparator-preflight",
+      "returncode": 0,
+      "system_cpu_seconds": 0.035,
+      "user_cpu_seconds": 0.133,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 172902000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 81473536,
+      "phase": "comparator-preflight:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.349,
+      "max_rss_kib": 351156,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "comparator-preflight",
+      "returncode": 0,
+      "system_cpu_seconds": 0.185,
+      "user_cpu_seconds": 0.185,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 374629000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 359841792,
+      "phase": "comparator-preflight:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 5.841,
+      "max_rss_kib": 150072,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "comparator-preflight",
+      "returncode": 0,
+      "system_cpu_seconds": 0.096,
+      "user_cpu_seconds": 5.827,
+      "workspace_disk_peak_bytes": 4096
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 5930321000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 153931776,
+      "phase": "comparator-preflight:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.081,
+      "max_rss_kib": 33920,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "comparator-preflight",
+      "returncode": 1,
+      "system_cpu_seconds": 0.012,
+      "user_cpu_seconds": 0.095,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 114452000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 34992128,
+      "phase": "comparator-preflight:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 5.761,
+      "max_rss_kib": 147312,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "comparator-preflight",
+      "returncode": 1,
+      "system_cpu_seconds": 0.096,
+      "user_cpu_seconds": 5.704,
+      "workspace_disk_peak_bytes": 4096
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 5808746000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 151105536,
+      "phase": "comparator-preflight:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 1.487,
+      "max_rss_kib": 147568,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "module-resolution",
+      "returncode": 0,
+      "system_cpu_seconds": 0.358,
+      "user_cpu_seconds": 1.188,
+      "workspace_disk_peak_bytes": 905216
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 1551337000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 151367680,
+      "phase": "module-resolution:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.042,
+      "max_rss_kib": 24116,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "module-resolution",
+      "returncode": 0,
+      "system_cpu_seconds": 0.017,
+      "user_cpu_seconds": 0.047,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 70944000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 24952832,
+      "phase": "module-resolution:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 27.074,
+      "max_rss_kib": 8629312,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "trusted-cache",
+      "returncode": 0,
+      "system_cpu_seconds": 53.498,
+      "user_cpu_seconds": 53.212,
+      "workspace_disk_peak_bytes": 7896616960
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 106719040000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 8836673536,
+      "phase": "trusted-cache:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 3.425,
+      "max_rss_kib": 313208,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "trusted-cache",
+      "returncode": 0,
+      "system_cpu_seconds": 1.93,
+      "user_cpu_seconds": 4.306,
+      "workspace_disk_peak_bytes": 1507328
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 6244706000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 320983040,
+      "phase": "trusted-cache:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 1.939,
+      "max_rss_kib": 147920,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "trusted-cache",
+      "returncode": 0,
+      "system_cpu_seconds": 0.505,
+      "user_cpu_seconds": 1.4,
+      "workspace_disk_peak_bytes": 8192
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 1913097000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 151511040,
+      "phase": "trusted-cache:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 3.184,
+      "max_rss_kib": 622964,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "canonical-challenge",
+      "returncode": 0,
+      "system_cpu_seconds": 0.879,
+      "user_cpu_seconds": 2.584,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 3470251000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 637956096,
+      "phase": "canonical-challenge:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.044,
+      "max_rss_kib": 24112,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "canonical-challenge",
+      "returncode": 0,
+      "system_cpu_seconds": 0.028,
+      "user_cpu_seconds": 0.049,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 85253000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 24731648,
+      "phase": "canonical-challenge:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.037,
+      "max_rss_kib": 23856,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "canonical-challenge",
+      "returncode": 0,
+      "system_cpu_seconds": 0.02,
+      "user_cpu_seconds": 0.049,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 76565000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 24686592,
+      "phase": "canonical-challenge:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.01,
+      "max_rss_kib": 13400,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 0,
+      "system_cpu_seconds": 0.021,
+      "user_cpu_seconds": 0.017,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 43862000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 9031680,
+      "phase": "confinement-final:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.026,
+      "max_rss_kib": 13272,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 0,
+      "system_cpu_seconds": 0.004,
+      "user_cpu_seconds": 0.042,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 52497000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 13692928,
+      "phase": "confinement-final:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.01,
+      "max_rss_kib": 13464,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 1,
+      "system_cpu_seconds": 0.019,
+      "user_cpu_seconds": 0.019,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 45651000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 9302016,
+      "phase": "confinement-final:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.029,
+      "max_rss_kib": 13464,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 0,
+      "system_cpu_seconds": 0.02,
+      "user_cpu_seconds": 0.04,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 65394000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 13959168,
+      "phase": "confinement-final:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.024,
+      "max_rss_kib": 13388,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 0,
+      "system_cpu_seconds": 0.008,
+      "user_cpu_seconds": 0.036,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 50726000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 13967360,
+      "phase": "confinement-final:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.021,
+      "max_rss_kib": 13976,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 1,
+      "system_cpu_seconds": 0.019,
+      "user_cpu_seconds": 0.027,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 52473000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 14569472,
+      "phase": "confinement-final:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.028,
+      "max_rss_kib": 13400,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 1,
+      "system_cpu_seconds": 0.012,
+      "user_cpu_seconds": 0.036,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 53320000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 13979648,
+      "phase": "confinement-final:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 0.027,
+      "max_rss_kib": 13548,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "confinement-final",
+      "returncode": 1,
+      "system_cpu_seconds": 0.004,
+      "user_cpu_seconds": 0.051,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 60181000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "1",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 13180928,
+      "phase": "confinement-final:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "failed",
+      "systemd_result": "exit-code"
+    },
+    {
+      "elapsed_seconds": 1.025,
+      "max_rss_kib": 112168,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "candidate-configuration",
+      "returncode": 0,
+      "system_cpu_seconds": 0.514,
+      "user_cpu_seconds": 0.562,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 1081220000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 115118080,
+      "phase": "candidate-configuration:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 0.97,
+      "max_rss_kib": 111124,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 1,
+      "phase": "candidate-configuration",
+      "returncode": 0,
+      "system_cpu_seconds": 0.443,
+      "user_cpu_seconds": 0.569,
+      "workspace_disk_peak_bytes": 0
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 1019710000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 114049024,
+      "phase": "candidate-configuration:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 5.095,
+      "max_rss_kib": 825324,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "challenge-export",
+      "returncode": 0,
+      "system_cpu_seconds": 1.049,
+      "user_cpu_seconds": 4.067,
+      "workspace_disk_peak_bytes": 70447104
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 5124296000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 845389824,
+      "phase": "challenge-export:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 42.792,
+      "max_rss_kib": 5242952,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "solution-build",
+      "returncode": 0,
+      "system_cpu_seconds": 46.59,
+      "user_cpu_seconds": 256.31,
+      "workspace_disk_peak_bytes": 348811264
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 302912082000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 5369040896,
+      "phase": "solution-build:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 15.167,
+      "max_rss_kib": 1320032,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "solution-export",
+      "returncode": 0,
+      "system_cpu_seconds": 1.708,
+      "user_cpu_seconds": 13.479,
+      "workspace_disk_peak_bytes": 368017408
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 15192003000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 1351753728,
+      "phase": "solution-export:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    },
+    {
+      "elapsed_seconds": 102.992,
+      "max_rss_kib": 1707180,
+      "memory_source": "cgroup",
+      "peak_tasks_observed": 3,
+      "phase": "comparator",
+      "returncode": 0,
+      "system_cpu_seconds": 1.424,
+      "user_cpu_seconds": 145.058,
+      "workspace_disk_peak_bytes": 20480
+    },
+    {
+      "cpu_max_applied": false,
+      "cpu_usage_nanoseconds": 146492149000,
+      "deadline_fired": false,
+      "exec_main_code": "1",
+      "exec_main_status": "0",
+      "memory_events": {
+        "oom": 0,
+        "oom_kill": 0
+      },
+      "memory_peak_bytes": 1748410368,
+      "phase": "comparator:cgroup",
+      "pids_events_max": 0,
+      "rlimits_applied": {
+        "FSIZE": 1099511627776,
+        "NOFILE": 131072
+      },
+      "supervisor": "cgroup",
+      "supervisor_timeout": false,
+      "systemd_active_state": "inactive",
+      "systemd_result": "success"
+    }
+  ],
+  "schema_version": 2,
+  "solution": {
+    "module": "ComparatorAudit.Solution",
+    "path": "lean/ComparatorAudit/Solution.lean",
+    "sha256": "f3b031d5cbfee1ce4df900b3914613a052ae6412ea468c246b6cb6e79087f8b9"
+  },
+  "source": {
+    "bytes": 1190273,
+    "commit": "8375e73ed454e3128500d10d87480c5dd597ff03",
+    "repository": "selanavot/matrix-multiplication-all-fields",
+    "repository_url": "https://github.com/selanavot/matrix-multiplication-all-fields",
+    "tree_url": "https://github.com/selanavot/matrix-multiplication-all-fields/tree/8375e73ed454e3128500d10d87480c5dd597ff03"
+  },
+  "source_requirements": {
+    "files_checked": 135,
+    "header_parser": "lean --deps-json",
+    "maximum_lines": 10000,
+    "module_required": true,
+    "schema_version": 1
+  },
+  "stage": "complete",
+  "status": "pass",
+  "submission": {
+    "authorization": {
+      "relationship": "maintainer"
+    },
+    "requested_paths": {
+      "comparator_config_path": "comparator.json",
+      "formalization_metadata_path": "",
+      "project_path": ""
+    },
+    "submission_id": "w7d4p9guy1iw"
+  },
+  "tool_digests": {
+    "bwrap": "c9aaec8b3cac0fa83ac4a597bdc3a434935af18dac61859f5b1e846b3d08436d",
+    "con-ron": "4e5616d94374cae37324dad2594f6230c2bb2297240249fc78ff508f3bc5acef",
+    "lake": "8ba83c98f76562d03b8dbc33f1057151ba6cbb121679dde76b2260ccc90495e1",
+    "lean": "bf8d54e4714cc4b03d3f6bb34c83b7202b87e49c8bfcbff6895c085bb90ceb38",
+    "leanchecker": "9e36e955a251b1313c8eb5b7fa101282d51df109d34d8bb7c1cfdf51985aba29",
+    "leanexport": "c5bc1a10a21e22cbb3671d65987cdef2076833b14182d823ccb2153adf2fa954",
+    "nanoda_bin": "8241c5e6baa29490aa118d382f97961b208ae730fdb96545c2abed74c9ece5a8"
+  },
+  "toolchain_commit": "11acb17ec6b07a8f9e9173e6845197929540936b",
+  "verification_profile": {
+    "id": "palomar-namespace-16x32-v1",
+    "limits": {
+      "execution_budget_seconds": 19800,
+      "file_size_max_bytes": 1099511627776,
+      "job_timeout_minutes": 350,
+      "memory_high_percent": 95,
+      "memory_max_percent": 98,
+      "minimum_host_memory_bytes": 30064771072,
+      "minimum_workspace_free_bytes": 21474836480,
+      "open_files_max": 1048576,
+      "tasks_max": 32768
+    },
+    "observed_host": {
+      "architecture": "x86_64",
+      "effective_cpus": 16.0,
+      "memory_bytes": 33716862976,
+      "memory_high_bytes": 32031019827,
+      "memory_max_bytes": 33042525716,
+      "workspace_free_bytes": 167649550336
+    },
+    "runner": {
+      "architecture": "x86_64",
+      "label": "nscloud-ubuntu-24.04-amd64-16x32-with-features",
+      "labels": [
+        "nscloud-ubuntu-24.04-amd64-16x32-with-features",
+        "namespace-features:container.privileged=true"
+      ],
+      "provider": "namespace"
+    },
+    "sha256": "8a124c2d0f369a019e8cb807854b47a9c711f0592ed3bfcda49718dfb457fad0",
+    "trusted_tools": {
+      "bwrap_source_tag": "v0.12.0",
+      "toolchain_floor": "v4.35.0-rc2"
+    }
+  },
+  "warnings": [],
+  "workflow_url": "https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/37640339487",
+  "execution_profile": "palomar-namespace-16x32-v1"
+}

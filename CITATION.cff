@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: >-
+  Please cite this version of the formalization when using its arbitrary-field
+  extension or Lean proof. Cite the original OpenAI construction separately.
+type: software
+title: 'Matrix multiplication exponent at most 9/4 over arbitrary fields: a Lean formalization'
+version: 1.0.0
+date-released: '2026-10-07'
+authors:
+  - family-names: Navot
+    given-names: Sela
+repository-code: 'https://github.com/selanavot/matrix-multiplication-all-fields'
+license: Apache-2.0
+abstract: >-
+  A Lean formalization extending OpenAI's matrix multiplication exponent bound
+  of 9/4 from the complex numbers to every field, including finite fields and
+  fields of positive characteristic. OpenAI supplied the original numerical
+  bound, complex-field construction, and arithmetic-program specification.
+  Sela Navot directed GPT-6 Astra and GPT-6.1 Sol agents in developing and
+  formalizing the arbitrary-field extension. This release records exact
+  coefficient-rank identities and division-free arithmetic-operation bounds
+  with every positive exponent slack. The proof passed Palomar's mechanical
+  verification using Lean and the independent kernels recorded in the archived
+  report. Palomar's automated review is pending as of 2026-10-07; no human peer
+  review or historical-priority claim is made. This is an asymptotic arithmetic
+  bound, not a practical implementation or a bit-complexity result. Five
+  vendored fixed-point proof modules retain their separate MIT license.
+keywords:
+  - matrix multiplication
+  - arithmetic complexity
+  - finite fields
+  - tensor rank
+  - Lean
+  - formal verification
+references:
+  - type: software
+    title: 'An Upper Bound of 9/4 for the Matrix Multiplication Exponent'
+    authors:
+      - name: OpenAI
+    repository-code: 'https://github.com/openai/math'
+    commit: adc7f1241b42e322a6451854ab7e4b4c146bf78a
+    url: 'https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026'

@@ -134,6 +134,15 @@ git diff --diff-filter=AMR openai-baseline-adc7f12 -- lean/OAI/LinearAlgebra/Mat
 
 Git shows `Arithmetic/Growth.lean` as a rename of upstream's `ComplexArithmetic/Growth.lean`, which it generalizes to arbitrary fields. Without the filter, the omitted upstream modules also appear as deletions.
 
+## Citation and archival release
+
+[`CITATION.cff`](CITATION.cff) records the citation for version 1.0.0 of the
+formalization. The [release record](docs/releases/v1.0.0.md) identifies the
+verified proof snapshot and its archived mechanical report. Zenodo metadata
+is in [`.zenodo.json`](.zenodo.json); a DOI should be cited only after Zenodo
+has actually issued it. Cite OpenAI's original construction separately when
+discussing the numerical bound or the complex-field proof.
+
 ## Reservoir discovery
 
 The root Lake configuration and manifest make this repository discoverable as
@@ -155,5 +164,8 @@ The upstream [Apache License 2.0](LICENSE) is retained. See [UPSTREAM.md](UPSTRE
 The [submission guide](docs/palomar/README.md) records the exact claims, metadata,
 paths and full mechanical preflight. The compatibility port uses Lean
 4.35.0-rc2, matching Mathlib, and Lean modules throughout. The earlier verification
-records below describe their named historical commits; the new snapshot requires
-its own passing Palomar report. Registration has not been requested.
+records above describe their named historical commits. The new snapshot passed
+[Palomar's official mechanical verification](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/37640339487)
+on 2026-10-07; the [release record](docs/releases/v1.0.0.md) binds that evidence
+to the exact source snapshot. Palomar's automated review is pending as of that
+date. Permanent registration has not been requested.
