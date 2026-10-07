@@ -126,6 +126,8 @@ end OAI
 
 namespace ComparatorChecks
 
+open scoped BigOperators
+
 universe u
 open OAI.MatrixMultiplication
 

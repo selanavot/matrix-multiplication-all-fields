@@ -40,6 +40,8 @@ def verify_spec():
     if challenge.split(MARKER)[0] != module_port(original) or current != module_port(original):
         raise RuntimeError("Challenge/current model differs from immutable baseline")
     config = json.loads((SPEC / "config.json").read_text())
+    if json.loads((ROOT / "comparator.json").read_text()) != config:
+        raise RuntimeError("Root Palomar config differs from local Comparator config")
     if config.get("definition_names"):
         raise RuntimeError("Definition holes would weaken the frozen specification")
     if config["permitted_axioms"] != ["propext", "Classical.choice", "Quot.sound"]:

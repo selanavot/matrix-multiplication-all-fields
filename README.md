@@ -21,7 +21,7 @@ In namespace `OAI.MatrixMultiplication.AuxiliarySeparation`, the statement chang
 
 The entry point [`AllFields.lean`](lean/OAI/LinearAlgebra/MatrixMultiplication/AllFields.lean) exports the new `OAI.MatrixMultiplication.omega_le_nine_quarters` theorem. OpenAI's original `complex_omega_le_nine_quarters` statement is kept there as a specialization. The field may be finite or infinite, of any characteristic, and in any universe; no algebraic-closedness, perfectness, or separability assumption is imposed on it.
 
-[`Model.lean`](lean/OAI/LinearAlgebra/MatrixMultiplication/Model.lean) is unchanged from the OpenAI baseline. Its `Arithmetic.omega` is the infimum of admissible exponents for division-free arithmetic programs: scalar addition, subtraction, and multiplication each cost one; input and constant loads are free. Correctness requires the program to multiply every pair of input matrices over the chosen field.
+[`Model.lean`](lean/OAI/LinearAlgebra/MatrixMultiplication/Model.lean) retains the OpenAI baseline definitions, with only the deterministic module-system port required by Palomar. Its `Arithmetic.omega` is the infimum of admissible exponents for division-free arithmetic programs: scalar addition, subtraction, and multiplication each cost one; input and constant loads are free. Correctness requires the program to multiply every pair of input matrices over the chosen field.
 
 ## Proof of the field extension
 

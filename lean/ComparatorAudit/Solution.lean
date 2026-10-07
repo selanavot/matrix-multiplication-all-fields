@@ -1,6 +1,6 @@
 module
 
-public import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Main
+public import OAI.LinearAlgebra.MatrixMultiplication.AllFieldsAudit
 
 public section
 
@@ -10,6 +10,8 @@ public section
 This file must not import `ComparatorAudit.Challenge`. -/
 
 namespace ComparatorChecks
+
+open scoped BigOperators
 
 universe u
 open OAI.MatrixMultiplication
