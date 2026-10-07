@@ -84,7 +84,9 @@ the earlier pins above describe the extraction and historical checks.
 
 Five required Brouwer proof modules are vendored from harfe's
 `fixed-point-theorems-lean4` commit `770940ddf9878cf61952ed53d910b92bca841838`, with
-the preserved OpenAI compatibility patch and the same module-only port. The
+the preserved OpenAI compatibility patch and the module-system port. The
+`child_map_inj` proof additionally supplies its equality argument explicitly
+to each rewrite for the new elaborator; its statement is unchanged. The
 upstream MIT licence is retained in `lean/FixedPointTheorems/LICENSE.txt`. Only
 these modules are copied: `brouwer`, `apply_cubical_sperner`, `convex_homeos`,
 `cubical_sperner`, and `cubical_sperner_prep`. The old patch is retained as a

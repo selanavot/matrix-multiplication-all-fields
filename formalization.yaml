@@ -41,7 +41,8 @@ sources:
     license: MIT
     note: >-
       Five Brouwer proof modules are vendored with the compatibility patch
-      inherited from OpenAI and the module-system port. The original MIT notice
+      inherited from OpenAI, the module-system port, and explicit proof arguments
+      required by the new elaborator. The original MIT notice
       is preserved under lean/FixedPointTheorems/LICENSE.txt. See UPSTREAM.md.
 related_formalizations:
   - id: https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/LinearAlgebra/MatrixMultiplication

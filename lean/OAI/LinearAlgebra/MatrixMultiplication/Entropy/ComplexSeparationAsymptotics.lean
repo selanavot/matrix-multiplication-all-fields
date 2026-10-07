@@ -26,7 +26,7 @@ namespace MatrixMultiplication.Foundation.Separation
 
 open Filter
 
-private theorem scale_exists (K : ℕ) : ∃ n : ℕ, K ≤ 2 ^ (n ^ 2) := by
+theorem scale_exists (K : ℕ) : ∃ n : ℕ, K ≤ 2 ^ (n ^ 2) := by
   refine ⟨K + 1, ?_⟩
   have hK : K < 2 ^ K := Nat.lt_pow_self (by decide : 1 < 2)
   exact hK.le.trans (Nat.pow_le_pow_right (by decide) (by nlinarith))

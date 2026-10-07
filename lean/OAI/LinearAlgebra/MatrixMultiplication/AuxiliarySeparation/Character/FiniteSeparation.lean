@@ -39,7 +39,7 @@ variable {M : ℕ} {X Y Z : Type}
 variable [Fintype X] [Fintype Y] [Fintype Z]
 
 omit [Fintype Z] in
-private theorem polynomial_rank_bound
+theorem polynomial_rank_bound
     (P : Tensor (Polynomial K) X Y Z) :
     Tensor.RankAtMost P (Fintype.card (X × Y)) := by
   classical

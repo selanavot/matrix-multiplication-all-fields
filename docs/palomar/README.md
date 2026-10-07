@@ -58,6 +58,8 @@ exposed definitions public, supplies an ordered-sum import explicitly, and
 uses Mathlib's public entropy rewrite lemmas in place of unfolding hidden
 implementation bodies. These are compatibility changes to proofs and module
 interfaces, not changes to the six stated claims.
+The vendored Brouwer proof also passes an existing equality hypothesis explicitly
+to two rewrites, as recorded in `UPSTREAM.md`.
 
 The five MIT-licensed Brouwer modules previously supplied by a runtime-patched
 Git dependency are vendored in `lean/FixedPointTheorems`. This lets a clean,
