@@ -136,12 +136,16 @@ Git shows `Arithmetic/Growth.lean` as a rename of upstream's `ComplexArithmetic/
 
 ## Citation and archival release
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23219128.svg)](https://doi.org/10.5281/zenodo.23219128)
+
 [`CITATION.cff`](CITATION.cff) records the citation for version 1.0.0 of the
 formalization. The [release record](docs/releases/v1.0.0.md) identifies the
-verified proof snapshot and its archived mechanical report. Zenodo metadata
-is in [`.zenodo.json`](.zenodo.json); a DOI should be cited only after Zenodo
-has actually issued it. Cite OpenAI's original construction separately when
-discussing the numerical bound or the complex-field proof.
+verified proof snapshot and its archived mechanical report. Cite this exact
+version using [DOI 10.5281/zenodo.23219128](https://doi.org/10.5281/zenodo.23219128).
+The [concept DOI](https://doi.org/10.5281/zenodo.23219127) refers to the evolving
+project. Zenodo release metadata is in [`.zenodo.json`](.zenodo.json).
+Cite OpenAI's original construction separately when discussing the numerical
+bound or the complex-field proof.
 
 ## Reservoir discovery
 

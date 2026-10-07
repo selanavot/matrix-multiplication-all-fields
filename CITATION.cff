@@ -6,9 +6,12 @@ type: software
 title: 'Matrix multiplication exponent at most 9/4 over arbitrary fields: a Lean formalization'
 version: 1.0.0
 date-released: '2026-10-07'
+doi: '10.5281/zenodo.23219128'
+url: 'https://zenodo.org/records/23219128'
 authors:
   - family-names: Navot
     given-names: Sela
+    orcid: 'https://orcid.org/0009-0001-8002-5835'
 repository-code: 'https://github.com/selanavot/matrix-multiplication-all-fields'
 license: Apache-2.0
 abstract: >-

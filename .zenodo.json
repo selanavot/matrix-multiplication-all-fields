@@ -4,7 +4,7 @@
   "upload_type": "software",
   "publication_date": "2026-10-07",
   "creators": [
-    {"name": "Navot, Sela"}
+    {"name": "Navot, Sela", "orcid": "0009-0001-8002-5835"}
   ],
   "description": "<p>A Lean formalization extending OpenAI's matrix multiplication exponent bound of 9/4 from the complex numbers to every field, including finite fields and fields of positive characteristic.</p><p>OpenAI supplied the original numerical bound, complex-field construction, and arithmetic-program specification. Sela Navot directed GPT-6 Astra and GPT-6.1 Sol agents in developing and formalizing the arbitrary-field extension. The contribution includes field-independent Fourier separation and interpolation, descent through a fixed finite coefficient algebra, exact coefficient-rank identities, and division-free arithmetic-operation bounds with every positive exponent slack.</p><p>The proof snapshot passed Palomar's mechanical verification using Lean and the independent kernels named in the archived report. The archive includes that report, exact dependency pins, reproduction instructions, and source provenance. Palomar's automated review is pending as of 2026-10-07. No human peer review, endorsement, or historical-priority claim is made. The result is an asymptotic arithmetic bound; it supplies neither practical constants nor a bit-complexity bound or effective uniform program generator.</p><p>The project uses Apache-2.0; five vendored fixed-point proof modules retain their MIT license. See UPSTREAM.md and formalization.yaml for attribution and scope.</p>",
   "access_right": "open",
