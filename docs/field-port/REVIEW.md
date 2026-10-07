@@ -46,7 +46,7 @@ The primary arithmetic files `Complexity`, `Programs`, `RecursiveBlockPrograms`,
 | Obtain the closed-field rank bound | [RankBound](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation/Arithmetic/RankBound.lean) | Generic characters, determinant/sector constructions, real growth inequalities, and detecting characters give `ν(K) ≤ 9/4` when `K` is algebraically closed. |
 | Descend without changing the exponent | [FieldDescent](../../lean/OAI/LinearAlgebra/MatrixMultiplication/Arithmetic/FieldDescent.lean), [FieldExtension](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation/Arithmetic/FieldExtension.lean) | One finite coefficient algebra is fixed before tensor powers vary. Its dimension-squared cost is a single fixed factor, giving `ν(F) ≤ ν(AlgebraicClosure F)`. No separability premise is needed. |
 | Convert rank to the existing arithmetic exponent | [Growth](../../lean/OAI/LinearAlgebra/MatrixMultiplication/Arithmetic/Growth.lean), [Arithmetic.Exponent](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation/Arithmetic/Exponent.lean) | The unchanged generic block builder supplies the actual correct programs and pays their linear-combination cost. Padding and positive exponent slack prove `omega F ≤ ν(F)`. |
-| Assemble the conclusion | [AuxiliarySeparation.Main](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation/Main.lean), [AllFields](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AllFields.lean), [Main](../../lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean) | The final field parameter has only `[Field F]`; the complex theorem remains a specialization. |
+| Assemble the conclusion | [AuxiliarySeparation.Main](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation/Main.lean), [AllFields](../../lean/OAI/LinearAlgebra/MatrixMultiplication/AllFields.lean) | The final field parameter has only `[Field F]`; the complex theorem remains a specialization. |
 
 ## Arithmetic fidelity review
 
@@ -70,7 +70,7 @@ Run `bash scripts/check-proof.sh` from the repository root after bootstrapping
 dependencies. It verifies eleven original files against an immutable baseline,
 checks all ten dependency revisions and the exact compatibility patch, and builds
 `AllFieldsAudit.lean`, which imports the exported all-fields theorems in
-`AllFields.lean` (not the other upstream results re-exported by `Main`), checks an arbitrary
+`AllFields.lean`, checks an arbitrary
 universe and characteristic-2/3/5 examples, an infinite characteristic-two
 rational-function field, the original correctness/cost statement, and an
 expanded exact coefficient-rank witness. Ten guarded axiom checks

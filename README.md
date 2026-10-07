@@ -4,7 +4,7 @@ This is a focused source fork of [OpenAI's mathematics repository](https://githu
 
 The extension of OpenAI's proof to arbitrary fields was found and formalized by **consumer-grade GPT-6 Astra and GPT-6.1 Sol**, working under Sela Navot's direction. Lean checked the resulting formal proof; the verification scope is documented below.
 
-The sources are extracted from the `MatrixMultiplication` subtree at OpenAI commit [`adc7f1241b42e322a6451854ab7e4b4c146bf78a`](https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/LinearAlgebra/MatrixMultiplication), packaged as a standalone Lake project. The preserved tag `openai-baseline-adc7f12` records that subtree before the extension. The accompanying OpenAI preprint is [*An Upper Bound of 9/4 for the Matrix Multiplication Exponent*](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex). See [UPSTREAM.md](UPSTREAM.md) for provenance.
+The sources are extracted from the `MatrixMultiplication` subtree at OpenAI commit [`adc7f1241b42e322a6451854ab7e4b4c146bf78a`](https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/LinearAlgebra/MatrixMultiplication), packaged as a standalone Lake project. Only the 126 modules that the all-fields theorem needs are kept; OpenAI's other matrix-multiplication results in that subtree (the dual exponent, rectangular and conditional bounds, and their numerical certificates) are omitted. The preserved tag `openai-baseline-adc7f12` records that subtree before the extension. The accompanying OpenAI preprint is [*An Upper Bound of 9/4 for the Matrix Multiplication Exponent*](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex). See [UPSTREAM.md](UPSTREAM.md) for provenance.
 
 ## Premise and theorem-statement diff
 
@@ -19,7 +19,7 @@ In namespace `OAI.MatrixMultiplication.AuxiliarySeparation`, the statement chang
 +     Arithmetic.omega F ≤ (9 : ℝ) / 4
 ```
 
-The public entry point exports the new `OAI.MatrixMultiplication.omega_le_nine_quarters` theorem. Its original `complex_omega_le_nine_quarters` declaration is retained as a specialization. The field may be finite or infinite, of any characteristic, and in any universe; no algebraic-closedness, perfectness, or separability assumption is imposed on it.
+The entry point [`AllFields.lean`](lean/OAI/LinearAlgebra/MatrixMultiplication/AllFields.lean) exports the new `OAI.MatrixMultiplication.omega_le_nine_quarters` theorem. OpenAI's original `complex_omega_le_nine_quarters` statement is kept there as a specialization. The field may be finite or infinite, of any characteristic, and in any universe; no algebraic-closedness, perfectness, or separability assumption is imposed on it.
 
 [`Model.lean`](lean/OAI/LinearAlgebra/MatrixMultiplication/Model.lean) is unchanged from the OpenAI baseline. Its `Arithmetic.omega` is the infimum of admissible exponents for division-free arithmetic programs: scalar addition, subtraction, and multiplication each cost one; input and constant loads are free. Correctness requires the program to multiply every pair of input matrices over the chosen field.
 
@@ -41,7 +41,7 @@ The main sources are [Fourier separation](lean/OAI/LinearAlgebra/MatrixMultiplic
 
 ## Exact statements
 
-The all-fields theorems are exported from [`OAI.LinearAlgebra.MatrixMultiplication.AllFields`](lean/OAI/LinearAlgebra/MatrixMultiplication/AllFields.lean), which imports only the all-fields proof. The public entry point [`OAI.LinearAlgebra.MatrixMultiplication.Main`](lean/OAI/LinearAlgebra/MatrixMultiplication/Main.lean) re-exports them alongside OpenAI's other retained results. Two supporting conclusions in namespace `OAI.MatrixMultiplication.AuxiliarySeparation` make the scope explicit.
+The entry point is [`OAI.LinearAlgebra.MatrixMultiplication.AllFields`](lean/OAI/LinearAlgebra/MatrixMultiplication/AllFields.lean). Two supporting conclusions in namespace `OAI.MatrixMultiplication.AuxiliarySeparation` make the scope explicit.
 
 **Exact coefficient rank.** If `R_F(n)` is the exact rank of the square matrix multiplication coefficient tensor, `exactRankExponent F` is `inf_{n ≥ 2} log_n R_F(n)`. The proof establishes:
 
@@ -88,9 +88,9 @@ The toolchain and direct dependency pins are:
 
 All transitive revisions are recorded in [`lean/lake-manifest.json`](lean/lake-manifest.json). Bootstrap obtains the matching Mathlib cache and applies the included [upstream Lean 4.34.1 compatibility patch](lean/patches/fixed-point-theorems-lean4341.patch) to fixed-point-theorems. Dependency validation checks the pinned revisions and that exact patch.
 
-`check-proof.sh` compares eleven original specification and builder files with the immutable baseline, validates dependencies, and builds [`AllFields.lean`](lean/OAI/LinearAlgebra/MatrixMultiplication/AllFields.lean) and [`AllFieldsAudit.lean`](lean/OAI/LinearAlgebra/MatrixMultiplication/AllFieldsAudit.lean). The audit covers an arbitrary field universe, representative finite and infinite fields, the explicit cost statement, an exact coefficient-rank witness, and guarded axiom checks. Those guards require exactly `propext`, `Classical.choice`, and `Quot.sound` for the audited declarations; an additional axiom, including `sorryAx`, makes the check fail. The check does not compile the other OpenAI results that `Main` re-exports.
+`check-proof.sh` compares eleven original specification and builder files with the immutable baseline, validates dependencies, and builds [`AllFields.lean`](lean/OAI/LinearAlgebra/MatrixMultiplication/AllFields.lean) and [`AllFieldsAudit.lean`](lean/OAI/LinearAlgebra/MatrixMultiplication/AllFieldsAudit.lean). The audit covers an arbitrary field universe, representative finite and infinite fields, the explicit cost statement, an exact coefficient-rank witness, and guarded axiom checks. Those guards require exactly `propext`, `Classical.choice`, and `Quot.sound` for the audited declarations; an additional axiom, including `sorryAx`, makes the check fail.
 
-`check-kernel.sh` first runs the proof checks, then uses `leanchecker --fresh` to replay the audit target, including the exported all-fields theorems and all their imported declarations, in a fresh environment. This uses Lean's own kernel. It is not an independent kernel implementation or a rebuild of every dependency from source. The scripts default to one worker because the large imports require substantial memory. Run only one build or replay process at a time. To also compile the other OpenAI results that `Main` re-exports, which takes considerably longer, run `lake build OAI.LinearAlgebra.MatrixMultiplication.Main` from `lean/`.
+`check-kernel.sh` first runs the proof checks, then uses `leanchecker --fresh` to replay the audit target, including the exported all-fields theorems and all their imported declarations, in a fresh environment. This uses Lean's own kernel. It is not an independent kernel implementation or a rebuild of every dependency from source. The scripts default to one worker because the large imports require substantial memory. Run only one build or replay process at a time.
 
 > **Verified on 2026-10-06.** The isolated core source rebuild and fresh kernel replay passed at proof commit `9bd2a64`. The expanded public audit passed at `704431e`, including ten axiom guards; separate controls confirmed that added axioms and `sorry` are rejected. Three adversarial source reviews, each run by a fresh AI-agent session that did not write the proof, found no fatal defect; they are not human peer review. Pinned third-party caches were reused, and the broader isolated rebuild of unrelated public results was not completed. The verification record gives the exact scope and documents subsequent comment-only attribution changes.
 
@@ -107,11 +107,13 @@ All transitive revisions are recorded in [`lean/lake-manifest.json`](lean/lake-m
 
   Pinned third-party build caches were reused, and `bootstrap.sh` was not rerun.
 
-See the [verification record](docs/field-port/VERIFICATION.md) and [adversarial audit](docs/field-port/ADVERSARIAL.md) for evidence and review limits. For the source comparison against OpenAI's preserved subtree:
+See the [verification record](docs/field-port/VERIFICATION.md) and [adversarial audit](docs/field-port/ADVERSARIAL.md) for evidence and review limits. To compare the kept sources with OpenAI's preserved subtree, showing only the files this fork added or changed:
 
 ```sh
-git diff openai-baseline-adc7f12 -- lean/OAI/LinearAlgebra/MatrixMultiplication
+git diff --diff-filter=AM openai-baseline-adc7f12 -- lean/OAI/LinearAlgebra/MatrixMultiplication
 ```
+
+Without `--diff-filter=AM`, the omitted upstream modules also appear as deletions.
 
 ## Attribution and scope
 

@@ -3,9 +3,8 @@ import OAI.LinearAlgebra.MatrixMultiplication.AuxiliarySeparation.Main
 /-!
 # The all-fields matrix multiplication bound
 
-This module exports the all-fields theorem and its complex specialization
-without importing the other upstream results re-exported by `Main`, so the
-core result can be built and kernel-checked on its own.
+This is the repository's entry point. It exports the all-fields theorem and
+OpenAI's original complex statement, now derived as a specialization.
 -/
 
 namespace OAI

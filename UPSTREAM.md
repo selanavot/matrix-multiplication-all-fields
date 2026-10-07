@@ -20,12 +20,18 @@ preserves the upstream sources before our changes. Do not move the tag.
 Compare against that baseline after development PRs merge:
 
 ```sh
-git diff d2336fc571f1f8cdabf0c6d3a2d3ef1ec3327653 -- lean/OAI/LinearAlgebra/MatrixMultiplication
+git diff --diff-filter=AM d2336fc571f1f8cdabf0c6d3a2d3ef1ec3327653 -- lean/OAI/LinearAlgebra/MatrixMultiplication
 ```
+
+The filter hides the upstream modules omitted from this extraction (below).
 
 The extraction is packaged as a standalone Lake project, keeping upstream's
 Lean 4.34.1 toolchain, Mathlib commit, fixed-point dependency, and compatibility
-patch. Other mathematical projects and their dependencies are omitted. This
+patch. Other mathematical projects and their dependencies are omitted. Within
+the matrix-multiplication subtree, only the 126 modules that the all-fields
+theorem needs are kept. OpenAI's `Main`, its dual-exponent, rectangular and
+conditional results, and their numerical certificates are omitted; they remain
+available at the pinned upstream revision. This
 provenance describes the extracted source history; it does not claim to retain
 the full upstream repository history or GitHub fork relationship.
 
@@ -38,13 +44,12 @@ the full upstream repository history or GitHub fork relationship.
   overhead across all tensor powers.
 - Connect exact rank over arbitrary fields to the existing generic arithmetic
   program builder and original exponent definition.
-- Export an arbitrary-field theorem and the public complex specialization from
-  a new `AllFields` module, re-exported unchanged by `Main`, and add
+- Export an arbitrary-field theorem and the complex specialization from a new
+  `AllFields` entry point, which replaces upstream's `Main`, and add
   specification, representative-field, and axiom audits.
 
 The original `Model.lean` and ten protected specification/builder files are
-unchanged. Retained upstream rectangular and dual-exponent results keep their
-original scope. The README shows the small theorem-statement change; the
+unchanged. The README shows the small theorem-statement change; the
 [reviewer guide](docs/field-port/REVIEW.md) traces the substantive proof changes.
 
 ## Attribution and verification
