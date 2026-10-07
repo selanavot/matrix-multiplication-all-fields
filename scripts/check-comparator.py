@@ -92,8 +92,8 @@ def main():
         raise RuntimeError("Use the Palomar full preflight workflow for Linux sandbox verification")
     print("MODE: trusted local sources; native lake comparator with bundled independent kernels.", flush=True)
     run(["lake", "build", "ComparatorAudit.Challenge", "ComparatorAudit.Solution"], env=env)
-    command = ["lake", "comparator", "--unsafe"]
-    run(command + [SPEC / "config.json"], cwd=ROOT, env=env)
+    command = ["lake", "comparator", "--inadvisably-no-sandbox", "--paranoid"]
+    run(command + ["--config", SPEC / "config.json"], cwd=ROOT, env=env)
     if verify_spec() != before:
         raise RuntimeError("Frozen challenge changed during verification")
     print("PASS: six theorems, frozen definitions, standard axioms, Lean kernel replay.",
@@ -133,7 +133,7 @@ def negative_controls(command, env, trusted_local):
             cfg.write_text(json.dumps(altered, indent=2) + "\n")
             if trusted_local:
                 run(["lake", "build", module], cwd=ROOT, env=env)
-            result = subprocess.run(list(map(str, command + [cfg])), cwd=ROOT,
+            result = subprocess.run(list(map(str, command + ["--config", cfg])), cwd=ROOT,
                                     env=env, text=True, capture_output=True)
             output = result.stdout + result.stderr
             log = ROOT / ".lake" / f"comparator-{name}.log"

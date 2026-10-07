@@ -16,7 +16,7 @@ namespace MatrixMultiplication.AuxiliarySeparation
 open Set
 open scoped BigOperators
 
-private def weightSimplex (J : Type*) [Fintype J] : Set (J → ℝ) :=
+def weightSimplex (J : Type*) [Fintype J] : Set (J → ℝ) :=
   {w | (∀ j, 0 ≤ w j) ∧ ∑ j, w j = 1}
 
 private theorem weightSimplex_convex (J : Type*) [Fintype J] :
