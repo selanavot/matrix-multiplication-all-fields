@@ -2,7 +2,8 @@
 
 **The all-fields theorem and expanded audit passed.** The core proof was
 rebuilt from committed sources in isolation and replayed in a fresh Lean
-kernel environment. The canonical public build, ten axiom guards, and
+kernel environment, first at proof commit `9bd2a64` and most recently from a
+fresh clone of the trimmed repository at `620b5ed`. Ten axiom guards and
 intentional axiom/sorry rejection controls also passed. See
 [ADVERSARIAL.md](ADVERSARIAL.md) and [VERIFICATION.md](VERIFICATION.md) for
 scope, evidence, and the use of pinned third-party caches.

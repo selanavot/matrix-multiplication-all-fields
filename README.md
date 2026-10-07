@@ -100,8 +100,8 @@ All transitive revisions are recorded in [`lean/lake-manifest.json`](lean/lake-m
   - `Model.lean` is byte-identical to OpenAI's upstream file, and the exported theorems depend only on Lean core, Mathlib and that file.
   - Its program model, correctness predicate and exponent match the textbook definition of ω exactly for infinite fields. For finite fields, the separate exact-rank theorem gives the textbook-strength statement.
   - The bound is not vacuous, since 2 ≤ ω(F) is proved.
-- **The Lean verification works end to end.** From a fresh clone at commit `7c4b124`, with no OAI build outputs, `bash scripts/check-kernel.sh` exited 0:
-  - all 126 OAI modules of the core compiled with no errors or `sorry`;
+- **The Lean verification works end to end.** From a fresh clone at commit `620b5ed`, the last commit to change Lean sources or scripts, with no OAI build outputs, `bash scripts/check-kernel.sh` exited 0:
+  - all 126 OAI modules compiled with no errors or `sorry`;
   - all ten axiom guards passed;
   - `leanchecker --fresh` replayed the audit target.
 

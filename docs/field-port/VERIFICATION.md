@@ -163,11 +163,17 @@ Date: 2026-10-06. Checker: Anthropic's Claude (Opus 5.5), which took no part
 in developing the proof. Toolchain: `leanprover/lean4:v4.34.1` on arm64 macOS,
 `LEAN_NUM_THREADS=1`.
 
-**Core proof, end to end.** A fresh clone from GitHub was checked at commit
-`7c4b124`, which moves the exported theorems into `AllFields.lean` without
-changing them. The clone started with an empty OAI build directory, and all
+**Core proof, end to end.** Fresh clones from GitHub were checked at three
+commits. Each run started from an empty OAI build directory, and in each all
 ten dependency checkouts passed `verify-dependencies.py`.
-`bash scripts/check-kernel.sh` exited 0 after 29 minutes:
+
+| Commit | Change | `check-kernel.sh` |
+| --- | --- | --- |
+| `7c4b124` | Exported theorems moved into `AllFields.lean`, unchanged; scripts target `AllFieldsAudit` | exit 0, 29 min |
+| `dc21b40` | Repository trimmed to the 126 modules `AllFieldsAudit` imports | exit 0, 31 min |
+| `620b5ed` | Modification notice added to `Arithmetic/Growth.lean`; last commit to change Lean sources or scripts | exit 0, 34 min |
+
+In each run:
 
 - the eleven protected files matched the baseline;
 - 126 OAI modules compiled with no errors or `sorry` warnings;
@@ -176,7 +182,7 @@ ten dependency checkouts passed `verify-dependencies.py`.
   declarations.
 
 The source commit and a clean working tree were confirmed before and after
-the run. Pinned third-party build caches were reused, and `bootstrap.sh` was
+each run. Pinned third-party build caches were reused, and `bootstrap.sh` was
 not rerun.
 
 **Earlier full build.** A separate fresh clone was checked at commit
