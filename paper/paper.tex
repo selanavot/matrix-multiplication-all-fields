@@ -1,0 +1,415 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdftitle={The Matrix Multiplication Bound ω ≤ 9/4 over Arbitrary Fields},pdfauthor={}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\rank}{R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\degen}{\mathrel{\rightsquigarrow}}
+\numberwithin{equation}{section}
+\title{The Matrix Multiplication Bound\\$\omega\leq9/4$ over Arbitrary Fields}
+\author{}
+\date{October 8, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+OpenAI proved that the matrix multiplication exponent over the complex
+numbers is at most $9/4$. We extend that argument to every field. The
+extension replaces a Fourier period that can vanish in positive
+characteristic, removes an integer-node choice from the Lean interpolation
+proof, and descends exact tensor decompositions from an algebraic closure
+with a fixed overhead. We describe these changes and their formalization,
+taking the underlying $9/4$ construction from OpenAI's proof.
+\end{abstract}
+
+\section{Statement and relation to the original result}
+
+For a field $F$, write $\omega(F)$ for the infimum of the real numbers
+$\tau$ such that, for every $\eps>0$, square matrices of size $n$ over $F$
+can be multiplied by division-free arithmetic circuits of cost
+$O_{F,\eps}(n^{\tau+\eps})$. Scalar additions, subtractions, and
+multiplications each cost one; inputs and constant loads are free.
+Circuits and their constants may depend on the size, and the constant
+implicit in the bound may depend on $F$ and $\eps$.
+
+\begin{theorem}\label{thm:main}
+For every field $F$ and every $\eps>0$, there is a constant $C>0$ such
+that, for every integer $n\geq1$, there is a division-free arithmetic
+circuit over $F$ computing $n\times n$ matrix multiplication with at
+most $Cn^{9/4+\eps}$ operations. In particular,
+\[
+\omega(F)\leq\frac94.
+\]
+The bound is obtained from exact identities of tensor coefficients.
+\end{theorem}
+
+The original bound over $\C$, its auxiliary-separation construction, and
+its spectral and polynomial-growth argument are due to OpenAI
+\cite{OAI}. This note concerns the additional field scope. We use the
+manuscript and Lean sources at the pinned revision in \cite{OAI,OAILean};
+the formal extension is archived in \cite{Formalization}.
+
+The characteristic-zero consequence is already implicit in
+\cite[Remark~5.2]{OAI}. For a fixed finite rank decomposition, its
+coefficient equations have rational coefficients. A complex solution
+therefore gives a solution over $\overline{\Q}$, and the finitely many
+coefficients lie in a number field. Coordinate simulation over $\Q$
+has constant overhead once the decomposition is fixed. The resulting
+rational coefficient identities extend to every characteristic-zero
+field. The extension degree may depend on $\eps$, which is permitted
+in the definition of the exponent.
+
+This reasoning does not by itself cover every positive characteristic:
+reducing a rational scheme modulo a prime can fail at its denominators,
+and the exceptional primes can depend on the scheme chosen for $\eps$.
+Instead, for each field $F$ we work directly over $K=\overline F$.
+Section~\ref{sec:closed} explains the modifications over $K$;
+Section~\ref{sec:descent} descends the result to $F$.
+
+We distinguish the circuit exponent from the exact coefficient-rank
+exponent. Let
+\[
+T_n=\sum_{i,j,k=1}^{n}x_{ij}y_{jk}z_{ki},\qquad
+\nu(F)=\inf_{n\geq2}\log_n\rank_F(T_n),
+\]
+where $\rank_F$ is tensor rank over $F$. The proof gives
+$\nu(F)\leq9/4$ and then $\omega(F)\leq\nu(F)$. For unrestricted
+arithmetic circuits over finite fields, functional correctness alone
+need not imply a formal polynomial identity; the tensor argument proves
+exact coefficient identities.
+
+\section{The construction in positive characteristic}\label{sec:closed}
+
+Fix an algebraically closed field $K$. Such a field is infinite,
+regardless of its characteristic. We retain the tensor restrictions,
+degenerations, and real-valued tensor characters of \cite{OAI}.
+
+\subsection{A nonvanishing Fourier period}
+
+The finite separation construction in \cite[Proposition~3.1]{OAI}
+uses a Fourier period $5M$ for $M\geq1$ blocks. Normalization divides
+by this period. In characteristic $p$ this is invalid when $p\mid5M$;
+in that case there is also no primitive $(5M)$-th root of unity.
+Replace the period by
+\begin{equation}\label{eq:period}
+L=L_K(M)=
+\begin{cases}
+5M,&(5M)1_K\ne0,\\
+5M+1,&(5M)1_K=0.
+\end{cases}
+\end{equation}
+Then $5M\leq L\leq6M$ and $L1_K\ne0$, since consecutive integers
+cannot both have zero image in a field. The polynomial $X^L-1$ splits
+with distinct roots in $K$. Its roots form a finite subgroup of
+$K^\times$, hence a cyclic group, so $K$ contains a primitive
+$L$-th root $\zeta$.
+
+\begin{lemma}\label{lem:fourier}
+For $e\in\mathbb Z$,
+\[
+\frac1L\sum_{r=0}^{L-1}\zeta^{re}
+=\begin{cases}1,&L\mid e,\\0,&L\nmid e.\end{cases}
+\]
+If $|e|<L$, the value is $1$ precisely when $e=0$.
+\end{lemma}
+\begin{proof}
+If $L\mid e$, all summands equal $1$. Otherwise $\zeta^e\ne1$,
+and the geometric-sum identity gives zero. Both divisions are valid:
+$L1_K$ and $\zeta^e-1$ are nonzero in their respective cases.
+The last statement is an assertion about divisibility of integers.
+\end{proof}
+
+In the substitutions of \cite[Proposition~3.1]{OAI}, the Fourier
+phase is $e=u-v+2(g-h)$, with all four labels in $\{1,\ldots,M\}$.
+It satisfies $|e|\leq3(M-1)<L$. Thus Lemma~\ref{lem:fourier}
+retains exactly the same terms as the original filter. The unchanged
+weight calculation assigns total weight $(g-h)^2$ to a surviving
+term; its zero-weight part forces $g=h$ and $u=v$. These weights are
+integer exponents of a formal parameter, so they are not reduced
+modulo the characteristic. In particular the argument also works
+in characteristic two.
+
+The resulting separation uses $L$ copies of the source tensor instead
+of $5M$ copies. This changes a bounded finite overhead, not the
+entropy inequality. Indeed, in the type-counting step of
+\cite[Corollary~3.2]{OAI}, let $M_N$ be the number of words of a
+fixed rational type $q$, where $N$ runs through multiples of a common
+denominator of $q$, and put
+$C_N=\prod_i\lambda(A_i)^{Nq_i}$. Here the $A_i$ are the sectors
+of $A$, $\lambda$ is a tensor character, and
+$\lambda(B_X(m))=m^{p_X}$ for the oriented dot-product tensor.
+Separation and degeneration monotonicity give
+\[
+6M_N\lambda(A)^N\ \geq\ L_K(M_N)\lambda(A)^N
+\ \geq\ M_N^{1+p_X}C_N.
+\]
+After canceling $M_N$ and taking $N$-th roots, the extra factor is
+$6^{1/N}\to1$. The same entropy limit and continuity argument
+therefore give the original inequality. All quantities in this
+limit are real numbers, not elements of $K$.
+
+\subsection{Interpolation over the algebraic closure}
+
+The manuscript's interpolation argument already allows arbitrary
+distinct nonzero nodes \cite[Lemma~2.3]{OAI}. The corresponding
+original Lean implementation chooses the images of
+$1,2,\ldots,D+1$ in $\C$. That implementation choice must be
+replaced in positive characteristic: integer images can coincide
+or vanish. An infinite field supplies any finite number of distinct
+nonzero nodes, with invertible pairwise differences.
+
+For clarity, the part of interpolation used here can be expressed
+without characteristic assumptions as follows. Suppose a polynomial
+tensor family $G(t)$ has degree at most $D$, has $G(0)=B$, and every
+$G(t)$ with $t\ne0$ is a restriction of $A$. For each $m\geq1$,
+the family $G(t)^{\otimes m}$ has degree at most $Dm$ and constant
+coefficient $B^{\otimes m}$. Interpolating at $Dm+1$ distinct nonzero
+nodes expresses that coefficient as a linear combination of the
+evaluations. Hence
+\[
+\lambda(B)^m\leq(Dm+1)\lambda(A)^m.
+\]
+Taking $m$-th roots proves $\lambda(B)\leq\lambda(A)$.
+If a degeneration initially has a nonzero leading degree, divide
+out that power of the parameter before applying this argument;
+the nonzero-node condition permits this normalization.
+The same choice of nodes gives the usual evaluation and interpolation
+bound for polynomial multiplication over $K$.
+
+\subsection{The retained 9/4 argument}
+
+With these two choices made, the remaining proof of \cite{OAI}
+applies over $K$. The determinant filtration uses polynomial-domain
+identities and bases with unit pivots; it does not require division
+by the characteristic or a semisimple splitting. The sector
+construction uses integer indices and weights. The real growth
+inequalities in \cite[Sections~4--5]{OAI} have no dependence on the
+characteristic of the coefficient field. Finally, the separation and
+fixed-point arguments in \cite[Appendix~A]{OAI} act on real-valued
+functions on the tensor semiring. They do not impose a topology on
+$K$. A natural number in that semiring counts direct summands and
+is not its image in $K$.
+
+Consequently the detecting-character argument, with the same
+polynomial-growth estimate, gives
+\begin{equation}\label{eq:closed}
+\nu(K)\leq\frac94\qquad(K\text{ algebraically closed}).
+\end{equation}
+This step uses the original proof rather than a new derivation of
+the numerical bound. In the formalization, its endpoint is
+\nolinkurl{AuxiliarySeparation.exactRankExponent_le_nine_quarters}.
+
+\section{Descent with a fixed coefficient algebra}\label{sec:descent}
+
+Field-extension invariance is classical; see Sch\"onhage's rank-descent
+argument and characteristic-invariance theorem
+\cite[Theorems~2.7--2.8]{Schonhage}. The descent principle below
+isolates the order of quantifiers used in our formalization. It uses
+finite-dimensional linear algebra and applies without a separability
+assumption.
+
+\begin{lemma}\label{lem:projection}
+Let $S$ be a nonzero commutative $F$-algebra of finite dimension $d$.
+If a finite coefficient tensor $T$ over $F$ has an $r$-term rank-one
+decomposition after scalar extension to $S$, then
+\[
+\rank_F(T)\leq d^2r.
+\]
+\end{lemma}
+\begin{proof}
+Choose an $F$-basis $e_1,\ldots,e_d$ of $S$ and an $F$-linear map
+$\pi:S\to F$ with $\pi(1)=1$. Such a map exists because $1\ne0$;
+extend $1$ to a basis and take its coordinate functional. Thus
+$\pi(c1_S)=c$ for $c\in F$.
+
+Write the decomposition as
+$T(x,y,z)1_S=\sum_{\ell=1}^r a_\ell(x)b_\ell(y)c_\ell(z)$.
+Expand the first two factors in the chosen basis:
+$a_\ell(x)=\sum_i a_{\ell i}(x)e_i$ and
+$b_\ell(y)=\sum_j b_{\ell j}(y)e_j$, with coefficients in $F$.
+Applying $\pi$ gives the coefficient identity
+\[
+T(x,y,z)=\sum_{\ell=1}^r\sum_{i,j=1}^d
+a_{\ell i}(x)b_{\ell j}(y)\,
+\pi\bigl(e_i e_j c_\ell(z)\bigr).
+\]
+Each summand separates the three coordinates and has coefficients
+in $F$. There are at most $rd^2$ summands. No multiplicativity of
+$\pi$ or field trace is used.
+\end{proof}
+
+\begin{proposition}\label{prop:powers}
+Let $E/F$ be an algebraic field extension, and let $T$ be a finite
+coefficient tensor over $F$. If $\rank_E(T_E)\leq r$, then there
+exists an integer $d\geq1$ such that, for every $m\geq1$,
+\begin{equation}\label{eq:descent}
+\rank_F(T^{\otimes m})\leq d^2r^m.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Fix one $r$-term decomposition over $E$. Its finitely many coefficients
+generate an $F$-subalgebra $S\subseteq E$ of finite dimension $d$,
+because each generator is algebraic over $F$. The chosen decomposition
+already exists over $S$, and taking its $m$-th tensor power uses only
+products of coefficients in the same algebra $S$. It therefore has
+at most $r^m$ terms over $S$. Apply Lemma~\ref{lem:projection} to
+this powered decomposition.
+\end{proof}
+
+The order is $\exists d\,\forall m$: the coefficient algebra is
+fixed before the tensor power varies. Descending one block first
+and then powering its descended decomposition would instead give
+the weaker bound $(d^2r)^m$. Equation~\eqref{eq:descent} avoids
+charging the extension cost at each recursive level. The proof
+works for inseparable extensions and for imperfect base fields.
+
+\begin{corollary}\label{cor:exponent}
+For every algebraic field extension $E/F$,
+$\nu(F)\leq\nu(E)$. In particular $\nu(F)\leq\nu(\overline F)$.
+\end{corollary}
+\begin{proof}
+Fix $u\geq2$ and a decomposition of $T_u$ over $E$ of length
+$r=\rank_E(T_u)$. Since $T_u^{\otimes m}$ is $T_{u^m}$ after
+reindexing, Proposition~\ref{prop:powers} yields, for every $m\geq1$,
+\[
+\nu(F)\leq\log_{u^m}\rank_F(T_{u^m})
+\leq\log_u r+\frac{2\log d}{m\log u}.
+\]
+Let $m\to\infty$, then take the infimum over $u\geq2$.
+This does not require the infimum defining $\nu(E)$ to be attained.
+\end{proof}
+
+\section{Arithmetic circuits and the formal statement}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Apply \eqref{eq:closed} to $K=\overline F$ and then
+Corollary~\ref{cor:exponent} to obtain $\nu(F)\leq9/4$.
+Fix $0<\delta<\eps$. The definition of the infimum supplies a
+block size $u\geq2$ and an exact rank decomposition over $F$ of
+length $r<u^{9/4+\delta}$.
+
+The generic block-program construction from the original Lean
+development \cite{OAILean} implements this bilinear formula
+recursively, including the scalar operations in its linear
+combinations. On powers of $u$, its cost satisfies
+\[
+S(uv)\leq rS(v)+6ru^2v^2,\qquad S(1)=1.
+\]
+The flattening bound gives $r\geq u^2$. Thus the cost is
+$O(N^{\log_u r})$ when $r>u^2$, and $O(N^2\log N)$ when $r=u^2$.
+Padding to a power of the fixed $u$ and using the positive exponent
+slack gives $O_{F,\eps}(n^{9/4+\eps})$ for every $n\geq1$.
+\end{proof}
+
+The archived formalization \cite{Formalization}, written in Lean~4
+\cite{Lean} using Mathlib \cite{Mathlib}, exports the theorem
+in namespace \texttt{OAI.MatrixMultiplication}. With the real type
+written as \texttt{Real}, its statement is
+\begin{verbatim}
+theorem omega_le_nine_quarters (F : Type*) [Field F] :
+    Arithmetic.omega F <= (9 : Real) / 4
+\end{verbatim}
+The original statement substitutes $\C$ for $F$. The definitions
+of the arithmetic model are preserved; the current source includes
+only a mechanical module-system port of the protected upstream
+specification. The original complex conclusion remains a specialization.
+
+Two supporting results make the scope explicit. The exact-rank theorem
+proves $\nu(F)\leq9/4$ using equality at every tensor coordinate.
+The arithmetic theorem has quantifiers
+\[
+\forall\eps>0\ \exists C>0\ \forall n\geq1\ \exists P:
+\quad P\text{ correctly multiplies over }F,\qquad
+\operatorname{cost}(P)\leq Cn^{9/4+\eps}.
+\]
+Here $P$ must work for every input pair of its size. Over finite
+fields, its correctness predicate is functional; the separate exact
+coefficient theorem supplies the stronger algebraic guarantee.
+The formal result is a family of arithmetic circuits. It does not
+assert an $O(n^{9/4})$ endpoint bound, effective uniform generation,
+or a bit-complexity bound.
+
+\begin{flushleft}
+\small
+The source correspondence is short. Within the matrix-multiplication
+subtree of \cite{Formalization}, the Fourier changes are in
+\nolinkurl{AuxiliarySeparation/Separation}; interpolation is in
+\nolinkurl{AuxiliarySeparation/Polynomial/Interpolation.lean}.
+The two descent results are implemented in
+\nolinkurl{Arithmetic/FieldDescent.lean}. The exponent comparison is in
+\nolinkurl{AuxiliarySeparation/Arithmetic/FieldExtension.lean}.
+The public entry point is \nolinkurl{AllFields.lean}.
+\end{flushleft}
+
+The versioned archive records the proof snapshot and its mechanical
+verification. Its six Comparator claims include the arithmetic bound,
+infimum side conditions, and explicit exact coefficient identities.
+The recorded Palomar run checks those claims using Lean and the
+independent kernels listed in its report. The allowed axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+These are verification claims about the recorded source snapshot,
+not a claim of human peer review or a check of this prose document.
+
+\paragraph{Attribution and development.}
+OpenAI supplied the original $9/4$ construction and complex-field proof
+\cite{OAI,OAILean}. The contribution described here is its adaptation
+to arbitrary positive characteristic, the explicit descent argument,
+and their formal verification. No historical-priority claim is made
+for the scalar-descent principle. The extension and Lean formalization
+were developed with consumer-accessible GPT-6 Astra and GPT-6.1 Sol
+through Codex, under human direction. The repository records that
+provenance. This note was prepared with AI assistance.
+
+\begin{thebibliography}{9}
+\bibitem{OAI}
+OpenAI, \emph{An Upper Bound of $9/4$ for the Matrix Multiplication
+Exponent}, October 2, 2026.
+\href{https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/paper.pdf}{Preprint},
+\href{https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex}{manuscript source}.
+Revision \texttt{adc7f1241b42e322a6451854ab7e4b4c146bf78a}.
+
+\bibitem{OAILean}
+OpenAI, \emph{Lean sources for matrix multiplication}, 2026.
+\href{https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/LinearAlgebra/MatrixMultiplication}{MatrixMultiplication subtree},
+revision \texttt{adc7f1241b42e322a6451854ab7e4b4c146bf78a}.
+
+\bibitem{Formalization}
+S.~Navot, \emph{Matrix multiplication exponent at most $9/4$ over
+arbitrary fields: a Lean formalization}, version 1.0.0, October 7, 2026.
+\href{https://doi.org/10.5281/zenodo.23219128}{doi:10.5281/zenodo.23219128}.
+\href{https://github.com/selanavot/matrix-multiplication-all-fields/tree/c88bb830aeb6ebd83f1e48a7bdae566ff5e0924d}{Archived source revision}
+\texttt{c88bb830aeb6ebd83f1e48a7bdae566ff5e0924d};
+verification provenance is in \texttt{docs/releases/v1.0.0.md}.
+
+\bibitem{Schonhage}
+A.~Sch\"onhage, \emph{Partial and total matrix multiplication},
+SIAM Journal on Computing \textbf{10}(3) (1981), 434--455.
+\href{https://doi.org/10.1137/0210032}{doi:10.1137/0210032}.
+
+\bibitem{Lean}
+L.~de Moura and S.~Ullrich, \emph{The Lean 4 theorem prover and
+programming language}, in Automated Deduction---CADE~28,
+Lecture Notes in Computer Science \textbf{12699} (2021), 625--635.
+\href{https://doi.org/10.1007/978-3-030-79876-5_37}{doi:10.1007/978-3-030-79876-5\_37}.
+
+\bibitem{Mathlib}
+The mathlib Community, \emph{The Lean mathematical library},
+Proceedings of the 9th ACM SIGPLAN International Conference on
+Certified Programs and Proofs (CPP~2020), 367--381.
+\href{https://doi.org/10.1145/3372885.3373824}{doi:10.1145/3372885.3373824}.
+\end{thebibliography}
+\end{document}

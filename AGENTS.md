@@ -32,9 +32,9 @@ The user wants a comprehensible diff against that baseline.
 - Preserve an upstream baseline commit and use a separate work branch.
 - Save meaningful work in commits. Label incomplete checkpoints honestly;
   a source checkpoint is not a verified theorem.
-- Open/update a PR in this repository before calling the work
-  complete. The user explicitly authorizes merging development PRs;
-  merge verified checkpoints when useful, retaining the upstream baseline.
+- Open/update a PR in this repository before calling the work complete.
+  Every PR merge requires Sela's explicit human approval identifying that PR;
+  earlier general authorization for development merges no longer applies.
 - Do not commit downloaded toolchains, dependency checkouts, build caches,
   credentials, machine-specific paths, or large generated logs.
 
@@ -126,3 +126,15 @@ deterministic module-only baseline port, checked by
 `scripts/check-specification.py`; never relax that comparison. The required
 Brouwer sources are vendored with their MIT notice, not runtime-patched Git
 dependencies. The historical patch is retained only for provenance.
+
+## Paper
+
+`paper/` is a self-contained manuscript directory, not a nested Git repository.
+Build with `bash paper/build.sh`; commit `paper/paper.tex` and the generated
+`paper/paper.pdf` together and visually inspect every page after changes.
+Keep the author byline and PDF Author metadata empty as requested. Cite the
+pinned OpenAI baseline and versioned formalization archive; do not imply the
+existing v1.0.0 archive contains the later paper. Attribute integer-node repair
+to the original Lean implementation: the manuscript already permits arbitrary
+distinct nonzero interpolation points. Record review and build evidence in
+`paper/REVIEW.md`. Paper-only edits do not require a new Lean proof build.
