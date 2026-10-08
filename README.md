@@ -6,6 +6,7 @@ The extension of OpenAI's proof to arbitrary fields was found and formalized by 
 
 **Paper:** [*The Matrix Multiplication Bound ω ≤ 9/4 over Arbitrary Fields*](paper/paper.pdf)
 ([LaTeX source](paper/paper.tex), [build instructions](paper/README.md)).
+**The paper itself was also AI-generated through Codex, under Sela Navot's direction.**
 The note describes the positive-characteristic modifications and fixed-overhead
 descent, with explicit attribution to OpenAI's original construction and the
 classical field-extension argument. The characteristic-zero consequence already
