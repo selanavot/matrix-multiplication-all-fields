@@ -6,8 +6,8 @@ This self-contained paper directory describes the contribution on top of
 OpenAI's original proof: the nonvanishing Fourier period, the characteristic-free
 interpolation implementation, and fixed-overhead descent from an algebraic
 closure. The original construction is cited rather than reproduced. The paper
-has no author byline and its PDF Author metadata is empty; bibliographic and
-development attribution remain explicit.
+has no author byline or displayed date and its PDF Author metadata is empty;
+bibliographic and development attribution remain explicit.
 
 The paper cites the immutable OpenAI baseline and the existing
 [v1.0.0 formalization archive](https://doi.org/10.5281/zenodo.23219128).
@@ -31,5 +31,6 @@ byte-for-byte reproduction requires the same TeX distribution and package versio
 No Lean build is needed to typeset this document.
 
 When editing, rebuild the PDF, inspect every rendered page, and commit source
-and PDF together. Keep the author block and PDF Author metadata empty.
+and PDF together. Keep the author block, displayed date, and PDF Author metadata
+empty; Git commits identify manuscript versions.
 See [REVIEW.md](REVIEW.md) for the mathematical and artifact review record.

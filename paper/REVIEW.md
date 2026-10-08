@@ -169,5 +169,14 @@ Fields*, as requested during review. Checks completed:
 - `python3 scripts/check-specification.py` passed: the eleven protected files
   and frozen Challenge model retain the exact module-only baseline port.
 
-The committed PDF is 295,708 bytes. SHA-256:
+At initial paper commit `cd846fe`, the PDF was 295,708 bytes. SHA-256:
 `4805e65c689e4c2a19f773ea9d66541acc856905b5c4bafc7357555915f2b09a`.
+
+### Displayed date removed
+
+At the user's request, the title-page date is now empty (`\date{}`); Git
+commits identify manuscript versions. Bibliographic publication dates remain.
+The native compiler and repository PDF build both passed again, all six pages
+were rendered and inspected, and `git diff --check` passed. The updated PDF
+is 273,060 bytes, with SHA-256:
+`6669fa39da9696b141ae96537185467ba2469dd1a29c4727968799f93184a0ed`.

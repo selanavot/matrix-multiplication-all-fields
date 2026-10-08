@@ -3,7 +3,7 @@ set -euo pipefail
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
 
 # Fixed UTC timestamp makes successive builds reproducible with the same TeX
-# distribution; the manuscript date is explicit in paper.tex.
+# distribution. The manuscript omits a displayed date; Git records its version.
 export SOURCE_DATE_EPOCH=1791417600
 export FORCE_SOURCE_DATE=1
 mkdir -p build
