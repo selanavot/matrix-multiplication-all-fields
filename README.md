@@ -4,6 +4,14 @@ This is a focused source fork of [OpenAI's mathematics repository](https://githu
 
 The extension of OpenAI's proof to arbitrary fields was found and formalized by **consumer-grade GPT-6 Astra and GPT-6.1 Sol**, working under Sela Navot's direction. Lean checked the resulting formal proof; the verification scope is documented below.
 
+**Paper:** [*The Matrix Multiplication Bound ω ≤ 9/4 over Arbitrary Fields*](paper/paper.pdf)
+([LaTeX source](paper/paper.tex), [build instructions](paper/README.md)).
+**The paper itself was also AI-generated through Codex, under Sela Navot's direction.**
+The note describes the positive-characteristic modifications and fixed-overhead
+descent, with explicit attribution to OpenAI's original construction and the
+classical field-extension argument. The characteristic-zero consequence already
+follows from OpenAI's proof using standard descent.
+
 The sources are extracted from the `MatrixMultiplication` subtree at OpenAI commit [`adc7f1241b42e322a6451854ab7e4b4c146bf78a`](https://github.com/openai/math/tree/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/LinearAlgebra/MatrixMultiplication), packaged as a standalone Lake project. The matrix-multiplication subtree keeps only the 126 OAI modules in the import closure of the all-fields theorem and its audit: 120 upstream modules, 40 of them modified, plus 6 new files. OpenAI's other matrix-multiplication results in that subtree (the dual exponent, rectangular and conditional bounds, and their numerical certificates) are omitted. So is the complex-only program layer through which OpenAI's complex proof reached `Model.lean`, which this fork's generic arithmetic bridge replaces. The preserved tag `openai-baseline-adc7f12` records that subtree before the extension. The accompanying OpenAI preprint is [*An Upper Bound of 9/4 for the Matrix Multiplication Exponent*](https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/build/paper.tex). See [UPSTREAM.md](UPSTREAM.md) for provenance.
 
 ## Premise and theorem-statement diff
