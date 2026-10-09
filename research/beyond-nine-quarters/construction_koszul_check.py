@@ -59,12 +59,46 @@ def verify(H):
     return {'H':H,'matrix_rows':rows,'matrix_columns':len(columns),'kernel_dimension':len(free),'exact_rank':rank}
 
 
+def verify_oriented(h,orientation):
+    """Same exact incidence rank algorithm for either orientation per factor."""
+    if not isinstance(h,int) or h<1:raise ValueError('h must be positive')
+    if len(orientation)!=2 or any(c not in '+-' for c in orientation):raise ValueError('orientation must have two signs')
+    X=[(r,s) for r in (0,1) for s in (0,1)]
+    yd=[h if c=='+' else h+1 for c in orientation]
+    zd=[h+1 if c=='+' else h for c in orientation]
+    Y=[(u,v) for u in range(yd[0]) for v in range(yd[1])]
+    Z=[(w,z) for w in range(zd[0]) for z in range(zd[1])]
+    index={(r,s,u,v):i for i,(r,s,u,v) in enumerate((r,s,u,v) for r,s in X for u,v in Y)}
+    parent=list(range(len(index)))
+    def root(i):
+        while parent[i]!=i:parent[i]=parent[parent[i]];i=parent[i]
+        return i
+    forced=[]
+    def entry(slot,p,q,w,z):
+        u=w-p if orientation[0]=='+' else w+p
+        v=z-q if orientation[1]=='+' else z+q
+        return index.get((*slot,u,v))
+    for i,j in combinations(range(4),2):
+        for w,z in Z:
+            a=entry(X[j],*X[i],w,z);b=entry(X[i],*X[j],w,z)
+            if a is not None and b is not None:parent[root(a)]=root(b)
+            elif a is not None:forced.append(a)
+            elif b is not None:forced.append(b)
+    forced={root(i) for i in forced}
+    free={root(i) for i in range(len(index))}-forced
+    rank=len(index)-len(free)
+    return {'orientation':orientation,'dimY':len(Y),'dimZ':len(Z),'koszul_rank':rank,'weighted_cost':2*len(Y)+3*len(Z)+rank}
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--max-width',type=int,default=10)
     args=parser.parse_args()
     if args.max_width<1:parser.error('--max-width must be positive')
     results=[verify(H) for H in range(1,args.max_width+1)]
-    print(json.dumps({'status':'passed','method':'exact signed incidence equations; valid over every field','checks':results},indent=2))
+    orientations=[verify_oriented(2,s) for s in ('++','+-','-+','--')]
+    assert [r['koszul_rank'] for r in orientations]==[15,20,20,20]
+    assert all(r['weighted_cost']==50 for r in orientations)
+    print(json.dumps({'status':'passed','method':'exact signed incidence equations; valid over every field','checks':results,'all_four_h2_orientations':orientations},indent=2))
 
 if __name__=='__main__':main()

@@ -255,7 +255,7 @@ More generally let A=H(H+1), b=h(h+1), and assume H≥h≥2. The new multiplicit
 
 N ≤ (A+2/3)/(b+2/3) ≤ (A+1/4)/(b+1/4) = ((H+1/2)/(h+1/2))².
 
-The second inequality is strict when H>h, since increasing the common additive constant lowers (A+c)/(b+c). The right side is exactly the endpoint profile's squared ratio for C(2,H) versus C(2,h). Thus even arbitrary polynomial degenerations into these balanced product branches cannot beat the endpoint witness. This does **not** address targets containing the unbalanced FB/BF branches or different tensor families, and it is not a lower bound on omega.
+The second inequality is strict when H>h, since increasing the common additive constant lowers (A+c)/(b+c). The right side is exactly the endpoint profile's squared ratio for C(2,H) versus C(2,h). Thus even arbitrary polynomial degenerations into these balanced product branches cannot beat the endpoint witness. That balanced-only inequality does not address unbalanced FB/BF branches. The refinement below covers all four orientations at target width h=2. Neither statement addresses arbitrary other tensor families or gives a lower bound on omega.
 
 ### Reproduction
 
@@ -264,3 +264,34 @@ The second inequality is strict when H>h, since increasing the common additive c
 8,20,38,62,92,128,170,218,272,332
 
 for H=1..10. Complete output is in `construction_koszul_result.json`. Because each row is an equality or a zero constraint, these checks compute exact ranks over every field rather than ranks modulo one selected prime.
+
+### All four orientations at target width h=2
+
+A final exact refinement removes the balanced-orientation restriction for target branches built from two C(2,2) factors. Let r_Y and r_Z denote the two ordinary flattening ranks, and k the first Koszul rank. Use the weighted quantity
+
+W(T)=2r_Y(T)+3r_Z(T)+k(T).
+
+For blocks sharing the same four-dimensional first space and having disjoint other-leg spaces, all three ranks add. They cannot increase under the coordinate maps and polynomial degenerations under discussion. The displayed tensor legs are concise, so their ordinary flattening ranks equal their dimensions.
+
+The exact signed-incidence computation gives:
+
+| Factor orientations | dim Y | dim Z | Koszul rank | W |
+|---|---:|---:|---:|---:|
+| Ordinary × ordinary | 4 | 9 | 15 | 50 |
+| Ordinary × exchanged | 6 | 6 | 20 | 50 |
+| Exchanged × ordinary | 6 | 6 | 20 | 50 |
+| Exchanged × exchanged | 9 | 4 | 20 | 50 |
+
+Every Koszul row still has at most two opposite unit coefficients. The same equality-component algorithm therefore verifies these ranks over **every field**, rather than just over Q or one finite field. First-index reversals and outer-leg reindexings in the interval embeddings are invertible and do not alter these ranks.
+
+For the source S_H, putting D=H(H+1) yields W(S_H)=2D+3D+(3D+2)=8D+2. Any degeneration to N full product branches of the four displayed types consequently satisfies
+
+50N ≤ 8H(H+1)+2,
+
+or equivalently
+
+N ≤ (4H(H+1)+1)/25 = ((H+1/2)/(5/2))².
+
+For H≥2 this is **exactly** the squared endpoint-profile ratio for C(2,H) versus C(2,2). Thus this entire four-orientation fixed-width coupled construction cannot improve that ratio, even using non-diagonal coordinate changes, polynomial cancellations, or discarding unused outer coordinates. The conclusion is confined to this source/target family. It is a barrier to the candidate construction, not to all matrix-multiplication algorithms.
+
+The default `construction_koszul_check.py` run now verifies these four target cases in addition to S_H for H=1..10. In particular, its target ranks are 15,20,20,20 and every weighted cost is exactly 50.

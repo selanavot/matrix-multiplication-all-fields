@@ -72,5 +72,35 @@
       "kernel_dimension": 108,
       "exact_rank": 332
     }
+  ],
+  "all_four_h2_orientations": [
+    {
+      "orientation": "++",
+      "dimY": 4,
+      "dimZ": 9,
+      "koszul_rank": 15,
+      "weighted_cost": 50
+    },
+    {
+      "orientation": "+-",
+      "dimY": 6,
+      "dimZ": 6,
+      "koszul_rank": 20,
+      "weighted_cost": 50
+    },
+    {
+      "orientation": "-+",
+      "dimY": 6,
+      "dimZ": 6,
+      "koszul_rank": 20,
+      "weighted_cost": 50
+    },
+    {
+      "orientation": "--",
+      "dimY": 9,
+      "dimZ": 4,
+      "koszul_rank": 20,
+      "weighted_cost": 50
+    }
   ]
 }

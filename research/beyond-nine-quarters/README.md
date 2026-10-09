@@ -31,7 +31,7 @@ and their historical novelty has not been established.
 | Use a dense periodic packing | A dimension-optimal packing exists, but an exact directed cycle obstructs monomial separation. | Saved packing and cycle certificate. Separately charging cancellation costs erases the hoped-for gain. |
 | Change basis using diagonal polynomial filtrations | Obtained an all-characteristic family of direct-sum degenerations, including `C(2,2)^2 -> C(3,3) + 1`. | Paper proof and independent exact coefficient checks; still compatible with the endpoint example. |
 | Extract other full convolution blocks | A stronger dimension-based barrier covers arbitrary changes of basis for consistently oriented source products and individual convolution target blocks. | Global paper proof, including a 525-term positive-coefficient certificate checked by two agents. It does not cover every orientation or product-valued target. |
-| Encode matrix/vector and transposed-matrix/vector products together | The smallest mixed candidate fails an exact trace invariant; a separate Koszul-rank calculation obstructs a larger family of balanced coupled branches. | Paper proofs with exact rational/integer checks. The trace argument is over characteristic zero; the separate Koszul kernel is described over every field. |
+| Encode matrix/vector and transposed-matrix/vector products together | An explicit Koszul kernel excludes balanced coupled branches, and a weighted rank bound covers all four target orientations at width two. | All-field paper proof and exact incidence checks. The four-orientation bound exactly reproduces the endpoint capacity, even for arbitrary coordinate changes and polynomial degenerations. |
 | Couple binary and ternary polynomial multiplication | Derived a Koszul-filtration inequality connecting the two tensor families, then found an explicit global endpoint example satisfying it. | Paper construction and global analytic countermodel; this supersedes the exploratory finite numerical LP results. |
 | Improve the exponent lower bound | No improvement. Audited the distinction between finite rank bounds, method barriers, and a true omega lower bound. | Primary references and explicit counterexamples in [barriers.md](barriers.md). |
 
@@ -86,6 +86,7 @@ python3 research/beyond-nine-quarters/diagonal_filtration_check.py
 python3 research/beyond-nine-quarters/profile_product_certificate.py
 python3 research/beyond-nine-quarters/profile_filtration.py
 python3 research/beyond-nine-quarters/construction_pencil_check.py
+python3 research/beyond-nine-quarters/construction_koszul_check.py --max-width 10
 ```
 
 `verify_certificates.py` independently reconstructs the selected supports,
@@ -94,7 +95,9 @@ checks the periodic obstruction, and rejects a deliberately corrupted
 potential assignment. It does not import the search implementation or accept
 solver-reported optimality as a proof. `diagonal_filtration_check.py` checks
 integral basis inversion and every coefficient of 704 offset degenerations
-for dimensions at most four. The scripts print the exact scope of each run.
+for dimensions at most four. The Koszul checker verifies the signed incidence
+equations and explicit kernel labels, so its rank certificates hold over every
+field. The scripts print the exact scope of each run.
 
 The optional searches use Python 3.12.14, NumPy 2.5.3, and SciPy 1.18.1 in the
 recorded run. Keep their environment outside the repository:
