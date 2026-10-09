@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "method": "exact signed incidence equations; valid over every field",
+  "checks": [
+    {
+      "H": 1,
+      "matrix_rows": 12,
+      "matrix_columns": 8,
+      "kernel_dimension": 0,
+      "exact_rank": 8
+    },
+    {
+      "H": 2,
+      "matrix_rows": 36,
+      "matrix_columns": 24,
+      "kernel_dimension": 4,
+      "exact_rank": 20
+    },
+    {
+      "H": 3,
+      "matrix_rows": 72,
+      "matrix_columns": 48,
+      "kernel_dimension": 10,
+      "exact_rank": 38
+    },
+    {
+      "H": 4,
+      "matrix_rows": 120,
+      "matrix_columns": 80,
+      "kernel_dimension": 18,
+      "exact_rank": 62
+    },
+    {
+      "H": 5,
+      "matrix_rows": 180,
+      "matrix_columns": 120,
+      "kernel_dimension": 28,
+      "exact_rank": 92
+    },
+    {
+      "H": 6,
+      "matrix_rows": 252,
+      "matrix_columns": 168,
+      "kernel_dimension": 40,
+      "exact_rank": 128
+    },
+    {
+      "H": 7,
+      "matrix_rows": 336,
+      "matrix_columns": 224,
+      "kernel_dimension": 54,
+      "exact_rank": 170
+    },
+    {
+      "H": 8,
+      "matrix_rows": 432,
+      "matrix_columns": 288,
+      "kernel_dimension": 70,
+      "exact_rank": 218
+    },
+    {
+      "H": 9,
+      "matrix_rows": 540,
+      "matrix_columns": 360,
+      "kernel_dimension": 88,
+      "exact_rank": 272
+    },
+    {
+      "H": 10,
+      "matrix_rows": 660,
+      "matrix_columns": 440,
+      "kernel_dimension": 108,
+      "exact_rank": 332
+    }
+  ]
+}

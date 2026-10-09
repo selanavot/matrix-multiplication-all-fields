@@ -1,0 +1,626 @@
+[
+  {
+    "a": 2,
+    "h": 2,
+    "H": 5,
+    "candidates": 25,
+    "kept": 4,
+    "current_profile_squared_ratio": 4.840000000000001,
+    "dimension_capacity": 5.0,
+    "solver_status": 0,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_dual_upper_bound": 4.0,
+    "exact_support_verification": "passed",
+    "branches": [
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 3,
+        "potential": 2
+      },
+      {
+        "kind": "FF",
+        "x": 3,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 3,
+        "y": 3,
+        "potential": 0
+      },
+      {
+        "kind": "BB",
+        "x": 0,
+        "y": 1,
+        "potential": 1
+      }
+    ]
+  },
+  {
+    "a": 2,
+    "h": 2,
+    "H": 7,
+    "candidates": 61,
+    "kept": 6,
+    "current_profile_squared_ratio": 9.0,
+    "dimension_capacity": 9.333333333333334,
+    "solver_status": 0,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_dual_upper_bound": 6.0,
+    "exact_support_verification": "passed",
+    "branches": [
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 1,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 5,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 5,
+        "y": 1,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 5,
+        "y": 5,
+        "potential": 0
+      },
+      {
+        "kind": "BB",
+        "x": 2,
+        "y": 2,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 2,
+        "y": 5,
+        "potential": 1
+      }
+    ]
+  },
+  {
+    "a": 2,
+    "h": 2,
+    "H": 8,
+    "candidates": 85,
+    "kept": 9,
+    "current_profile_squared_ratio": 11.559999999999999,
+    "dimension_capacity": 12.0,
+    "solver_status": 0,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_dual_upper_bound": 9.0,
+    "exact_support_verification": "passed",
+    "branches": [
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 3,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 6,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 1,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 3,
+        "y": 3,
+        "potential": 2
+      },
+      {
+        "kind": "FF",
+        "x": 5,
+        "y": 6,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 6,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 6,
+        "y": 3,
+        "potential": 0
+      },
+      {
+        "kind": "BB",
+        "x": 2,
+        "y": 6,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 3,
+        "y": 1,
+        "potential": 1
+      }
+    ]
+  },
+  {
+    "a": 2,
+    "h": 2,
+    "H": 10,
+    "candidates": 145,
+    "kept": 13,
+    "current_profile_squared_ratio": 17.64,
+    "dimension_capacity": 18.333333333333332,
+    "solver_status": 0,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_dual_upper_bound": 13.0,
+    "exact_support_verification": "passed",
+    "branches": [
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 3,
+        "potential": 1
+      },
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 8,
+        "potential": 1
+      },
+      {
+        "kind": "FF",
+        "x": 3,
+        "y": 0,
+        "potential": 3
+      },
+      {
+        "kind": "FF",
+        "x": 5,
+        "y": 8,
+        "potential": 1
+      },
+      {
+        "kind": "FF",
+        "x": 8,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 8,
+        "y": 3,
+        "potential": 1
+      },
+      {
+        "kind": "FF",
+        "x": 8,
+        "y": 8,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 0,
+        "y": 6,
+        "potential": 0
+      },
+      {
+        "kind": "BB",
+        "x": 2,
+        "y": 3,
+        "potential": 2
+      },
+      {
+        "kind": "BB",
+        "x": 3,
+        "y": 6,
+        "potential": 0
+      },
+      {
+        "kind": "BB",
+        "x": 5,
+        "y": 1,
+        "potential": 4
+      },
+      {
+        "kind": "BB",
+        "x": 7,
+        "y": 6,
+        "potential": 0
+      }
+    ]
+  },
+  {
+    "a": 2,
+    "h": 2,
+    "H": 12,
+    "candidates": 221,
+    "kept": 20,
+    "current_profile_squared_ratio": 25.0,
+    "dimension_capacity": 26.0,
+    "solver_status": 0,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_dual_upper_bound": 20.0,
+    "exact_support_verification": "passed",
+    "branches": [
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 3,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 6,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 10,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 5,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 5,
+        "y": 4,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 5,
+        "y": 7,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 5,
+        "y": 10,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 10,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 10,
+        "y": 4,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 10,
+        "y": 7,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 10,
+        "y": 10,
+        "potential": 0
+      },
+      {
+        "kind": "BB",
+        "x": 2,
+        "y": 1,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 2,
+        "y": 4,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 2,
+        "y": 7,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 2,
+        "y": 10,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 7,
+        "y": 1,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 7,
+        "y": 4,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 7,
+        "y": 7,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 7,
+        "y": 10,
+        "potential": 1
+      }
+    ]
+  },
+  {
+    "a": 3,
+    "h": 3,
+    "H": 10,
+    "candidates": 100,
+    "kept": 4,
+    "current_profile_squared_ratio": 7.5625,
+    "dimension_capacity": 8.0,
+    "solver_status": 0,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_dual_upper_bound": 4.0,
+    "exact_support_verification": "passed",
+    "branches": [
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 7,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 5,
+        "y": 7,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 6,
+        "y": 2,
+        "potential": 0
+      }
+    ]
+  },
+  {
+    "a": 4,
+    "h": 4,
+    "H": 14,
+    "candidates": 185,
+    "kept": 4,
+    "current_profile_squared_ratio": 7.942148760330579,
+    "dimension_capacity": 8.5,
+    "solver_status": 0,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_dual_upper_bound": 4.0,
+    "exact_support_verification": "passed",
+    "branches": [
+      {
+        "kind": "FF",
+        "x": 1,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 1,
+        "y": 10,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 9,
+        "y": 10,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 10,
+        "y": 0,
+        "potential": 0
+      }
+    ]
+  },
+  {
+    "a": 2,
+    "h": 1,
+    "H": 8,
+    "candidates": 113,
+    "kept": 24,
+    "current_profile_squared_ratio": null,
+    "dimension_capacity": 36.0,
+    "solver_status": 0,
+    "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "solver_dual_upper_bound": 24.0,
+    "exact_support_verification": "passed",
+    "branches": [
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 2,
+        "potential": 1
+      },
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 5,
+        "potential": 1
+      },
+      {
+        "kind": "FF",
+        "x": 0,
+        "y": 7,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 2,
+        "y": 0,
+        "potential": 3
+      },
+      {
+        "kind": "FF",
+        "x": 2,
+        "y": 7,
+        "potential": 3
+      },
+      {
+        "kind": "FF",
+        "x": 3,
+        "y": 2,
+        "potential": 1
+      },
+      {
+        "kind": "FF",
+        "x": 3,
+        "y": 5,
+        "potential": 1
+      },
+      {
+        "kind": "FF",
+        "x": 4,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 4,
+        "y": 7,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 5,
+        "y": 2,
+        "potential": 2
+      },
+      {
+        "kind": "FF",
+        "x": 5,
+        "y": 5,
+        "potential": 2
+      },
+      {
+        "kind": "FF",
+        "x": 7,
+        "y": 0,
+        "potential": 0
+      },
+      {
+        "kind": "FF",
+        "x": 7,
+        "y": 2,
+        "potential": 1
+      },
+      {
+        "kind": "FF",
+        "x": 7,
+        "y": 5,
+        "potential": 1
+      },
+      {
+        "kind": "FF",
+        "x": 7,
+        "y": 7,
+        "potential": 0
+      },
+      {
+        "kind": "BB",
+        "x": 0,
+        "y": 4,
+        "potential": 0
+      },
+      {
+        "kind": "BB",
+        "x": 1,
+        "y": 2,
+        "potential": 2
+      },
+      {
+        "kind": "BB",
+        "x": 1,
+        "y": 6,
+        "potential": 2
+      },
+      {
+        "kind": "BB",
+        "x": 2,
+        "y": 4,
+        "potential": 0
+      },
+      {
+        "kind": "BB",
+        "x": 4,
+        "y": 4,
+        "potential": 0
+      },
+      {
+        "kind": "BB",
+        "x": 5,
+        "y": 1,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 5,
+        "y": 7,
+        "potential": 1
+      },
+      {
+        "kind": "BB",
+        "x": 6,
+        "y": 4,
+        "potential": 0
+      }
+    ]
+  }
+]
